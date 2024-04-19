@@ -339,3 +339,8 @@ quadrantChart
 
 ## Funding
 
+|Name|Logo|Grant number|
+|--|--|--|
+|[Deutsche Forschungsgemeinschaft](https://www.dfg.de/)|<img align="middle" src="https://raw.githubusercontent.com/PeriHub/PeriLab.jl/main/assets/dfg.jpg" height="120">|[WI 4835/5-1](https://gepris.dfg.de/gepris/projekt/456427423)|
+|[Saxon state parlament](https://www.landtag.sachsen.de/de)|<img align="middle" src="https://raw.githubusercontent.com/PeriHub/PeriLab.jl/main/assets/sachsen.jpg" height="120">|[3028223](https://www.m-era.net/materipedia/2020/emma)|
+|[Federal Ministry for Economic Affairs and Climate Action](https://www.bmwk.de/Navigation/DE/Home/home.html)|<img align="middle" src="https://raw.githubusercontent.com/PeriHub/PeriLab.jl/main/assets/hytank.jpg" height="120">|20W2214G|
