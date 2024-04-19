@@ -51,14 +51,14 @@ _class: cols-2 -->
 
 <div class=ldiv>
 
-## Isotropic
+### Isotropic
 
 ![width:400px](./assets/Isotropic_Scan.png)
 
 </div>
 <div class=rdiv>
 
-## Anisotropic
+### Anisotropic
 
 ![width:500px](./assets/Anisotropic_Scan.png)
 
@@ -109,7 +109,7 @@ _class: cols-2 -->
 ---
 
 <!--footer: ''
-_class: cols-2-->
+_class: cols-2-1-->
 
 # Experimental Setup
 
@@ -117,11 +117,12 @@ _class: cols-2-->
 
 ## Material: AA7010-T7452
 
-| Orientation       | KIC $[MPa\sqrt{m}]$ |
-| ----------------- | ------------------- |
-| **L-T**           | $37.44$             |
-| _T-L_ $45\degree$ | $\mathit{36.21}$    |
-| **T-L**           | $21.24$             |
+| Parameter       | Value               |
+| ----------------| ------------------- |
+| $K_{IC_{LT}}$   | $37.44\ MPa\sqrt{m}$|
+| $K_{IC_{TL}}$   | $21.24\ MPa\sqrt{m}$|
+| $E$             | $71700\ MPa$        |
+| $\nu$           | $0.33$              |
 
 </div>
 <div class=rdiv>
@@ -130,9 +131,15 @@ _class: cols-2-->
 
 | Parameter | Value   |
 | --------- | ------- |
-| $F_{max}$ | $4.5kN$ |
+| $F_{max}$ | $4.5\ kN$ |
 | $R$       | $0.1$   |
-| $f$       | $20Hz$  |
+| $f$       | $20\ Hz$  |
+
+</div>
+
+<div class=bdiv>
+
+$F(t) = -2025 * sin(2 * pi * 20 * t - pi / 2) -2475$
 
 </div>
 
@@ -172,7 +179,8 @@ _class: cols-2-->
 
 $$
 \begin{align}
-w_C&= \frac{4G_0}{\pi\delta^4} \qquad\qquad \tag{1}\label{eq:wc}\\
+w_C&= \frac{4G_I}{\pi\delta^4} \qquad\qquad \tag{1}\label{eq:wc}\\
+G_I&= K_I^2(\frac{1}{E}), \quad \text{plane stress} \\
 \chi(\underline{e}\langle\xi\rangle,t)&=
   \begin{cases}
       1,  & \text{if } w(\underline{e}\langle\xi\rangle) > w_C \\
@@ -186,18 +194,18 @@ $$
 
 <!-- _class: cols-2 -->
 
-## Damage
+## Advanced energy-based damage model
 
 <div class=ldiv>
 
 - Material orientation angle $\alpha = 45\degree$
 - Inverse rotation of Bonds $\eta_a$ and $\eta_b$
-- Projection of $\eta_a$ and $\eta_b$ in the $x$ and $y$ directions
+- Projection of $\eta_a$ and $\eta_b$ in the $L$ and $T$ directions
 
 | Bond                       | Bond components |
 | -------------------------- | --------------- |
-| $(\eta_{a_x}, \eta_{b_y})$ | $(0,1)$         |
-| $(\eta_{b_x}, \eta_{b_y})$ | $(0.5,0.5)$     |
+| $(\eta_{a_{r_{LT}}}, \eta_{a_{r_{TL}}})$ | $(0,1)$         |
+| $(\eta_{b_{r_{LT}}}, \eta_{b_{r_{TL}}})$ | $(0.5,0.5)$     |
 
 </div>
 <div class=rdiv>
@@ -212,10 +220,10 @@ $$
 
 $$
 \begin{align}
-w_C(\alpha)&= \frac{4G_0(\alpha)}{\pi\delta^4} \tag{4}\label{eq:wca}\\
+w_C(\alpha)&= \frac{4G_1(\alpha)}{\pi\delta^4} \tag{4}\label{eq:wca}\\
 \mathbf{\eta}_{Rot}&= R^{-1}(\alpha)\mathbf{\eta} \tag{5}\label{eq:eta}\\
-(\eta_x, \eta_y)&= \frac{|\eta_{Rot_x}|}{||\mathbf{\eta}||} \tag{6}\label{eq:etax}\\
-w(\underline{e}\langle\xi\rangle,\alpha)&= w(\underline{e}\langle\xi\rangle)(\eta_x, \eta_y) \tag{7}\label{eq:we}\\
+(\eta_{r_{LT}}, \eta_{r_{TL}})&= \frac{|\eta_{Rot_x}|}{||\mathbf{\eta}||} \tag{6}\label{eq:etax}\\
+w(\underline{e}\langle\xi\rangle,\alpha)&= w(\underline{e}\langle\xi\rangle)(\eta_{r_{LT}}, \eta_{r_{TL}}) \tag{7}\label{eq:we}\\
 \chi(\underline{e}\langle\xi\rangle,t,\alpha)&=
 \begin{cases}
     1,  & \text{if } w(\underline{e}\langle\xi\rangle,\alpha) > w_C(\alpha) \\
@@ -285,13 +293,10 @@ quadrantChart
 
 <div class=ldiv>
 
-## Compact Tension
+- Resulting Damage indices extracted
+- Weighted least-squares approximation
+- Crack angle $\approx 26.6\degree$
 
-| Orientation     | KIC $[MPa\sqrt{m}]$ |
-| --------------- | ------------------- |
-| L-T             | $37.44$             |
-| T-L $45\degree$ | $36.21$             |
-| T-L             | $21.24$             |
 
 </div>
 <div class=rdiv>
@@ -310,26 +315,38 @@ quadrantChart
 
 ---
 <!--footer: ''-->
+<!-- _class: cols-2 -->
 
-## Discussion and further
+## Discussion and further work
 
-- Material Models ➡️ Plasticity
+<div class=ldiv>
+
+- How to represent occuring failure mechanism?
+- Material Models 
+  - Plasticity
 - Discretization and non uniform mesh
 - Sensitivity Analysis
 
+</div>
+<div class=rdiv>
+
+![width:600px](./assets/Mechanism.png)
+
+</div>
+
 ---
 
-## Thank you
+# Thank you
 
 [Jan-Timo Hesse](mailto:jan-timo.hesse@dlr.de) (DLR)
 [Christian Willberg](christian.willberg@h2.de) (h2)
 [Eric Breitbarth](eric.breitbarth@dlr.de) (DLR)
 [Florian Paysan](florian.paysan@dlr.de) (DLR)
-![bg right height:7cm](https://gitlab.com/dlr-perihub/PeriLab.jl/-/raw/main/assets/PeriLab_crack.gif)
+![bg right height:8cm](https://gitlab.com/dlr-perihub/PeriLab.jl/-/raw/main/assets/PeriLab_crack.gif)
 
 ---
 
-## References
+# References
 
 1. [Foster, John & Silling, Stewart & Chen, Weinong. (2011). An energy based failure criterion for use with peridynamic states.](http://dx.doi.org/10.1615/IntJMultCompEng.2011002407)
 2. [Willberg, Christian & Wiedemann, Lasse & Rädel, Martin. (2019). A mode-dependent energy-based damage model for peridynamics and its implementation.](https://doi.org/10.2140/jomms.2019.14.193)
@@ -341,6 +358,6 @@ quadrantChart
 
 |Name|Logo|Grant number|
 |--|--|--|
-|[Deutsche Forschungsgemeinschaft](https://www.dfg.de/)|<img align="middle" src="https://raw.githubusercontent.com/PeriHub/PeriLab.jl/main/assets/dfg.jpg" height="120">|[WI 4835/5-1](https://gepris.dfg.de/gepris/projekt/456427423)|
-|[Saxon state parlament](https://www.landtag.sachsen.de/de)|<img align="middle" src="https://raw.githubusercontent.com/PeriHub/PeriLab.jl/main/assets/sachsen.jpg" height="120">|[3028223](https://www.m-era.net/materipedia/2020/emma)|
+|[German Research Foundation](https://www.dfg.de/)|<img align="middle" src="https://raw.githubusercontent.com/PeriHub/PeriLab.jl/main/assets/dfg.jpg" height="120">|[WI 4835/5-1](https://gepris.dfg.de/gepris/projekt/456427423)|
+|[Saxon State Parliament](https://www.landtag.sachsen.de/de)|<img align="middle" src="https://raw.githubusercontent.com/PeriHub/PeriLab.jl/main/assets/sachsen.jpg" height="120">|[3028223](https://www.m-era.net/materipedia/2020/emma)|
 |[Federal Ministry for Economic Affairs and Climate Action](https://www.bmwk.de/Navigation/DE/Home/home.html)|<img align="middle" src="https://raw.githubusercontent.com/PeriHub/PeriLab.jl/main/assets/hytank.jpg" height="120">|20W2214G|

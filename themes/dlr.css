@@ -42,8 +42,9 @@ section.cols-2 {
 section.cols-2 h1 {
   grid-area: slideheading;
 }
-
-section.cols-2 h2,
+section.cols-2 h2 {
+  grid-area: slideheading;
+}
 section.cols-2 h3 {
   grid-area: slideheading;
   font-size: var(--font-size-2-3);
@@ -67,6 +68,58 @@ section.cols-2 .limg {
 section.cols-2 .rimg {
   grid-area: rightpanel;
   margin-top: -5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+section.cols-2-1 {
+  overflow: visible;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 45% 50%;
+  grid-template-rows: 10% 80% 10%;
+  grid-template-areas:
+    "slideheading slideheading"
+    "leftpanel    rightpanel"
+    "slidefooter slidefooter";
+}
+section.cols-2-1 h1 {
+  grid-area: slideheading;
+}
+
+section.cols-2-1 h2,
+section.cols-2-1 h3 {
+  grid-area: slideheading;
+  font-size: var(--font-size-2-3);
+}
+
+section.cols-2-1 .ldiv {
+  grid-area: leftpanel;
+  margin-top: -5%;
+}
+section.cols-2-1 .rdiv {
+  grid-area: rightpanel;
+  margin-top: -5%;
+}
+section.cols-2-1 .limg {
+  grid-area: leftpanel;
+  margin-top: -5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+section.cols-2-1 .rimg {
+  grid-area: rightpanel;
+  margin-top: -5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+section.cols-2-1 .bdiv {
+  grid-area: slidefooter;
+  margin-top: -10%;
   display: flex;
   align-items: center;
   justify-content: center;
