@@ -27,7 +27,7 @@ Jan-Timo Hesse<a href="https://orcid.org/0000-0002-3006-1520"><img src="themes/O
 > _April 23th to 25th, 2024, Tucson_
 
 <div style="position: absolute; bottom: 10px; left: 100px; color: grray; font-size: 20px;">
-Presentation URL: https://perihub.github.io/Publications/#1
+Presentation URL: https://perihub.github.io/Presentations
 </div>
 
 ---
