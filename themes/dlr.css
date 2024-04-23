@@ -21,11 +21,11 @@ footer {
 
 section {
   font-family: Frutiger;
-  background-image: url("./assets/background_slides.svg");
+  /* background-image: url("./assets/background_slides.svg"); */
 }
 
 section.title-slide {
-  background-image: url("./assets/background_title.svg");
+  /* background-image: url("./assets/background_title.svg"); */
   color: var(--title-slide-text-color);
 }
 
