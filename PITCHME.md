@@ -105,7 +105,7 @@ _class: cols-2 -->
 </div>
 <div class=rimg>
 
-<!-- ![width:600px](./assets/compact_tension.svg) -->
+![width:600px](./assets/compact_tension.svg)
 
 </div>
 
@@ -224,7 +224,7 @@ $$
 </div>
 <div class=rdiv>
 
-<!-- ![width:500px](./assets/3dPlot.svg) -->
+![width:500px](./assets/3dPlot.svg)
 
 </div>
 
@@ -315,7 +315,7 @@ quadrantChart
 </div>
 <div class=rdiv>
 
-<!-- ![width:600px](./assets/plot.svg) -->
+![width:600px](./assets/plot.svg)
 
 </div>
 
