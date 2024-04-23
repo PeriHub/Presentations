@@ -46,6 +46,9 @@ Presentation URL: https://perihub.github.io/Presentations
 ---
 <!--footer: 'EBSD Scans by: Otto Fuchs'
 _class: cols-2 -->
+<!-- -Electron backscatter diffraction
+-Grain structure of an alluminium alloy 
+- -->
 
 ## Forged Components
 
@@ -102,7 +105,7 @@ _class: cols-2 -->
 </div>
 <div class=rimg>
 
-![width:600px](./assets/compact_tension.svg)
+<!-- ![width:600px](./assets/compact_tension.svg) -->
 
 </div>
 
@@ -110,6 +113,8 @@ _class: cols-2 -->
 
 <!--footer: ''
 _class: cols-2-1-->
+<!-- -Fracture Toughness 
+-Sine wave function -->
 
 # Experimental Setup
 
@@ -146,6 +151,8 @@ $F(t) = -2025 * sin(2 * pi * 20 * t - pi / 2) -2475$
 ---
 
 <!--footer: 'Video by: Carl Zeiss GOM Metrology GmbH'-->
+<!-- -Black-white pattern
+-Compression test and resulting surface stresses and displacments -->
 
 ## ARAMIS High-Speed DIC Systems
 
@@ -172,6 +179,12 @@ _class: cols-2-->
 </div>
 
 ---
+<!-- -Critical Energy
+-Energy release rate
+-Fracture toughness
+-Damage index
+-Bond energy
+- -->
 
 # Peridynamics
 
@@ -193,6 +206,7 @@ $$
 ---
 
 <!-- _class: cols-2 -->
+<!-- -Two displaced bonds eta_a and eta_b -->
 
 ## Advanced energy-based damage model
 
@@ -210,7 +224,7 @@ $$
 </div>
 <div class=rdiv>
 
-![width:500px](./assets/3dPlot.svg)
+<!-- ![width:500px](./assets/3dPlot.svg) -->
 
 </div>
 
@@ -246,7 +260,7 @@ $$
 
 - ✒️ **Modularization**
 
-- 🔥 **Additive Manufacturing**
+- 🎨 **Formulations**
 
 - 🧲 **Multiphysics**
 
@@ -280,9 +294,9 @@ quadrantChart
 ---
 <!--footer: 'Results: https://perilab-results.nimbus-extern.dlr.de/models/ForgedCT'-->
 
-## Compact Tension $45\degree$ Specimen 
+## Compact Tension $45\degree$ Specimen
 
-<iframe src="https://perilab-results.nimbus-extern.dlr.de/models/ForgedCT?step=199&variable=Damage&displFactor=20" width="1150" height="600"></iframe>
+<iframe src="https://perilab-results.nimbus-extern.dlr.de/models/ForgedCT?step=10&variable=von Mises Stress&displFactor=20" width="1150" height="600"></iframe>
 
 ---
 
@@ -301,7 +315,7 @@ quadrantChart
 </div>
 <div class=rdiv>
 
-![width:600px](./assets/plot.svg)
+<!-- ![width:600px](./assets/plot.svg) -->
 
 </div>
 
