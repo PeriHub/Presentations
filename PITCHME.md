@@ -32,6 +32,7 @@ Presentation URL: https://perihub.github.io/Presentations
 
 ---
 <!--paginate: true-->
+<!--footer: 'Presentation URL: https://perihub.github.io/Presentations'-->
 
 ## Forged Components
 
@@ -74,8 +75,8 @@ _class: cols-2 -->
 
 <div class=ldiv>
 
-- Highly diverse material properties due to forging process.
-- Anisotropic damage behavior depends on material orientations.
+- Highly diverse material properties
+- Anisotropic damage behavior depends on material orientations
 - Time and cost-consuming identification of material properties
 
 </div>
@@ -120,18 +121,6 @@ _class: cols-2-1-->
 
 <div class=ldiv>
 
-## Material: AA7010-T7452
-
-| Parameter       | Value               |
-| ----------------| ------------------- |
-| $K_{IC_{LT}}$   | $37.44\ MPa\sqrt{m}$|
-| $K_{IC_{TL}}$   | $21.24\ MPa\sqrt{m}$|
-| $E$             | $71700\ MPa$        |
-| $\nu$           | $0.33$              |
-
-</div>
-<div class=rdiv>
-
 ## Loading Force
 
 | Parameter | Value   |
@@ -139,6 +128,17 @@ _class: cols-2-1-->
 | $F_{max}$ | $4.5\ kN$ |
 | $R$       | $0.1$   |
 | $f$       | $20\ Hz$  |
+</div>
+<div class=rdiv>
+
+## Material: AA7010-T7452
+
+| Parameter       | Value               |
+| ----------------| ------------------- |
+| $E$             | $71700\ MPa$        |
+| $\nu$           | $0.33$              |
+| $K_{IC_{LT}}$   | $37.44\ MPa\sqrt{m}$|
+| $K_{IC_{TL}}$   | $21.24\ MPa\sqrt{m}$|
 
 </div>
 
@@ -152,7 +152,8 @@ $F(t) = -2025 * sin(2 * pi * 20 * t - pi / 2) -2475$
 
 <!--footer: 'Video by: Carl Zeiss GOM Metrology GmbH'-->
 <!-- -Black-white pattern
--Compression test and resulting surface stresses and displacments -->
+-Compression test 
+-Resulting surface stresses and displacments -->
 
 ## ARAMIS High-Speed DIC Systems
 
@@ -184,6 +185,7 @@ _class: cols-2-->
 -Fracture toughness
 -Damage index
 -Bond energy
+-Bond force density vector states
 - -->
 
 # Peridynamics
@@ -193,13 +195,13 @@ _class: cols-2-->
 $$
 \begin{align}
 w_C&= \frac{4G_I}{\pi\delta^4} \qquad\qquad \tag{1}\label{eq:wc}\\
-G_I&= K_I^2(\frac{1}{E}), \quad \text{plane stress} \\
+G_I&= K_I^2(\frac{1}{E}), \quad \text{plane stress} \tag{2}\label{eq:g1}\\
 \chi(\underline{e}\langle\xi\rangle,t)&=
   \begin{cases}
       1,  & \text{if } w(\underline{e}\langle\xi\rangle) > w_C \\
       0,  & \text{otherwise}
-  \end{cases} \tag{2}\label{eq:chi}\\
-w &= \int_\eta (\mathbf{\underline{T}}[x,t]\langle x'-x\rangle - \mathbf{\underline{T}}[x',t]\langle x-x'\rangle)d\eta \tag{3}\label{eq:w}\\
+  \end{cases} \tag{3}\label{eq:chi}\\
+w &= \int_\eta (\mathbf{\underline{T}}[x,t]\langle x'-x\rangle - \mathbf{\underline{T}}[x',t]\langle x-x'\rangle)d\eta \tag{4}\label{eq:w}\\
 \end{align}
 $$
 
@@ -229,26 +231,32 @@ $$
 </div>
 
 ---
+<!-- -Critical Energy
+-Energy release rate dependend on alpha
+-Rotated Bond
+-Rotated Bond components
+-Bond energy components-->
 
 ## Advanced energy-based damage model
 
 $$
 \begin{align}
-w_C(\alpha)&= \frac{4G_1(\alpha)}{\pi\delta^4} \tag{4}\label{eq:wca}\\
-\mathbf{\eta}_{Rot}&= R^{-1}(\alpha)\mathbf{\eta} \tag{5}\label{eq:eta}\\
-(\eta_{r_{LT}}, \eta_{r_{TL}})&= \frac{|\eta_{Rot_x}|}{||\mathbf{\eta}||} \tag{6}\label{eq:etax}\\
-w(\underline{e}\langle\xi\rangle,\alpha)&= w(\underline{e}\langle\xi\rangle)(\eta_{r_{LT}}, \eta_{r_{TL}}) \tag{7}\label{eq:we}\\
+w_C(\alpha)&= \frac{4G_1(\alpha)}{\pi\delta^4} \tag{5}\label{eq:wca}\\
+\mathbf{\eta}_{Rot}&= R^{-1}(\alpha)\mathbf{\eta} \tag{6}\label{eq:eta}\\
+(\eta_{r_{LT}}, \eta_{r_{TL}})&= \frac{|\eta_{Rot_x}|}{||\mathbf{\eta}||} \tag{7}\label{eq:etax}\\
+w(\underline{e}\langle\xi\rangle,\alpha)&= w(\underline{e}\langle\xi\rangle)(\eta_{r_{LT}}, \eta_{r_{TL}}) \tag{8}\label{eq:we}\\
 \chi(\underline{e}\langle\xi\rangle,t,\alpha)&=
 \begin{cases}
     1,  & \text{if } w(\underline{e}\langle\xi\rangle,\alpha) > w_C(\alpha) \\
     0,  & \text{otherwise}
-\end{cases} \tag{8}\label{eq:chia}
+\end{cases} \tag{9}\label{eq:chia}
 \end{align}
 $$
 
 ---
 <!--footer: 'PeriLab Repository: https://github.com/PeriHub/PeriLab.jl'-->
 <!-- _class: cols-2 -->
+<!-- -Goal: as easy to use while keeping it modular and extensible --->
 
 # PeriLab - Peridynamic Laboratory
 
@@ -260,7 +268,7 @@ $$
 
 - ✒️ **Modularization**
 
-- 🎨 **Formulations**
+- 🎨 **User Materials**
 
 - 🧲 **Multiphysics**
 
@@ -294,7 +302,7 @@ quadrantChart
 ---
 <!--footer: 'Results: https://perilab-results.nimbus-extern.dlr.de/models/ForgedCT'-->
 
-## Compact Tension $45\degree$ Specimen
+## Compact Tension $45\degree$ Specimen | PeriLab Results
 
 <iframe src="https://perilab-results.nimbus-extern.dlr.de/models/ForgedCT?step=10&variable=von Mises Stress&displFactor=20" width="1150" height="600"></iframe>
 
@@ -320,6 +328,8 @@ quadrantChart
 </div>
 
 ---
+<!-- -Gradient is quite similar in the right section 
+-Gradient is to high in the start of the crack propagation -->
 <!--footer: 'Results: https://perilab-results.nimbus-extern.dlr.de/plots/ForgedCTCrack'-->
 
 
@@ -330,12 +340,14 @@ quadrantChart
 ---
 <!--footer: ''-->
 <!-- _class: cols-2 -->
+<!-- -We could determine three diferent failure mechanisms by looking at the crack surface-->
 
 ## Discussion and further work
 
 <div class=ldiv>
 
-- How to represent occuring failure mechanism?
+- Basic phenomenon can be represented
+- How to deal with occuring failure mechanisms
 - Material Models 
   - Plasticity
 - Discretization and non uniform mesh
