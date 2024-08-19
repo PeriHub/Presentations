@@ -59,8 +59,8 @@ jobs:
 
       - run: ls -R public
 
-      - name: Upload page artifacts
-        uses: actions/upload-pages-artifact@v3
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
         with:
           path: public
           name: ${{ matrix.folder }}
