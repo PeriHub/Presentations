@@ -1,0 +1,126 @@
+/* @theme h2 */
+
+@import "default";
+
+:root {
+  /* Colors used in the presentation */
+  --main-color: #001158;
+  --accent-color: #8592bc;
+  --light-accent-color: #e7e9f2;
+  --title-slide-text-color: #000000;
+  --background-color: #fff;
+  --footer-text-color: #fff;
+}
+
+footer {
+  position: absolute;
+  left: 50px;
+  right: 50px;
+  height: 20px;
+}
+
+section {
+  font-family: Frutiger;
+  background-image: url("../assets/h2_background.png");
+}
+
+section.title-slide {
+  background-image: url("../assets/h2_background.png");
+  color: var(--title-slide-text-color);
+}
+
+section.cols-2 {
+  overflow: visible;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 45% 50%;
+  grid-template-rows: 10% 90%;
+  grid-template-areas:
+    "slideheading slideheading"
+    "leftpanel    rightpanel";
+}
+section.cols-2 h1 {
+  grid-area: slideheading;
+}
+section.cols-2 h2 {
+  grid-area: slideheading;
+}
+section.cols-2 h3 {
+  grid-area: slideheading;
+  font-size: var(--font-size-2-3);
+}
+
+section.cols-2 .ldiv {
+  grid-area: leftpanel;
+  margin-top: -5%;
+}
+section.cols-2 .rdiv {
+  grid-area: rightpanel;
+  margin-top: -5%;
+}
+section.cols-2 .limg {
+  grid-area: leftpanel;
+  margin-top: -5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+section.cols-2 .rimg {
+  grid-area: rightpanel;
+  margin-top: -5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+section.cols-2-1 {
+  overflow: visible;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 45% 50%;
+  grid-template-rows: 10% 80% 10%;
+  grid-template-areas:
+    "slideheading slideheading"
+    "leftpanel    rightpanel"
+    "slidefooter slidefooter";
+}
+section.cols-2-1 h1 {
+  grid-area: slideheading;
+}
+
+section.cols-2-1 h2,
+section.cols-2-1 h3 {
+  grid-area: slideheading;
+  font-size: var(--font-size-2-3);
+}
+
+section.cols-2-1 .ldiv {
+  grid-area: leftpanel;
+  margin-top: -5%;
+}
+section.cols-2-1 .rdiv {
+  grid-area: rightpanel;
+  margin-top: -5%;
+}
+section.cols-2-1 .limg {
+  grid-area: leftpanel;
+  margin-top: -5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+section.cols-2-1 .rimg {
+  grid-area: rightpanel;
+  margin-top: -5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+section.cols-2-1 .bdiv {
+  grid-area: slidefooter;
+  margin-top: -10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -26,6 +26,7 @@ jobs:
       matrix:
         folder:
           - ./USACM_2024
+          - ./PDDAY_2024
     steps:
       - uses: actions/checkout@v4
 
@@ -43,15 +44,6 @@ jobs:
         env:
           # Please update URL if you want to use custom domain
           URL: https://${{ github.event.repository.owner.name }}.github.io/${{ github.event.repository.name }}/${{ matrix.folder }}
-
-      # - name: Upload page artifacts for '{{ matrix.folder }}'
-      #   uses: actions/upload-pages-artifact@v3
-      #   with:
-      #     path: ${{ matrix.folder }}_public
-
-      # - name: Deploy to GitHub Pages for '{{ matrix.folder }}'
-      #   id: deployment
-      #   uses: actions/deploy-pages@v4
 
       - name: Deploy to GitHub Pages for '{{ matrix.folder }}'
         uses: peaceiris/actions-gh-pages@v4

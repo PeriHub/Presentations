@@ -20,19 +20,20 @@ author: Jan-Timo Hesse, Christian Willberg, Eric Breitbarth, Florian Paysan
     <img src="assets/USACM_2024_QR.png" alt="Presentation link" style="height:180px;width:auto;vertical-align: top;background-color:transparent;">
 </div>
 
-Jan-Timo Hesse<a href="https://orcid.org/0000-0002-3006-1520"><img src="assets/ORCIDiD_iconvector.png" alt="ORCID Symbol" style="height:15px;width:auto;vertical-align: top;background-color:transparent;"></a>, Christian Willberg<a href="https://orcid.org/0000-0003-2433-9183"><img src="assets/ORCIDiD_iconvector.png" alt="ORCID Symbol" style="height:15px;width:auto;vertical-align: top;background-color:transparent;"></a></a>, Eric Breitbarth<a href="https://orcid.org/0000-0002-3479-9143"><img src="assets/ORCIDiD_iconvector.png" alt="ORCID Symbol" style="height:15px;width:auto;vertical-align: top;background-color:transparent;"></a> and Florian Paysan<a href="https://orcid.org/0000-0001-5575-1002"><img src="assets/ORCIDiD_iconvector.png" alt="ORCID Symbol" style="height:15px;width:auto;vertical-align: top;background-color:transparent;"></a>
+Jan-Timo Hesse<a href="https://orcid.org/0000-0002-3006-1520"><img src="../assets/ORCIDiD_iconvector.png" alt="ORCID Symbol" style="height:15px;width:auto;vertical-align: top;background-color:transparent;"></a>, Christian Willberg<a href="https://orcid.org/0000-0003-2433-9183"><img src="../assets/ORCIDiD_iconvector.png" alt="ORCID Symbol" style="height:15px;width:auto;vertical-align: top;background-color:transparent;"></a></a>, Eric Breitbarth<a href="https://orcid.org/0000-0002-3479-9143"><img src="../assets/ORCIDiD_iconvector.png" alt="ORCID Symbol" style="height:15px;width:auto;vertical-align: top;background-color:transparent;"></a> and Florian Paysan<a href="https://orcid.org/0000-0001-5575-1002"><img src="../assets/ORCIDiD_iconvector.png" alt="ORCID Symbol" style="height:15px;width:auto;vertical-align: top;background-color:transparent;"></a>
 <br />
 
 > <a href="https://sites.google.com/usacm.org/pd25/home" style="color: black; text-decoration: underline;">USACM Thematic Conference, Quarter Century of Peridynamics</a> 
 > _April 23th to 25th, 2024, Tucson_
 
 <div style="position: absolute; bottom: 10px; left: 100px; color: grray; font-size: 20px;">
-Presentation URL: https://perihub.github.io/Presentations
+Presentation URL: https://perihub.github.io/Presentations/USACM_2024
 </div>
 
 ---
+
 <!--paginate: true-->
-<!--footer: 'Presentation URL: https://perihub.github.io/Presentations'-->
+<!--footer: 'Pres. URL: https://perihub.github.io/Presentations/USACM_2024'-->
 
 ## Forged Components
 
@@ -45,10 +46,11 @@ Presentation URL: https://perihub.github.io/Presentations
 ![bg right width:350px](https://images.pexels.com/photos/3680094/pexels-photo-3680094.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)
 
 ---
+
 <!--footer: 'EBSD Scans by: Otto Fuchs'
 _class: cols-2 -->
 <!-- -Electron backscatter diffraction
--Grain structure of an alluminium alloy 
+-Grain structure of an alluminium alloy
 - -->
 
 ## Forged Components
@@ -114,7 +116,7 @@ _class: cols-2 -->
 
 <!--footer: ''
 _class: cols-2-1-->
-<!-- -Fracture Toughness 
+<!-- -Fracture Toughness
 -Sine wave function -->
 
 # Experimental Setup
@@ -123,22 +125,23 @@ _class: cols-2-1-->
 
 ## Loading Force
 
-| Parameter | Value   |
-| --------- | ------- |
+| Parameter | Value     |
+| --------- | --------- |
 | $F_{max}$ | $4.5\ kN$ |
-| $R$       | $0.1$   |
+| $R$       | $0.1$     |
 | $f$       | $20\ Hz$  |
+
 </div>
 <div class=rdiv>
 
 ## Material: AA7010-T7452
 
-| Parameter       | Value               |
-| ----------------| ------------------- |
-| $E$             | $71700\ MPa$        |
-| $\nu$           | $0.33$              |
-| $K_{IC_{LT}}$   | $37.44\ MPa\sqrt{m}$|
-| $K_{IC_{TL}}$   | $21.24\ MPa\sqrt{m}$|
+| Parameter     | Value                |
+| ------------- | -------------------- |
+| $E$           | $71700\ MPa$         |
+| $\nu$         | $0.33$               |
+| $K_{IC_{LT}}$ | $37.44\ MPa\sqrt{m}$ |
+| $K_{IC_{TL}}$ | $21.24\ MPa\sqrt{m}$ |
 
 </div>
 
@@ -152,7 +155,7 @@ $F(t) = -2025 * sin(2 * pi * 20 * t - pi / 2) -2475$
 
 <!--footer: 'Video by: Carl Zeiss GOM Metrology GmbH'-->
 <!-- -Black-white pattern
--Compression test 
+-Compression test
 -Resulting surface stresses and displacments -->
 
 ## ARAMIS High-Speed DIC Systems
@@ -180,6 +183,7 @@ _class: cols-2-->
 </div>
 
 ---
+
 <!-- -Critical Energy
 -Energy release rate
 -Fracture toughness
@@ -218,8 +222,8 @@ $$
 - Inverse rotation of Bonds $\eta_a$ and $\eta_b$
 - Projection of $\eta_a$ and $\eta_b$ in the $L$ and $T$ directions
 
-| Bond                       | Bond components |
-| -------------------------- | --------------- |
+| Bond                                     | Bond components |
+| ---------------------------------------- | --------------- |
 | $(\eta_{a_{r_{LT}}}, \eta_{a_{r_{TL}}})$ | $(0,1)$         |
 | $(\eta_{b_{r_{LT}}}, \eta_{b_{r_{TL}}})$ | $(0.5,0.5)$     |
 
@@ -231,6 +235,7 @@ $$
 </div>
 
 ---
+
 <!-- -Critical Energy
 -Energy release rate dependend on alpha
 -Rotated Bond
@@ -254,6 +259,7 @@ w(\underline{e}\langle\xi\rangle,\alpha)&= w(\underline{e}\langle\xi\rangle)(\et
 $$
 
 ---
+
 <!--footer: 'PeriLab Repository: https://github.com/PeriHub/PeriLab.jl'-->
 <!-- _class: cols-2 -->
 <!-- -Goal: as easy to use while keeping it modular and extensible --->
@@ -300,6 +306,7 @@ quadrantChart
 </div>
 
 ---
+
 <!--footer: 'Results: https://perilab-results.nimbus-extern.dlr.de/models/ForgedCT'-->
 
 ## Compact Tension $45\degree$ Specimen | PeriLab Results
@@ -319,7 +326,6 @@ quadrantChart
 - Weighted least-squares approximation
 - Crack angle $\approx 26.6\degree$
 
-
 </div>
 <div class=rdiv>
 
@@ -328,16 +334,17 @@ quadrantChart
 </div>
 
 ---
-<!-- -Gradient is quite similar in the right section 
+
+<!-- -Gradient is quite similar in the right section
 -Gradient is to high in the start of the crack propagation -->
 <!--footer: 'Results: https://perilab-results.nimbus-extern.dlr.de/plots/ForgedCTCrack'-->
-
 
 ## Compact Tension Crack Path
 
 <iframe src="https://perilab-results.nimbus-extern.dlr.de/plots/ForgedCTCrack" width="1150" height="600"></iframe>
 
 ---
+
 <!--footer: ''-->
 <!-- _class: cols-2 -->
 <!-- -We could determine three diferent failure mechanisms by looking at the crack surface-->
@@ -348,7 +355,7 @@ quadrantChart
 
 - Basic phenomenon can be represented
 - How to deal with occuring failure mechanisms
-- Material Models 
+- Material Models
   - Plasticity
 - Discretization and non uniform mesh
 - Sensitivity Analysis
@@ -382,8 +389,8 @@ quadrantChart
 
 ## Funding
 
-|Name|Logo|Grant number|
-|--|--|--|
-|[German Research Foundation](https://www.dfg.de/)|<img align="middle" src="https://raw.githubusercontent.com/PeriHub/PeriLab.jl/main/assets/dfg.jpg" height="120">|[WI 4835/5-1](https://gepris.dfg.de/gepris/projekt/456427423)|
-|[Saxon State Parliament](https://www.landtag.sachsen.de/de)|<img align="middle" src="https://raw.githubusercontent.com/PeriHub/PeriLab.jl/main/assets/sachsen.jpg" height="120">|[3028223](https://www.m-era.net/materipedia/2020/emma)|
-|[Federal Ministry for Economic Affairs and Climate Action](https://www.bmwk.de/Navigation/DE/Home/home.html)|<img align="middle" src="https://raw.githubusercontent.com/PeriHub/PeriLab.jl/main/assets/hytank.jpg" height="120">|20W2214G|
+| Name                                                                                                         | Logo                                                                                                                 | Grant number                                                  |
+| ------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
+| [German Research Foundation](https://www.dfg.de/)                                                            | <img align="middle" src="https://raw.githubusercontent.com/PeriHub/PeriLab.jl/main/assets/dfg.jpg" height="120">     | [WI 4835/5-1](https://gepris.dfg.de/gepris/projekt/456427423) |
+| [Saxon State Parliament](https://www.landtag.sachsen.de/de)                                                  | <img align="middle" src="https://raw.githubusercontent.com/PeriHub/PeriLab.jl/main/assets/sachsen.jpg" height="120"> | [3028223](https://www.m-era.net/materipedia/2020/emma)        |
+| [Federal Ministry for Economic Affairs and Climate Action](https://www.bmwk.de/Navigation/DE/Home/home.html) | <img align="middle" src="https://raw.githubusercontent.com/PeriHub/PeriLab.jl/main/assets/hytank.jpg" height="120">  | 20W2214G                                                      |
