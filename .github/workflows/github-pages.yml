@@ -78,6 +78,9 @@ jobs:
           path: public
           merge-multiple: true
 
+      - name: Copy assets
+        run: npm run copy
+
       - name: Upload page artifacts
         uses: actions/upload-pages-artifact@v3
         with:
