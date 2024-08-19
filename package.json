@@ -5,9 +5,9 @@
   "license": "WTFPL",
   "private": true,
   "scripts": {
-    "build": "rimraf ${PWD} && PWD=${PWD} npm run -s og-image && PWD=${PWD} npm run -s deck",
-    "deck": "marp --no-stdin ${PWD}/PITCHME.md -o ${PWD}/index.html --html && ncp ${PWD}/assets ${PWD}/assets",
-    "og-image": "marp --no-stdin ${PWD}/PITCHME.md -o ${PWD}/og-image.jpg --html",
+    "build": "rimraf $PWD && PWD=$PWD npm run -s og-image && PWD=$PWD npm run -s deck",
+    "deck": "marp --no-stdin $PWD/PITCHME.md -o $PWD/index.html --html && ncp $PWD/assets $PWD/assets",
+    "og-image": "marp --no-stdin $PWD/PITCHME.md -o $PWD/og-image.jpg --html",
     "start": "marp -ps .",
     "vercel-build": "yum install nss mesa-libgbm -y && MARP_USER=root CHROME_PATH=$(npx -y @puppeteer/browsers@latest install chrome@stable --path $(realpath ./tmp) | awk '{print $2}') npm run build"
   },
