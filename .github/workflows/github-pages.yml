@@ -22,6 +22,10 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        folder:
+          - ./USACM_2024
     steps:
       - uses: actions/checkout@v4
 
@@ -29,22 +33,24 @@ jobs:
         uses: actions/setup-node@v4
         with:
           cache: npm
-          node-version-file: '.nvmrc'
+          node-version-file: ".nvmrc"
 
-      - name: Install dependencies
+      - name: Install dependencies for {{ matrix.folder }}
+        working-directory: ${{ matrix.folder }}
         run: npm ci
 
-      - name: Build Marp slide deck
+      - name: Build Marp slide deck'{{ matrix.folder }}'
+        working-directory: ${{ matrix.folder }}
         run: CHROME_PATH=$(npx -y @puppeteer/browsers@latest install chrome@stable --path $(realpath ./tmp) | awk '{print $2}') npm run build
         env:
           # Please update URL if you want to use custom domain
-          URL: https://${{ github.event.repository.owner.name }}.github.io/${{ github.event.repository.name }}
+          URL: https://${{ github.event.repository.owner.name }}.github.io/${{ github.event.repository.name }}/${{ matrix.folder }}
 
-      - name: Upload page artifacts
+      - name: Upload page artifacts for '{{ matrix.folder }}'
         uses: actions/upload-pages-artifact@v3
         with:
           path: public
 
-      - name: Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages for '{{ matrix.folder }}'
         id: deployment
         uses: actions/deploy-pages@v4
