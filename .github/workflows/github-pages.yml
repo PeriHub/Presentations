@@ -47,7 +47,7 @@ jobs:
       - name: Upload page artifacts for '{{ matrix.folder }}'
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ${{ matrix.folder }}
+          path: ${{ matrix.folder }}_public
 
       - name: Deploy to GitHub Pages for '{{ matrix.folder }}'
         id: deployment
