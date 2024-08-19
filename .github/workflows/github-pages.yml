@@ -40,8 +40,8 @@ jobs:
     strategy:
       matrix:
         folder:
-          - ./USACM_2024
-          - ./PDDAY_2024
+          - USACM_2024
+          - PDDAY_2024
     steps:
       - uses: actions/checkout@v4
 
