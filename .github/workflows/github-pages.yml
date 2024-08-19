@@ -72,6 +72,8 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+
       - name: Download page artifacts
         uses: actions/download-artifact@v4
         with:
@@ -79,7 +81,7 @@ jobs:
           merge-multiple: true
 
       - name: Copy assets
-        run: npm run copy
+        run: cp -r assets public/assets && cp index.html public/index.html
 
       - name: Upload page artifacts
         uses: actions/upload-pages-artifact@v3

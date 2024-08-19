@@ -5,7 +5,6 @@
   "license": "WTFPL",
   "private": true,
   "scripts": {
-    "copy": "ncp index.html public/index.html && ncp assets public/assets && ls",
     "build": "rimraf public && FOLDER=${FOLDER} npm run -s og-image && FOLDER=${FOLDER} npm run -s deck",
     "deck": "marp --no-stdin ./${FOLDER}/PITCHME.md -o public/${FOLDER}/index.html --html && ncp ./${FOLDER}/assets public/${FOLDER}/assets",
     "og-image": "marp --no-stdin ./${FOLDER}/PITCHME.md -o public/${FOLDER}/og-image.jpg --html",
