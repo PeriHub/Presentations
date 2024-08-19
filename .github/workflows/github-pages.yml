@@ -83,6 +83,8 @@ jobs:
       - name: Copy assets
         run: cp -r assets public/assets && cp index.html public/index.html
 
+      - run: ls -R public
+
       - name: Upload page artifacts
         uses: actions/upload-pages-artifact@v3
         with:
