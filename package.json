@@ -6,9 +6,9 @@
   "private": true,
   "scripts": {
     "copy": "ncp ./assets public/assets",
-    "build": "rimraf public/${FOLDER} && FOLDER=${FOLDER} npm run -s og-image && FOLDER=${FOLDER} npm run -s deck",
-    "deck": "marp --no-stdin ${FOLDER}/PITCHME.md -o public/${FOLDER}/index.html --html && ncp ${FOLDER}/assets public/${FOLDER}/assets",
-    "og-image": "marp --no-stdin ${FOLDER}/PITCHME.md -o public/${FOLDER}/og-image.jpg --html",
+    "build": "rimraf public && FOLDER=${FOLDER} npm run -s og-image && FOLDER=${FOLDER} npm run -s deck",
+    "deck": "marp --no-stdin ${FOLDER}/PITCHME.md -o public/index.html --html && ncp ${FOLDER}/assets public/assets",
+    "og-image": "marp --no-stdin ${FOLDER}/PITCHME.md -o public/og-image.jpg --html",
     "start": "marp -ps .",
     "vercel-build": "yum install nss mesa-libgbm -y && MARP_USER=root CHROME_PATH=$(npx -y @puppeteer/browsers@latest install chrome@stable --path $(realpath ./tmp) | awk '{print $2}') npm run build"
   },
