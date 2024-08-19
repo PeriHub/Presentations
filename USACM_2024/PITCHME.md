@@ -17,7 +17,7 @@ author: Jan-Timo Hesse, Christian Willberg, Eric Breitbarth, Florian Paysan
 ## Advanced Peridynamics Modeling for Predicting Anisotropic Crack Growth in Forged Materials
 
 <div style="position: absolute; top: 20px; left: 1050px;"> 
-    <img src="assets/USACM_2024_QR.png" alt="Presentation link" style="height:180px;width:auto;vertical-align: top;background-color:transparent;">
+    <img src="assets/qr.png" alt="Presentation link" style="height:180px;width:auto;vertical-align: top;background-color:transparent;">
 </div>
 
 Jan-Timo Hesse<a href="https://orcid.org/0000-0002-3006-1520"><img src="../assets/ORCIDiD_iconvector.png" alt="ORCID Symbol" style="height:15px;width:auto;vertical-align: top;background-color:transparent;"></a>, Christian Willberg<a href="https://orcid.org/0000-0003-2433-9183"><img src="../assets/ORCIDiD_iconvector.png" alt="ORCID Symbol" style="height:15px;width:auto;vertical-align: top;background-color:transparent;"></a></a>, Eric Breitbarth<a href="https://orcid.org/0000-0002-3479-9143"><img src="../assets/ORCIDiD_iconvector.png" alt="ORCID Symbol" style="height:15px;width:auto;vertical-align: top;background-color:transparent;"></a> and Florian Paysan<a href="https://orcid.org/0000-0001-5575-1002"><img src="../assets/ORCIDiD_iconvector.png" alt="ORCID Symbol" style="height:15px;width:auto;vertical-align: top;background-color:transparent;"></a>

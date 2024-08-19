@@ -1,11 +1,10 @@
 ---
 marp: true
-
-theme: h2
+theme: dlr
 header: ""
 footer: ""
-title: Introduction to PeriLab
-author: Christian Willberg
+title: Reducing the entry barrier of Peridynamic simulations
+author: Jan-Timo Hesse, Christian Willberg, Anna Pernatii
 ---
 
 <script type="module">
@@ -15,20 +14,20 @@ author: Christian Willberg
 
 <!-- _class: title-slide -->
 
-# Introduction to PeriLab 
+## Reducing the entry barrier of Peridynamic simulations
 
-<div style="position: absolute; top: 150px; left: 1050px;"> 
+<div style="position: absolute; top: 20px; left: 1050px;"> 
     <img src="assets/qr.png" alt="Presentation link" style="height:180px;width:auto;vertical-align: top;background-color:transparent;">
 </div>
 
-Christian Willberg<a href="https://orcid.org/0000-0003-2433-9183"><img src="../assets/ORCIDiD_iconvector.png" alt="ORCID Symbol" style="height:15px;width:auto;vertical-align: top;background-color:transparent;"></a> 
+Jan-Timo Hesse<a href="https://orcid.org/0000-0002-3006-1520"><img src="../assets/ORCIDiD_iconvector.png" alt="ORCID Symbol" style="height:15px;width:auto;vertical-align: top;background-color:transparent;"></a>, Christian Willberg<a href="https://orcid.org/0000-0003-2433-9183"><img src="../assets/ORCIDiD_iconvector.png" alt="ORCID Symbol" style="height:15px;width:auto;vertical-align: top;background-color:transparent;"></a> and Anna Pernatii<a href="https://orcid.org/0000-0002-0004-0577"><img src="../assets/ORCIDiD_iconvector.png" alt="ORCID Symbol" style="height:15px;width:auto;vertical-align: top;background-color:transparent;"></a>
+<br />
 
-2nd Peridynamics Day, August 20th, 2024, Braunschweig
+[94th Annual Meeting of the International Association of Applied Mathematics and Mechanics, March 18th to 22nd, 2024, Magdeburg](https://jahrestagung.gamm.org/annual-meeting-2024/94th-annual-meeting/)
 
-<div style="position: absolute; bottom: 10px; left: 100px; color: grray; font-size: 20px;">
-Presentation URL: https://perihub.github.io/Presentations/PDDAY_2024
+<div style="position: absolute; bottom: 10px; left: 100px; color: blue; font-size: 20px;"> 
+Presentation DOI: 10.5281/zenodo.10785539
 </div>
-
 <!---
 - not the typical computational engineering presentation
 - algorithms are impresive, but we asked ourself, why so few algorithms reach the productive phase
@@ -39,7 +38,13 @@ Presentation URL: https://perihub.github.io/Presentations/PDDAY_2024
 ---
 
 <!--paginate: true-->
-<!--footer: 'Pres. URL: https://perihub.github.io/Presentations/PDDAY_2024'-->
+<!--footer: 'Pres. URL: https://perihub.github.io/Presentations/GAMM_2024'-->
+
+## 
+
+![bg cover](./Figures/chart.png)
+
+---
 
 ## Motivation Peridynamics (PD)
 
@@ -47,83 +52,26 @@ Presentation URL: https://perihub.github.io/Presentations/PDDAY_2024
 - PD integral equation
   $\int_{\mathcal{H}}(\underline{\textbf{T}}(\textbf{x},t)- \underline{\textbf{T}}(\textbf{x}',t))dV_{\textbf{x}}+\textbf{b} =\rho\ddot{\textbf{u}}$
 - focus material modeling and crack propagation no $C^1$ continuity for the displacement
-
-
+- many applications and a lot of good research
 ![bg right:48% transparent](./Figures/examples.png)
+<!---
 
-
----
-
-## 
-- Bond based
-- Ordinary state-based
-- Correspondence
-- Bond associated correspondence
+* multiple theories
+* fast very large dof, because of crack propagation
+* -->
 
 ---
 
-## 
-- Bond based
-- Ordinary state-based
-- **Correspondence**
-- Bond associated correspondence
-
----
-
-## Correspondence
-
-$$\mathbf{F}=\left[\int\limits_{\mathcal{H}}\underline{\omega}\langle 
-\boldsymbol{\xi}\rangle\underline{\mathbf{Y}}\langle 
-\boldsymbol{\xi}\rangle\otimes\underline{\mathbf{X}}\langle 
-\boldsymbol{\xi}\rangle dV_{\textbf{x}}\boldsymbol{\xi}\right]\cdot \mathbf{K}^{-1}$$
-
-
-$$\mathbf{K}=\int\limits_{\mathcal{H}}\underline{\omega}\langle 
-\boldsymbol{\xi}\rangle\underline{\mathbf{X}}\langle 
-\boldsymbol{\xi}\rangle\otimes\underline{\mathbf{X}}\langle 
-\boldsymbol{\xi}\rangle dV_{\textbf{x}}$$ 
-
-$$\underline{\mathbf{T}}\langle \boldsymbol{\xi}\rangle = 
-\underline{\omega}\langle 
-\boldsymbol{\xi}\rangle\mathbf{P}\mathbf {K}^{ -1 } \boldsymbol { \xi }\quad\text{with}\quad\mathbf{P}=\text{det}\mathbf{F}\boldsymbol{\sigma}\mathbf{F}^{
--1}$$
-
----
-
-
-## CM Solving the PDE
+## Solving process
 
 - CM is typically solved using finite element method (FEM)
   - state of the art technology; many options
   - flexible
   - not able to model cracks in a consistent way
-
-
----
-
-## PD Solving the integral - Material point method
-
-__Advantages__  
-- fast to implement
-- cracks are easy to include
-- discretization
-
-__Diadvantages__  
-- convergence is lower
-- surfaces are not known
-
-
-
-
----
-
-## 
-
-![bg cover](./Figures/chart.png)
-
-
-
-
+- PD is typically solved using material point method
+  - simple implementation
+  - low convergences
+  - not many options
 
 ---
 
@@ -215,8 +163,8 @@ __Diadvantages__
 | Criteria               | Peridigm                           | PeriLab         |
 | ---------------------- | ---------------------------------- | --------------- |
 | Distribution           | Manual download                    | Package manager |
-| Installation time      | ~1 day - 1 week                    | ~1 hour         |
-| Build time             | ~10 minutes                        | < 2 minutes     |
+| Installation time      | ~1 day - 1 week                    | ~1 day - 1 week |
+| Build time             | ~10 minutes                        | < 5 minutes     |
 | New material           | min. 5 files                       | min. 1 file     |
 | New Input parameter    | Input deck / 6 files / compilation | In input deck   |
 | Libraries (inst.&upd.) | manual                             | automatic       |
@@ -225,7 +173,7 @@ __Diadvantages__
 ---
 
 <!--
-- modern language allows packaging
+- modern language allows packageing
 - all dependencies are defined in a toml
 - no manual checking
 -->
@@ -249,6 +197,7 @@ __Diadvantages__
 ```python
         $ julia
         julia> ]
+        pkg> activate .
         pkg> add PeriLab
 ```
 
@@ -326,7 +275,7 @@ sequenceDiagram
 
 ## Examples (2/2)
 
-<iframe src="https://perilab-results.nimbus-extern.dlr.de/models/RVE?step=25&variable=Displacements&displFactor=100" width="1150" height="600"></iframe>
+<iframe src="https://perilab-results.nimbus-extern.dlr.de/models/DCB?step=65&variable=Damage&displFactor=200" width="1150" height="600"></iframe>
 
 ---
 
@@ -368,18 +317,9 @@ sequenceDiagram
 
 ---
 
-## Upcomming
-- Coupled PD-FEM
-- Axissymmetric
-- New solver
-- ...
-
----
-
 ## Thank you
-Christian Willberg: Magdeburg-Stendal University of Applied Sciences & German Aerospace Center; christian.willberg@h2.de
 
-Co - Developer
 Jan-Timo Hesse: German Aerospace Center; jan-timo.hesse@dlr.de
-
+Christian Willberg: Magdeburg-Stendal University of Applied Sciences & German Aerospace Center; christian.willberg@h2.de
+Anna Pernatii: OvGU Magdeburg anna.pernatii@ovgu.de
 ![bg right height:7cm](https://gitlab.com/dlr-perihub/PeriLab.jl/-/raw/main/assets/PeriLab_crack.gif)
