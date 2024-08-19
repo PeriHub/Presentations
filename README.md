@@ -6,7 +6,7 @@
   <a href="https://perihub.github.io/Presentations/USACM_2024"><img src="https://perihub.github.io/Presentations/USACM_2024/og-image.jpg" width="500" /></a>
 </p>
 
-- ### 2nd Peridynamci Day, Braunschweig
+- ### 2nd Peridynamic Day, Braunschweig
 <p align="center">
   <a href="https://perihub.github.io/Presentations/PDDAY_2024"><img src="https://perihub.github.io/Presentations/PDDAY_2024/og-image.jpg" width="500" /></a>
 </p>

@@ -21,7 +21,7 @@ author: Christian Willberg
     <img src="assets/qr.png" alt="Presentation link" style="height:180px;width:auto;vertical-align: top;background-color:transparent;">
 </div>
 
-Christian Willberg<a href="https://orcid.org/0000-0003-2433-9183"><img src="../assets/ORCIDiD_iconvector.png" alt="ORCID Symbol" style="height:15px;width:auto;vertical-align: top;background-color:transparent;"></a> 
+Christian Willberg<a href="https://orcid.org/0000-0003-2433-9183"><img src="../assets/ORCIDiD_iconvector.png" alt="ORCID Symbol" style="height:15px;width:auto;vertical-align: top;background-color:transparent;"></a>, Jan-Timo Hesse<a href="https://orcid.org/0000-0002-3006-1520"><img src="../assets/ORCIDiD_iconvector.png" alt="ORCID Symbol" style="height:15px;width:auto;vertical-align: top;background-color:transparent;"></a>
 
 2nd Peridynamics Day, August 20th, 2024, Braunschweig
 
@@ -49,7 +49,7 @@ Presentation URL: https://perihub.github.io/Presentations/PDDAY_2024
 - focus material modeling and crack propagation no $C^1$ continuity for the displacement
 
 
-![bg right:48% transparent](./Figures/examples.png)
+![bg right:48% transparent](assets/examples.png)
 
 
 ---
@@ -119,7 +119,7 @@ __Diadvantages__
 
 ## 
 
-![bg cover](./Figures/chart.png)
+![bg cover](assets/chart.png)
 
 
 
@@ -313,7 +313,7 @@ sequenceDiagram
 
 </div>
 <div style="position: absolute; bottom: 50px; left: 700px; color: blue; font-size: 20px;"> 
-    <img src="Figures/newVar.png" alt="Presentation link" style="height:550px;width:auto;vertical-align: top;background-color:transparent;">
+    <img src="assets/newVar.png" alt="Presentation link" style="height:550px;width:auto;vertical-align: top;background-color:transparent;">
 </div>
 
 ---
@@ -346,14 +346,14 @@ sequenceDiagram
 <div class="container">
     <div class="col">
 <div style="position: absolute; bottom: 120px; left: 50px; color: blue; font-size: 20px;"> 
-    <img src="Figures/Benchmark_mesh.png" style="height:430px;width:auto;vertical-align: top;background-color:transparent;">
+    <img src="assets/Benchmark_mesh.png" style="height:430px;width:auto;vertical-align: top;background-color:transparent;">
 </div>
 </div>
 <div class="col">
 
 </div>
 <div style="position: absolute; bottom: 50px; left: 650px; color: blue; font-size: 20px;"> 
-    <img src="Figures/benchmark.svg" style="height:550px;width:auto;vertical-align: top;background-color:transparent;">
+    <img src="assets/benchmark.svg" style="height:550px;width:auto;vertical-align: top;background-color:transparent;">
 </div>
 </div>
 
