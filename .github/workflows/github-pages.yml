@@ -63,15 +63,26 @@ jobs:
         # URL: https://${{ github.event.repository.owner.name }}.github.io/${{ github.event.repository.name }}/${{ matrix.folder }}
 
       - name: Upload page artifacts
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: ${{ matrix.folder }}
           path: public/${{ matrix.folder }}
+          name: ${{ matrix.folder }}
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
     steps:
+      - name: Download page artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: public
+          merge-multiple: true
+
+      - name: Upload page artifacts
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
