@@ -44,11 +44,18 @@ jobs:
           # Please update URL if you want to use custom domain
           URL: https://${{ github.event.repository.owner.name }}.github.io/${{ github.event.repository.name }}/${{ matrix.folder }}
 
-      - name: Upload page artifacts for '{{ matrix.folder }}'
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ${{ matrix.folder }}_public
+      # - name: Upload page artifacts for '{{ matrix.folder }}'
+      #   uses: actions/upload-pages-artifact@v3
+      #   with:
+      #     path: ${{ matrix.folder }}_public
+
+      # - name: Deploy to GitHub Pages for '{{ matrix.folder }}'
+      #   id: deployment
+      #   uses: actions/deploy-pages@v4
 
       - name: Deploy to GitHub Pages for '{{ matrix.folder }}'
-        id: deployment
-        uses: actions/deploy-pages@v4
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./${{ matrix.folder }}_public
+          destination_dir: ${{ matrix.folder }}
