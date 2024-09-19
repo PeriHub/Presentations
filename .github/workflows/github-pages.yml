@@ -47,9 +47,9 @@ jobs:
         id: filter
         with:
           filters: |
-            GAMM_2024: GAMM_2024
-            USACM_2024: USACM_2024
-            PDDAY_2024: PDDAY_2024
+            GAMM_2024: GAMM_2024/**
+            USACM_2024: USACM_2024/**
+            PDDAY_2024: PDDAY_2024/**
   build:
     # needs: prepare
     needs: changes
