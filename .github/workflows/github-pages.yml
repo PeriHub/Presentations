@@ -41,6 +41,7 @@ jobs:
       # Expose matched filters as job 'folder' output variable
       folders: ${{ steps.filter.outputs.changes }}
     steps:
+      - uses: actions/checkout@v4
       # For pull requests it's not necessary to checkout the code
       - uses: dorny/paths-filter@v3
         id: filter
@@ -57,15 +58,6 @@ jobs:
       matrix:
         folder: ${{ fromJSON(needs.changes.outputs.folders) }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: dorny/paths-filter@v3
-        id: filter
-        with:
-          filters: |
-            backend:
-              - 'backend/**'
-            frontend:
-              - 'frontend/**'
       - uses: actions/checkout@v4
       - name: Install Node.js
         uses: actions/setup-node@v4
