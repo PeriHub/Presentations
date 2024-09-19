@@ -45,6 +45,7 @@ jobs:
           - GAMM_2024
           - USACM_2024
           - PDDAY_2024
+          - PERIHUB
     steps:
       - uses: actions/checkout@v4
 
