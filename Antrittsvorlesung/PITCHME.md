@@ -15,7 +15,7 @@ author: Christian Willberg
 
 <!-- _class: title-slide -->
 
-# Introduction to PeriLab
+# Modellierung von Schädigungsmechanismen
 
 <div style="position: absolute; top: 150px; left: 1050px;">
   <img src="assets/qr.png" alt="Presentation link"
@@ -27,9 +27,7 @@ Christian Willberg<a href="https://orcid.org/0000-0003-2433-9183"><img src="../a
 
 Antrittsvorlesung Hochschule Magdeburg-Stendal HS 2, 08.10.2024, Magdeburg
 
-<div style="position: absolute; bottom: 10px; left: 100px; color: grray; font-size: 20px;">
-  Presentation URL: https://perihub.github.io/Presentations/PDDAY_2024
-</div>
+
 
 <!---
 - not the typical computational engineering presentation
@@ -38,21 +36,66 @@ Antrittsvorlesung Hochschule Magdeburg-Stendal HS 2, 08.10.2024, Magdeburg
 - We discuss all the time about fast algorithms and run time but -> next slide
 -->
 
----
 
 <!--paginate: true-->
-<!--footer: 'Pres. URL: https://perihub.github.io/Presentations/PDDAY_2024'-->
+<!--footer: 'https://github.com/PeriHub/Presentations/tree/master/Antrittsvorlesung'-->
 
-## Motivation Peridynamics (PD)
+---
 
-- alternative to classcical continuum mechanics $\text{div}(\mathbf{\sigma})+\textbf{b} =\rho\ddot{\textbf{u}}$
-- PD integral equation
-$\int_{\mathcal{H}}(\underline{\textbf{T}}(\textbf{x},t)-
+## Leichtbau und effizienter Ressourceneinsatz
+![bg right](assets/IWES_test.jpg)
+- große Zahl von Variationen
+- Experimente sind teuer
+- Zuverlässigkeit
+
+
+---
+## Testpyramide
+
+![bg fit right](assets/Testpyramide.png)
+
+---
+
+## Mikrostruktur
+
+- Mikrostruktur beeinflusst die Initiierung
+- Simulationen und Experimente zum Ableiten von Kennwerten für die Mesoskala
+
+![bg right 60%](assets/crack.jpg)
+![bg vertical 60%](https://upload.wikimedia.org/wikipedia/commons/e/e2/TiAl_Lammelar.jpg)
+
+
+---
+## Klassische Modellierung
+- klassische Kontinuumsmechanische Formulierung $\text{div}(\mathbf{\sigma})+\textbf{b} =\rho\ddot{\textbf{u}}$
+- Approximation der partiellen DGL mittels der Finiten Elemente Methode
+- Zentrale Annahme:
+  - $C^1$ Stetigkeit des Verschiebungsfeldes
+
+---
+
+## Problem der unendlichen Spannungen
+  - Interfaces
+  - Rissspitzen
+  - Ecken
+
+![bg right 100%](assets/Pruefung.png)
+
+---
+
+## Peridynamics (PD)
+
+$\int_{\mathcal{H}}(\underline{\textbf{T}}(\textbf{x},t)
 \underline{\textbf{T}}(\textbf{x}',t))dV_{\textbf{x}}+\textbf{b} =\rho\ddot{\textbf{u}}$
-- focus material modeling and crack propagation no $C^1$ continuity for the displacement
+
+![bg right 70%](assets/PeriMesh.PNG)
+
+---
 
 
-![bg right:48% transparent](assets/examples.png)
+
+
+![bg right:47% transparent](assets/examples.png)
 
 
 ---
