@@ -33,22 +33,39 @@ jobs:
 
   #     - name: Copy assets
   #       run: npm copy
-
+  changes:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: read
+    outputs:
+      # Expose matched filters as job 'folder' output variable
+      folder: ${{ steps.filter.outputs.changes }}
+    steps:
+      # For pull requests it's not necessary to checkout the code
+      - uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            GAMM_2024: GAMM_2024
+            USACM_2024: USACM_2024
+            PDDAY_2024: PDDAY_2024
   build:
     # needs: prepare
+    needs: changes
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        folder:
-          - GAMM_2024
-          - USACM_2024
-          - PDDAY_2024
-    rules:
-      - changes:
-          - ${{ matrix.folder }}/**/*
+        folder: ${{ fromJSON(needs.changes.outputs.folder) }}
     steps:
+      - uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            backend:
+              - 'backend/**'
+            frontend:
+              - 'frontend/**'
       - uses: actions/checkout@v4
-
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
