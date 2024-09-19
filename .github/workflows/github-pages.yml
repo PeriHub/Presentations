@@ -42,6 +42,7 @@ jobs:
     strategy:
       matrix:
         folder:
+          - Antrittsvorlesung
           - GAMM_2024
           - USACM_2024
           - PDDAY_2024
