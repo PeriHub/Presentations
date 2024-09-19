@@ -39,7 +39,7 @@ jobs:
       pull-requests: read
     outputs:
       # Expose matched filters as job 'folder' output variable
-      folder: ${{ steps.filter.outputs.changes }}
+      folders: ${{ steps.filter.outputs.changes }}
     steps:
       # For pull requests it's not necessary to checkout the code
       - uses: dorny/paths-filter@v3
@@ -55,8 +55,9 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        folder: ${{ fromJSON(needs.changes.outputs.folder) }}
+        folder: ${{ fromJSON(needs.changes.outputs.folders) }}
     steps:
+      - uses: actions/checkout@v4
       - uses: dorny/paths-filter@v3
         id: filter
         with:
