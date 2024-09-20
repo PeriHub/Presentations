@@ -190,7 +190,7 @@ _class: cols-2 -->
 
 
 <div style="text-align: center;">
-  <video src="./assets/zeiss_topics_aramis-high-speed_buckling-compression.mp4" controls width="90%"></video>
+  <video src="https://www.youtube.com/watch?v=J55n2xWJosA" controls width="90%"></video>
 <div>
 
 ## Performanc
