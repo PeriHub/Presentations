@@ -1,6 +1,6 @@
 # Presentations
 
-- ### PIntroduction to PeriHub, Braunschweig
+- ### Introduction to PeriHub, Braunschweig
 <p align="center">
   <a href="https://perihub.github.io/Presentations/PERIHUB"><img src="https://perihub.github.io/Presentations/PERIHUB/og-image.jpg" width="500" /></a>
 </p>
