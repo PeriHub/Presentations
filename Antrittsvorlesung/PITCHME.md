@@ -123,7 +123,7 @@ $$\underline{\mathbf{T}}\langle \boldsymbol{\xi}\rangle =
 
 ---
 
-## Geschiedete Bautteile
+## Geschmiedete Bautteile
 
 
 <!--footer: 'EBSD Scans by: Otto Fuchs'
@@ -174,14 +174,20 @@ _class: cols-2 -->
 
 ---
 
-## KIC $45\degree$ Specimen | PeriLab Ergebnisse
+## KIC $45\degree$ Modell | PeriLab Ergebnisse
 
 <iframe src="https://perilab-results.nimbus-extern.dlr.de/models/ForgedCT?step=10&variable=von Mises Stress&displFactor=20" width="1150" height="600"></iframe>
 
 
 ---
 
-## Additive Fertigung
+
+![bg 65%](assets/3d_printing.jpg)
+
+
+---
+
+## Additive Fertigung | PeriLab Ergebnisse
 
 <iframe src="https://perilab-results.nimbus-extern.dlr.de/models/RVE?step=25&variable=Displacements&displFactor=100"
       width="1150" height="600"></iframe>
@@ -189,58 +195,20 @@ _class: cols-2 -->
 ---
 
 
-<div style="text-align: center;">
-  <video src="https://www.youtube.com/watch?v=J55n2xWJosA" controls width="90%"></video>
-<div>
-
-## Performanc
--a
--a
--d
--a
--g
--f
--g
--5
--5
--8
-
-<div class="container">
-  <div class="col">
-    <div style="position: absolute; bottom: 120px; left: 50px; color: blue; font-size: 20px;">
-      <img src="assets/Benchmark_mesh.png"
-        style="height:430px;width:auto;vertical-align: top;background-color:transparent;">
-    </div>
-  </div>
-  <div class="col"
-  </div>
-  <div style="position: absolute; bottom: 50px; left: 650px; color: blue; font-size: 20px;">
-    <img src="assets/benchmark.svg"
-      style="height:550px;width:auto;vertical-align: top;background-color:transparent;">
-  </div>
-</div>
-
----
-## Conclusio
-- modern language should be preferred if new projects are started
-- Julia is a great alternative to C++ and for PhD students easier to learn and to handle
-- installation time was reduced to minutes from hours (if it even works)
-- more user focussed developement
-
----
-## Upcomming
-- Coupled PD-FEM
-- Axissymmetric
-- New solver
-- ...
-
+## Zusammenfassung
+- Peridynamik kann viele Fragestellungen adressieren
+  - Schädigung
+  - Materialverhalten
+  - Prozessverhalten
+- die materialpunktbasierte Implementierung erlaubt komplexe Geometrien ohne Vernetzungsaufwand
     
 ---
+
+
 
 ## Danke für die Aufmerksamkeit
 Christian Willberg: Magdeburg-Stendal University of Applied Sciences 
 christian.willberg@h2.de
 
-    
 
 ![bg right height:7cm](https://gitlab.com/dlr-perihub/PeriLab.jl/-/raw/main/assets/PeriLab_crack.gif)
