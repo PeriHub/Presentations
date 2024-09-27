@@ -19,6 +19,13 @@ footer {
   height: 20px;
 }
 
+header {
+  position: absolute;
+  left: 50px;
+  right: 50px;
+  height: 20px;
+}
+
 section {
   font-family: Frutiger;
   background-image: url("../assets/dlr_background_slides.svg");

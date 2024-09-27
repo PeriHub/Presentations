@@ -1,8 +1,8 @@
 # Presentations
 
-- ### Introduction to PeriHub, Braunschweig
+- ### Micromechanical analysis via Peridynamics , Braunschweig
 <p align="center">
-  <a href="https://perihub.github.io/Presentations/PERIHUB"><img src="https://perihub.github.io/Presentations/PERIHUB/og-image.jpg" width="500" /></a>
+  <a href="https://perihub.github.io/Presentations/MICRO_ANALYSIS"><img src="https://perihub.github.io/Presentations/MICRO_ANALYSIS/og-image.jpg" width="500" /></a>
 </p>
 
 - ### 2nd Peridynamic Day, Braunschweig
