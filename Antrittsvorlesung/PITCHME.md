@@ -17,7 +17,7 @@ author: Christian Willberg
 
 # Modellierung von Schädigungsmechanismen
 
-<div style="position: absolute; top: 150px; left: 1050px;">
+<div style="position: absolute; top: 280px; left: 1050px;">
   <img src="assets/qr.png" alt="Presentation link"
     style="height:180px;width:auto;vertical-align: top;background-color:transparent;">
 </div>
@@ -29,16 +29,32 @@ Antrittsvorlesung Hochschule Magdeburg-Stendal HS 2, 08.10.2024, Magdeburg
 
 
 
-<!---
-- not the typical computational engineering presentation
-- algorithms are impresive, but we asked ourself, why so few algorithms reach the productive phase
--  are our results in paper realy reproducible?
-- We discuss all the time about fast algorithms and run time but -> next slide
--->
-
 
 <!--paginate: true-->
 <!--footer: 'https://github.com/PeriHub/Presentations/tree/master/Antrittsvorlesung'-->
+
+---
+
+2001 - 2007 Studium Maschinenbau an der Otto von Guericke Universität Magdeburg
+2007 - 2012 Wissenschaftlicher Mitarbeiter an der Otto von Guericke Universität Magdeburg
+2012 - Promotion zum Dr.-Ing.
+2012 - 2024 Wissenschaftlicher Mitarbeiter am Deutschen Zentrum für Luft- und Raumfahrt
+
+![bg right 40%](assets/qr.png)
+    
+
+---
+## Themen
+- Structural Health Monitoring und Lastmonitoring
+- Gesamtentwurf vom Flugzeugen und Windrotorblättern
+- Digitalisierung und Softwareengineering
+- Einfluss von Fertigungsdefekten und Additive Fertigung
+- ...
+![bg right 40%](assets/qr.png)
+
+---
+
+# Modellierung von Schädigungsmechanismen
 
 ---
 
