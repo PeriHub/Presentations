@@ -85,10 +85,13 @@ Antrittsvorlesung Hochschule Magdeburg-Stendal HS 2, 08.10.2024, Magdeburg
 
 ---
 ## Klassische Modellierung
-- klassische Kontinuumsmechanische Formulierung $\text{div}(\boldsymbol{\sigma})+\textbf{b} =\rho\ddot{\textbf{u}}$
+- klassische kontinuumsmechanische Formulierung $\text{div}(\boldsymbol{\sigma})+\textbf{b} =\rho\ddot{\textbf{u}}$
 - Approximation der partiellen DGL mittels der Finiten Elemente Methode
 - Zentrale Annahme:
   - $C^1$ Stetigkeit des Verschiebungsfeldes
+
+
+![bg right 80%](assets/EF1.png)
 
 ---
 
