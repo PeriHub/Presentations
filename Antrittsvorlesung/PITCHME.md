@@ -17,7 +17,7 @@ author: Christian Willberg
 
 # Modellierung von Schädigungsmechanismen
 
-<div style="position: absolute; top: 280px; left: 1050px;">
+<div style="position: absolute; top: 240px; left: 1050px;">
   <img src="assets/qr.png" alt="Presentation link"
     style="height:180px;width:auto;vertical-align: top;background-color:transparent;">
 </div>
