@@ -226,7 +226,7 @@ _class: cols-2 -->
 
 
 ## Zusammenfassung
-- Peridynamik kann viele Fragestellungen adressieren
+- Peridynamische Modellierung ist eine Alternative zu klassischen Verfahren
   - Schädigung
   - Materialverhalten
   - Prozessverhalten
@@ -242,3 +242,6 @@ christian.willberg@h2.de
 
 
 ![bg right height:7cm](https://gitlab.com/dlr-perihub/PeriLab.jl/-/raw/main/assets/PeriLab_crack.gif)
+
+[PeriLab - Peridynamic Laboratory](https://github.com/PeriHub/PeriLab.jl)
+[PeriLab - Results](https://perilab-results.nimbus-extern.dlr.de/)
