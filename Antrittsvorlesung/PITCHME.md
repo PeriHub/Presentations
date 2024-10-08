@@ -218,6 +218,9 @@ _class: cols-2 -->
 
 <iframe width="1150" height="600" src="https://www.youtube.com/embed/qJh-PtR_ucA?si=23DSeaS2MOYYwanK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+
+[Externer Link](https://www.youtube.com/embed/qJh-PtR_ucA?si=23DSeaS2MOYYwanK)
+
 ---
 
 
