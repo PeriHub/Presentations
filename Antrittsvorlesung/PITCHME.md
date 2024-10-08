@@ -202,7 +202,7 @@ _class: cols-2 -->
 
 ---
 
-# Prozess der additive Fertigung
+# Prozess der additiven Fertigung
 
 ![bg right](https://leichtbau.dlr.de/wp-content/uploads/2021/04/20210330_Probendruck-MarkForged-web-2400x1200.jpg)
 
