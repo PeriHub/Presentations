@@ -38,7 +38,7 @@ Antrittsvorlesung Hochschule Magdeburg-Stendal HS 2, 08.10.2024, Magdeburg
 2001 - 2007 Studium Maschinenbau an der Otto von Guericke Universität Magdeburg
 2007 - 2012 Wissenschaftlicher Mitarbeiter an der Otto von Guericke Universität Magdeburg
 2012 - Promotion zum Dr.-Ing.
-2012 - 2024 Wissenschaftlicher Mitarbeiter am Deutschen Zentrum für Luft- und Raumfahrt
+2012 - 2024 Wissenschaftlicher Mitarbeiter am Deutschen Zentrum für Luft- und Raumfahrt in Braunschweig
 
 ![bg right 40%](assets/qr.png)
     
@@ -55,6 +55,8 @@ Antrittsvorlesung Hochschule Magdeburg-Stendal HS 2, 08.10.2024, Magdeburg
 ---
 
 # Modellierung von Schädigungsmechanismen
+
+![bg right fit](https://leichtbau.dlr.de/wp-content/uploads/2020/08/image2020-6-22_14-1-11-1.png)
 
 ---
 
