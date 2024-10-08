@@ -203,7 +203,7 @@ _class: cols-2 -->
 ---
 
 
-![bg 65%](assets/3d_printing.jpg)
+![bg 55%](assets/3d_printing.jpg)
 
 
 ---
