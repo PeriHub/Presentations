@@ -202,6 +202,11 @@ _class: cols-2 -->
 
 ---
 
+# Prozess der additive Fertigung
+
+![bg right](https://leichtbau.dlr.de/wp-content/uploads/2021/04/20210330_Probendruck-MarkForged-web-2400x1200.jpg)
+
+---
 
 ![bg 55%](assets/3d_printing.jpg)
 
