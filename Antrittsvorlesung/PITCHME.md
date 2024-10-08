@@ -54,7 +54,7 @@ Antrittsvorlesung Hochschule Magdeburg-Stendal HS 2, 08.10.2024, Magdeburg
 
 ---
 
-# Modellierung von Schädigungsmechanismen
+# Modellierung von Schädigungs-mechanismen
 
 ![bg right fit](https://leichtbau.dlr.de/wp-content/uploads/2020/08/image2020-6-22_14-1-11-1.png)
 
