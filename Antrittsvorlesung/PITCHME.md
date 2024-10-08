@@ -70,7 +70,7 @@ Antrittsvorlesung Hochschule Magdeburg-Stendal HS 2, 08.10.2024, Magdeburg
 ---
 ## Testpyramide
 
-![bg fit right](assets/Testpyramide.png)
+![bg 80% right](assets/Testpyramide.png)
 
 ---
 
