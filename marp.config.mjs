@@ -10,7 +10,8 @@ const config = {
 
     return undefined;
   })(),
-  themeSet: "themes",
+  jpegQuality: "95",
+  themeSet: ".themes",
   url: canonicalUrl,
 };
 
