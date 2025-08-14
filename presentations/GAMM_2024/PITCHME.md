@@ -182,8 +182,7 @@ Presentation DOI: 10.5281/zenodo.10785539
 
 - checks all dependencies
 - allows the specification of the library version
-- automatic installation
-  - in terminal
+- automatic installation in terminal
 
 ```python
         $ julia

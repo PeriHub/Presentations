@@ -297,23 +297,21 @@ sequenceDiagram
 
 ## Adding external input (2/2)
 
-## Mesh and Nodesets Input
+## Mesh Input
 
 <div class="container">
     <div class="col">
-    <div><b>Mesh Input</b></div>
     <div>header: x y block_id volume myName</div>
     <div>0.0&nbsp&nbsp&nbsp0.0&nbsp&nbsp&nbsp1&nbsp&nbsp0.01
 &nbsp0.123</div>
     <div>0.0&nbsp&nbsp&nbsp0.1&nbsp&nbsp&nbsp1&nbsp&nbsp0.01&nbsp&nbsp1.3</div>
     <div>0.1&nbsp&nbsp&nbsp0.0&nbsp&nbsp&nbsp1&nbsp&nbsp0.01&nbsp&nbsp1.3</div>
-    <div>...</div>
 </div>
 <div class="col">
 
 </div>
 <div style="position: absolute; bottom: 50px; left: 700px; color: blue; font-size: 20px;"> 
-    <img src="assets/newVar.png" alt="Presentation link" style="height:550px;width:auto;vertical-align: top;background-color:transparent;">
+    <img src="assets/newVar.png" alt="Presentation link" style="height:450px;width:auto;vertical-align: top;background-color:transparent;">
 </div>
 
 ---
@@ -331,17 +329,6 @@ sequenceDiagram
 ---
 
 ## Performance
-
--a
--a
--d
--a
--g
--f
--g
--5
--5
--8
 
 <div class="container">
     <div class="col">
