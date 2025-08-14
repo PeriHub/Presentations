@@ -25,7 +25,7 @@ author: Jan-Timo Hesse, Grigori Oehl
     <img src="https://quickchart.io/qr?text=https://perihub.github.io/Presentations/COMPLAS_2025/&light=0000&size=300" alt="Presentation link" style="height:180px;width:auto;vertical-align: top;background-color:transparent;">
 </div>
 
-Jan-Timo Hesse<a href="https://orcid.org/0000-0002-3006-1520"><img src="../../assets/ORCIDiD_iconvector.png" alt="ORCID Symbol" style="height:15px;width:auto;vertical-align: top;background-color:transparent;"></a>, Grigori Oehl<a href="https://orcid.org/0000-0002-6791-3176"><img src="../../assets/ORCIDiD_iconvector.png" alt="ORCID Symbol" style="height:15px;width:auto;vertical-align: top;background-color:transparent;"></a>
+Jan-Timo Hesse<a href="https://orcid.org/0000-0002-3006-1520"><img src="../assets/ORCIDiD_iconvector.png" alt="ORCID Symbol" style="height:15px;width:auto;vertical-align: top;background-color:transparent;"></a>, Grigori Oehl<a href="https://orcid.org/0000-0002-6791-3176"><img src="../assets/ORCIDiD_iconvector.png" alt="ORCID Symbol" style="height:15px;width:auto;vertical-align: top;background-color:transparent;"></a>
 <br />
 
 > <h style="color: black; ">18th International Conference on Computational Plasticity - COMPLAS 2025</h> 

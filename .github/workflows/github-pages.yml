@@ -43,11 +43,11 @@ jobs:
       matrix:
         folder:
           - COMPLAS_2025
-          # - Antrittsvorlesung
-          # - GAMM_2024
-          # - USACM_2024
-          # - PDDAY_2024
-          # - MICRO_ANALYSIS
+          - Antrittsvorlesung
+          - GAMM_2024
+          - USACM_2024
+          - PDDAY_2024
+          - MICRO_ANALYSIS
     steps:
       - uses: actions/checkout@v4
 
@@ -70,7 +70,7 @@ jobs:
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          path: public/presentations
+          path: public
           name: ${{ matrix.folder }}
 
   deploy:
@@ -86,7 +86,7 @@ jobs:
           merge-multiple: true
 
       - name: Copy assets
-        run: cp -r assets public/assets && cp index.html public/index.html
+        run: cp -r presentations/assets public/assets && cp index.html public/index.html
 
       - run: ls -R public
 

@@ -33,29 +33,29 @@ header {
 
 section {
   font-family: Frutiger;
-  background-image: url("../../assets/dlr_background_slides.svg");
+  background-image: url("../assets/dlr_background_slides.svg");
 }
 section.title-slide {
-  background-image: url("../../assets/dlr_background_title.svg");
+  background-image: url("../assets/dlr_background_title.svg");
   color: var(--title-slide-text-color);
 }
 
 section.section-slide-cfrp {
-  background-image: url("../../assets/section_slide_cfrp.png");
+  background-image: url("../assets/section_slide_cfrp.png");
   color: white;
 }
 
 section.section-slide-plane {
-  background-image: url("../../assets/section_slide_plane.png");
+  background-image: url("../assets/section_slide_plane.png");
   color: white;
 }
 section.section-slide-rocket {
-  background-image: url("../../assets/section_slide_rocket.png");
+  background-image: url("../assets/section_slide_rocket.png");
   color: white;
 }
 
 section.section-slide-vulcan {
-  background-image: url("../../assets/section_slide_vulcan.png");
+  background-image: url("../assets/section_slide_vulcan.png");
   color: white;
 }
 
