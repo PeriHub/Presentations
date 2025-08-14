@@ -51,7 +51,7 @@ Presentation URL: https://perihub.github.io/Presentations/COMPLAS_2025/
 
 # Our topics for today
 
- <div w3-include-html="assets/plot.html"></div> 
+<iframe src="assets/plot.html" width="90%" height="85%" style="border: 0; margin-left: 70px"></iframe>
 
 ---
 
