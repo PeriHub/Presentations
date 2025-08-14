@@ -6,8 +6,8 @@
   "private": true,
   "scripts": {
     "build": "rimraf public && FOLDER=${FOLDER} npm run -s og-image && FOLDER=${FOLDER} npm run -s deck",
-    "deck": "marp --no-stdin ./presentations/${FOLDER}/PITCHME.md -o public/${FOLDER}/index.html --html && ncp ./presentations/${FOLDER}/assets public/${FOLDER}/assets",
-    "og-image": "marp --no-stdin ./presentations/${FOLDER}/PITCHME.md -o public/${FOLDER}/og-image.jpg --html",
+    "deck": "marp --browser-timeout 120 --no-stdin ./presentations/${FOLDER}/PITCHME.md -o public/${FOLDER}/index.html --html && ncp ./presentations/${FOLDER}/assets public/${FOLDER}/assets",
+    "og-image": "marp --browser-timeout 120 --no-stdin ./presentations/${FOLDER}/PITCHME.md -o public/${FOLDER}/og-image.jpg --html",
     "start": "marp -ps .",
     "vercel-build": "yum install nss mesa-libgbm -y && MARP_USER=root CHROME_PATH=$(npx -y @puppeteer/browsers@latest install chrome@stable --path $(realpath ./tmp) | awk '{print $2}') npm run build"
   },
