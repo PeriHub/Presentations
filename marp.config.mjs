@@ -11,7 +11,7 @@ const config = {
     return undefined;
   })(),
   jpegQuality: "95",
-  themeSet: ".themes",
+  themeSet: "themes",
   url: canonicalUrl,
 };
 

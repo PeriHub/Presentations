@@ -57,6 +57,17 @@ Presentation URL: https://perihub.github.io/Presentations/COMPLAS_2025/
 
 ---
 
-<iframe src="https://app.sli.do/event/iZoQmywsAFqX7iApJ5f8sp" width="500px" height="600px" style="border: 0;"></iframe>
+<!-- _class: section-slide-vulcan -->
+
+## LLMs in general: Background knowledge and terminology
+
+---
+
+
+<!--header: ''-->
+
+# Questions
+
+<iframe src="https://app.sli.do/event/iZoQmywsAFqX7iApJ5f8sp" width="90%" height="85%" style="border: 0; margin-left: 70px"></iframe>
 
 ---
