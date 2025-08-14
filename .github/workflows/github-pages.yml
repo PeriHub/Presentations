@@ -43,11 +43,11 @@ jobs:
       matrix:
         folder:
           - COMPLAS_2025
-          - Antrittsvorlesung
-          - GAMM_2024
-          - USACM_2024
-          - PDDAY_2024
-          - MICRO_ANALYSIS
+          # - Antrittsvorlesung
+          # - GAMM_2024
+          # - USACM_2024
+          # - PDDAY_2024
+          # - MICRO_ANALYSIS
     steps:
       - uses: actions/checkout@v4
 
