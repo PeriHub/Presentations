@@ -63,7 +63,7 @@ jobs:
         run: npm ci
 
       - name: Build Marp slide deck
-        run: CHROME_PATH=$(npx -y @puppeteer/browsers@latest install chrome@stable --path $(realpath ./tmp) | awk '{print $2}') FOLDER=${{ matrix.folder }} npm run build
+        run: FOLDER=${{ matrix.folder }} npm run build
 
       - run: ls -R public
 
