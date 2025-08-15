@@ -166,9 +166,6 @@ section.cols-2-1 {
     "leftpanel    rightpanel"
     "slidefooter slidefooter";
 }
-section.cols-2-1 h1 {
-  grid-area: slideheading;
-}
 
 section.cols-2-1 h2,
 section.cols-2-1 h3 {

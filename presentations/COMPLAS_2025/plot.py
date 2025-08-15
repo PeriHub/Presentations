@@ -6,7 +6,8 @@ import matplotlib.pyplot as plt, mpld3
 #find all csv files 
 csv_files = glob.glob('*.{}'.format('csv'))
 
-fig, ax = plt.subplots()    
+fig, ax = plt.subplots()
+fig.set_size_inches(10.5, 4.5)
 for file in csv_files:
     df = pd.read_csv(file)
     x = df["External_Displacementx"]
