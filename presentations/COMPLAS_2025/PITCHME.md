@@ -59,25 +59,11 @@ Presentation URL: https://perihub.github.io/Presentations/COMPLAS_2025
 
 ---
 
-<!--footer: 'Specimen Geometry: ASTM E647-15'
-_class: cols-2 -->
+<!--footer: 'Specimen Geometry: ASTM E647-15'-->
 
-<div class=ldiv>
+# Dogbone Specimen
 
-## Dogbone Specimen
-
-| Parameter | Value  |
-| --------- | ------ |
-| $W$       | $75mm$ |
-| $B$       | $12mm$ |
-| $a$       | $21mm$ |
-
-</div>
-<div class=rimg>
-
-![width:600px](./assets/compact_tension.svg)
-
-</div>
+![width:1100px](./assets/dogbone.svg)
 
 ---
 
@@ -88,25 +74,24 @@ _class: cols-2-1-->
 
 <div class=ldiv>
 
-## Loading Force
+## Material: PEEK???
 
-| Parameter | Value     |
-| --------- | --------- |
-| $F_{max}$ | $4.5\ kN$ |
-| $R$       | $0.1$     |
-| $f$       | $20\ Hz$  |
+| Parameter     | Value                |
+| ------------- | -------------------- |
+| $E$           | $3800\ MPa$         |
+| $\nu$         | $0.33$               |
 
 </div>
 <div class=rdiv>
 
-## Material: AA7010-T7452
+## Thermal Properties
 
-| Parameter     | Value                |
-| ------------- | -------------------- |
-| $E$           | $71700\ MPa$         |
-| $\nu$         | $0.33$               |
-| $K_{IC_{LT}}$ | $37.44\ MPa\sqrt{m}$ |
-| $K_{IC_{TL}}$ | $21.24\ MPa\sqrt{m}$ |
+| Parameter | Value     |
+| --------- | --------- |
+| $\kappa$ | $0.12$ |
+| $h$       |$15.0\times 10^{-3} \frac{W}{m^2K}$|
+| $T_P$       | $653.15K$     |
+| $T_E$       | $293.15K$  |
 
 </div>
 
