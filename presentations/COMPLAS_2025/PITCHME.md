@@ -161,8 +161,8 @@ $F(t) = -2025 * sin(2 * pi * 20 * t - pi / 2) -2475$
 # Thank you
 
 [Jan-Timo Hesse](mailto:jan-timo.hesse@dlr.de) (DLR)
-[Christian Willberg](mailto:christian.willberg@h2.de) (DLR)
-[Felix Winkelmann](mailto:felix.winkelmann@dlr.de) (h2)
+[Christian Willberg](mailto:christian.willberg@h2.de) (h2)
+[Felix Winkelmann](mailto:felix.winkelmann@dlr.de) (DLR)
 [Robert Hein](mailto:robert.hein@dlr.de) (DLR)
 ![bg right height:8cm](https://gitlab.com/dlr-perihub/PeriLab.jl/-/raw/main/assets/PeriLab_crack.gif)
 
