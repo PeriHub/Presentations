@@ -49,7 +49,49 @@ Presentation URL: https://perihub.github.io/Presentations/COMPLAS_2025
 <!--paginate: true-->
 <!--footer: 'https://perihub.github.io/Presentations/COMPLAS_2025'-->
 
-# Introduction
+# Introduction 3D printing
+
+- Additive extrusion processes enables manufacturing of complex structures without moulds
+
+
+- Many process parameters influence the final properties
+    - Individual process parameter - property relation often unclear 
+
+
+- Process simulations can help to predict the properties and evaluate the process parameters
+ 
+
+
+![bg right 60%](assets/ProzessSchaubild3Ddruck.png) 
+    Quelle: Shah, J., Snider, B., Clarke, T. et al. Large-scale 3D printers for additive manufacturing: design considerations and challenges. Int J Adv Manuf Technol 104, 3679–3693 (2019). https://doi.org/10.1007/s00170-019-04074-6 
+
+
+---
+
+# Introduction polymer crystallization
+
+- Crystallization influences the mechanical and technical properties of the material
+
+
+- Degree of crystallization depends on material properties and cooling conditions
+
+
+- Complex processes during cooling in deposition processes
+
+Quelle: [2] Influence of thermal processing conditions in 3D printing on the crystallinity and mechanical properties of PEEK material, Yang,Tian,Li et. al. , Journal of Materials Processing Tech., 2017 
+
+![bg right 60%](assets/EinflussKristallisationLiteratur.png) 
+
+---
+# Subroutine 
+
+-  Calculation of crystallization based on dual kinetic model (by Velisaris Seferis ggf. Tonspur)
+
+- Implementation in Fortran Subroutine for usage in Abaqus
+  - Calculates crystallization kinetics through process simulation
+  - Degree of crystallization at every time step 
+
+- Temperature and time from the process simualtion are inputs for the subroutine  
 
 ---
 
