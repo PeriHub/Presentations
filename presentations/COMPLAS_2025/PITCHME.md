@@ -46,11 +46,13 @@ Presentation URL: https://perihub.github.io/Presentations/COMPLAS_2025
   </span>
 <summary>Questions</summary>
 </details>'-->
+<!--_class: cols-2-->
 <!--paginate: true-->
 <!--footer: 'https://perihub.github.io/Presentations/COMPLAS_2025'-->
 
 # Introduction 3D printing
 
+<div class=ldiv>
 - Additive extrusion processes enables manufacturing of complex structures without moulds
 
 
@@ -59,17 +61,20 @@ Presentation URL: https://perihub.github.io/Presentations/COMPLAS_2025
 
 
 - Process simulations can help to predict the properties and evaluate the process parameters
- 
+</div>
+<div class=rdiv>
 
-
-![bg right 60%](assets/ProzessSchaubild3Ddruck.png) 
-    Quelle: Shah, J., Snider, B., Clarke, T. et al. Large-scale 3D printers for additive manufacturing: design considerations and challenges. Int J Adv Manuf Technol 104, 3679–3693 (2019). https://doi.org/10.1007/s00170-019-04074-6 
-
+![width:600px](https://media.springernature.com/full/springer-static/image/art%3A10.1007%2Fs00170-019-04074-6/MediaObjects/170_2019_4074_Fig1_HTML.png?as=webp)
+</div>
 
 ---
+<!--_class: cols-2-->
+<!--footer: Figure Source: Yang et al., Influence of thermal processing conditions in 3D printing ...-->
 
 # Introduction polymer crystallization
 
+
+<div class=ldiv>
 - Crystallization influences the mechanical and technical properties of the material
 
 
@@ -77,10 +82,12 @@ Presentation URL: https://perihub.github.io/Presentations/COMPLAS_2025
 
 
 - Complex processes during cooling in deposition processes
+</div>
+<div class=rdiv>
 
-Quelle: [2] Influence of thermal processing conditions in 3D printing on the crystallinity and mechanical properties of PEEK material, Yang,Tian,Li et. al. , Journal of Materials Processing Tech., 2017 
+![width:600px](assets/EinflussKristallisationLiteratur.png) 
 
-![bg right 60%](assets/EinflussKristallisationLiteratur.png) 
+</div>
 
 ---
 # Subroutine 
@@ -116,12 +123,14 @@ _class: cols-2-1-->
 
 <div class=ldiv>
 
-## Material: PEEK???
+## Material: PEEK (Polyetheretherketon)
 
-| Parameter     | Value                |
-| ------------- | -------------------- |
-| $E$           | $3800\ MPa$         |
-| $\nu$         | $0.33$               |
+| Parameter     | Value        |
+| ------------- | -------------|
+| $E$           | $3800\ MPa$  |
+| $\nu$         | $0.33$       |
+| $\rho$        | $1240\times 10^{-12} \frac{t}{mm^3}$|
+|$s_c$          | $0.12$        |   
 
 </div>
 <div class=rdiv>
@@ -130,16 +139,18 @@ _class: cols-2-1-->
 
 | Parameter | Value     |
 | --------- | --------- |
-| $\kappa$ | $0.12$ |
-| $h$       |$15.0\times 10^{-3} \frac{W}{m^2K}$|
-| $T_P$       | $653.15K$     |
-| $T_E$       | $293.15K$  |
+| $\kappa$  | $0.12$ |
+| $h$       | $15.0\times 10^{-3} \frac{t}{s^3K}$ |
+| $T_P$     | $653.15K$ |
+| $T_{RT}$  | $293.15K$ |
+| $c$       | $1800.0\times 10^{6} \frac{mm^2}{s^2K}$ |
+
 
 </div>
 
 <div class=bdiv>
 
-$F(t) = -2025 * sin(2 * pi * 20 * t - pi / 2) -2475$
+$T_E = [473.15K; 423.15K; 373.15K; 293.15K]$
 
 </div>
 
@@ -153,7 +164,7 @@ $F(t) = -2025 * sin(2 * pi * 20 * t - pi / 2) -2475$
 
 # Experimental Results
 <br/>
-<iframe width="95%" height="95%" src="https://www.youtube-nocookie.com/embed/8V8CkSvO0Ok?si=2roU3VJ4qxuXFLeV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="1150" height="500" src="https://www.youtube.com/embed/dGfJG9AoL4g?si=22l_pryTfsmBexXY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ---
 
@@ -161,7 +172,7 @@ $F(t) = -2025 * sin(2 * pi * 20 * t - pi / 2) -2475$
 
 ## Dogbone Specimen | PeriLab Results
 
-<iframe src="https://perilab-results.nimbus-extern.dlr.de/models/ForgedCT?step=10&variable=von Mises Stress&displFactor=20" width="1150" height="600"></iframe>
+<iframe src="https://perilab-results.nimbus-extern.dlr.de/models/ForgedCT?step=10&variable=von Mises Stress&displFactor=20" width="1150" height="500"></iframe>
 
 ---
 
@@ -173,15 +184,6 @@ $F(t) = -2025 * sin(2 * pi * 20 * t - pi / 2) -2475$
 
 ---
 
-<!--header: ''-->
-
-# Questions
-
-<iframe src="https://app.sli.do/event/iZoQmywsAFqX7iApJ5f8sp" width="90%" height="85%" style="border: 0; margin-left: 70px"></iframe>
-
----
-
-<!--footer: ''-->
 <!-- _class: cols-2 -->
 <!-- -We could determine three diferent failure mechanisms by looking at the crack surface-->
 
@@ -200,6 +202,14 @@ $F(t) = -2025 * sin(2 * pi * 20 * t - pi / 2) -2475$
 
 ---
 
+<!--header: ''-->
+
+# Questions
+
+<iframe src="https://app.sli.do/event/iZoQmywsAFqX7iApJ5f8sp" width="90%" height="85%" style="border: 0; margin-left: 70px"></iframe>
+
+---
+
 # Thank you
 
 [Jan-Timo Hesse](mailto:jan-timo.hesse@dlr.de) (DLR)
@@ -211,6 +221,8 @@ $F(t) = -2025 * sin(2 * pi * 20 * t - pi / 2) -2475$
 ---
 
 # References
+
+    Quelle: Shah, J., Snider, B., Clarke, T. et al. Large-scale 3D printers for additive manufacturing: design considerations and challenges. Int J Adv Manuf Technol 104, 3679–3693 (2019). https://doi.org/10.1007/s00170-019-04074-6 
 
 1. [Foster, John & Silling, Stewart & Chen, Weinong. (2011). An energy based failure criterion for use with peridynamic states.](http://dx.doi.org/10.1615/IntJMultCompEng.2011002407)
 2. [Willberg, Christian & Wiedemann, Lasse & Rädel, Martin. (2019). A mode-dependent energy-based damage model for peridynamics and its implementation.](https://doi.org/10.2140/jomms.2019.14.193)
