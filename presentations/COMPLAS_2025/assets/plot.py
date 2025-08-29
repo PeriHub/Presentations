@@ -14,7 +14,7 @@ for file in csv_files:
     x = df["External_Displacementx"]
     y = df["External_Forcex"]
 
-    ax.plot(x, y, label=str(file) + '($^\circ$C)')
+    ax.plot(x, y, label=str(file) + '(\u00B0C)')
 # ax.set_title("Daily Temperature")
 ax.set_xlabel("Displacement [mm]")
 ax.set_ylabel("Force [N]")
