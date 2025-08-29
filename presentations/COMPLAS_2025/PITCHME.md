@@ -101,11 +101,13 @@ Presentation URL: https://perihub.github.io/Presentations/COMPLAS_2025
 
 - Temperature and time from the process simualtion are inputs for the subroutine  
 
+- Stiffness value $E$ of each node will be adapted based on the degree of crystallization
+
 ---
 
 <!-- _class: section-slide-vulcan -->
 
-## Experiment
+## Simulation
 
 ---
 
@@ -143,13 +145,14 @@ Presentation URL: https://perihub.github.io/Presentations/COMPLAS_2025
   - Printing specimen
   - Cooling step
   - Tensile test
+- Layer height = 0.2mm  (20 Layers)
 
 ---
 
 <!--footer: ''
 _class: cols-2-1-->
 
-# Experimental Properties
+# Simulation Properties
 
 <div class=ldiv>
 
@@ -188,17 +191,17 @@ $T_E = [473.15K; 423.15K; 373.15K; 293.15K]$
 
 <!-- _class: section-slide-rocket -->
 
-## Experimental Results
+## Simulation Results
 
 ---
 
-# Experimental Results
+# Simulation Results
 <br/>
 <iframe width="1150" height="500" src="https://www.youtube.com/embed/dGfJG9AoL4g?si=22l_pryTfsmBexXY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ---
 
-## Experimental Results
+## Simulation Results
 
 ![width:1050px](./assets/crack.png)
 
