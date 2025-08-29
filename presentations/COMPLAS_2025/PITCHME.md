@@ -90,11 +90,12 @@ Presentation URL: https://perihub.github.io/Presentations/COMPLAS_2025
 </div>
 
 ---
+<!--footer: ''-->
 # Subroutine 
 
--  Calculation of crystallization based on dual kinetic model (by Velisaris Seferis ggf. Tonspur)
+-  Calculation of crystallization based on dual kinetic model (by Velisaris & Seferis)
 
-- Implementation in Fortran Subroutine for usage in Abaqus
+- Implementation in Fortran HETVAL Subroutine for usage in Abaqus
   - Calculates crystallization kinetics through process simulation
   - Degree of crystallization at every time step 
 
@@ -108,18 +109,47 @@ Presentation URL: https://perihub.github.io/Presentations/COMPLAS_2025
 
 ---
 
-<!--footer: 'Specimen Geometry: ASTM E647-15'-->
+<!--_class: cols-2-->
+
+# Peridynamic Framework (PeriLab)
+
+<div class=ldiv>
+
+- No pre-processing required, mesh will be generated based on the gcode
+- Material Models:
+  - PD Solid Elastic/Plastic
+- Thermal Models:
+  - Thermal Flow
+  - Heat Transfer
+  - HETVAL subroutine
+- Damage Models:
+  - Critical Stretch
+</div>
+<div class=rdiv>
+
+![width:500px](https://raw.githubusercontent.com/PeriHub/PeriLab.jl/main/assets/PeriLab_crack.gif)
+
+</div>
+
+---
+
+<!--footer: 'Specimen Geometry: ASTM D638'-->
 
 # Dogbone Specimen
 
 ![width:1100px](./assets/dogbone.svg)
+
+- Three step simulation process:
+  - Printing specimen
+  - Cooling step
+  - Tensile test
 
 ---
 
 <!--footer: ''
 _class: cols-2-1-->
 
-# Experimental Setup
+# Experimental Properties
 
 <div class=ldiv>
 
@@ -168,11 +198,11 @@ $T_E = [473.15K; 423.15K; 373.15K; 293.15K]$
 
 ---
 
-<!--footer: 'Results: https://perilab-results.nimbus-extern.dlr.de/models/ForgedCT'-->
+## Experimental Results
 
-## Dogbone Specimen | PeriLab Results
+![width:1050px](./assets/crack.png)
 
-<iframe src="https://perilab-results.nimbus-extern.dlr.de/models/ForgedCT?step=10&variable=von Mises Stress&displFactor=20" width="1150" height="500"></iframe>
+- Crack initiation and propagation simliar, only initiation time slightly differs
 
 ---
 
@@ -184,21 +214,15 @@ $T_E = [473.15K; 423.15K; 373.15K; 293.15K]$
 
 ---
 
-<!-- _class: cols-2 -->
-<!-- -We could determine three diferent failure mechanisms by looking at the crack surface-->
+# Discussion and further work
 
-## Discussion and further work
+- Basic influence of different process parameters can be captured
+- PeriLab allows efficient and statistical analysis of the AM process
 
-<div class=ldiv>
+- Verification with experiments
+- Variation of diverse process parameters
+- Influence of printbed
 
-- Lorum
-
-</div>
-<div class=rdiv>
-
-![width:600px](./assets/Mechanism.png)
-
-</div>
 
 ---
 
