@@ -109,7 +109,7 @@ Antrittsvorlesung Hochschule Magdeburg-Stendal HS 2, 08.10.2024, Magdeburg
 $\int_{\mathcal{H}}(\underline{\textbf{T}}(\textbf{x},t)
 \underline{\textbf{T}}(\textbf{x}',t))dV_{\textbf{x}}+\textbf{b} =\rho\ddot{\textbf{u}}$
 
-![bg right 70%](assets/PeriMesh.PNG)
+![bg right 90%](../assets/PeriMesh.png)
 
 ---
 
@@ -132,7 +132,7 @@ $$\underline{\mathbf{T}}\langle \boldsymbol{\xi}\rangle =
 \boldsymbol{\xi}\rangle\mathbf{P}\mathbf {K}^{ -1 } \boldsymbol { \xi }\quad\text{with}\quad\mathbf{P}=\text{det}\mathbf{F}\boldsymbol{\sigma}\mathbf{F}^{
 -1}$$
 
-![bg right 70%](assets/PeriMesh.PNG)
+![bg right 90%](../assets/PeriMesh.png)
 
 ---
 ## Beispiele

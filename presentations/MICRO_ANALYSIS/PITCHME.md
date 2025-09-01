@@ -43,7 +43,7 @@ Presentation URL: https://perihub.github.io/Presentations/MICRO_ANALYSIS
 - focus material modeling and crack propagation no $C^1$ continuity for the displacement
 
 
-![bg right:47% fit transparent](assets/PeriMesh.PNG)
+![bg right:44% fit transparent](../assets/PeriMesh.png)
 
 ---
 

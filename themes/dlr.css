@@ -210,4 +210,5 @@ details span {
 img[alt~="center"] {
   display: block;
   margin: 0 auto;
+  background-color: transparent !important;
 }

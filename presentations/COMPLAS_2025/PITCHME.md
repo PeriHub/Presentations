@@ -111,6 +111,33 @@ Presentation URL: https://perihub.github.io/Presentations/COMPLAS_2025
 
 ---
 
+## Motivation Peridynamics (PD)
+
+- alternative to classcical continuum mechanics $\text{div}(\mathbf{\sigma})+\textbf{b} =\rho\ddot{\textbf{u}}$
+- PD integral equation
+  $\int_{\mathcal{H}}(\underline{\textbf{T}}(\textbf{x},t)- \underline{\textbf{T}}(\textbf{x}',t))dV_{\textbf{x}}+\textbf{b} =\rho\ddot{\textbf{u}}$
+- focus material modeling and crack propagation no $C^1$ continuity for the displacement
+
+
+![bg right:44% fit transparent](../assets/PeriMesh.png)
+
+---
+
+## PD Solving the integral - Material point method
+
+__Advantages__  
+- fast to implement
+- cracks are easy to include
+- discretization
+
+__Diadvantages__  
+- convergence is lower
+- surfaces are not known
+
+![bg right:50% width:900px](../assets/Fragmenting_Cylinder.gif)
+
+---
+
 <!--_class: cols-2-->
 
 # Peridynamic Framework (PeriLab)
@@ -127,7 +154,7 @@ Presentation URL: https://perihub.github.io/Presentations/COMPLAS_2025
 - Damage Models:
   - Critical Stretch
 </div>
-<div class=rdiv>
+<div class=rdiv style="margin-top:80px">
 
 ![width:500px](https://raw.githubusercontent.com/PeriHub/PeriLab.jl/main/assets/PeriLab_crack.gif)
 
@@ -237,7 +264,7 @@ $T_E = [473.15K; 423.15K; 373.15K; 293.15K]$
 
 ---
 
-# Thank you
+# Thank you!
 
 [Jan-Timo Hesse](mailto:jan-timo.hesse@dlr.de) (DLR)
 [Christian Willberg](mailto:christian.willberg@h2.de) (h2)
