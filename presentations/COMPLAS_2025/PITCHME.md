@@ -93,7 +93,7 @@ Presentation URL: https://perihub.github.io/Presentations/COMPLAS_2025
 <!--footer: ''-->
 # Subroutine 
 
--  Calculation of crystallization based on dual kinetic model (by Velisaris & Seferis)
+-  Calculation of crystallization, dual kinetic model (by Velisaris & Seferis)
 
 - Implementation in Fortran HETVAL Subroutine for usage in Abaqus
   - Calculates crystallization kinetics through process simulation
@@ -102,6 +102,8 @@ Presentation URL: https://perihub.github.io/Presentations/COMPLAS_2025
 - Temperature and time from the process simualtion are inputs for the subroutine  
 
 - Stiffness value $E$ of each node will be adapted based on the degree of crystallization
+
+- Fitting function: $X_{VC} =X_{VC\infty}(w_1F_{\theta1}(k)+w_2F_{\theta2}(k))$
 
 ---
 
