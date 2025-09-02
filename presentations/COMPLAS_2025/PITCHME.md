@@ -111,12 +111,12 @@ Presentation URL: https://perihub.github.io/Presentations/COMPLAS_2025
 
 ---
 
-## Motivation Peridynamics (PD)
+## What is Peridynamics?
 
-- alternative to classcical continuum mechanics $\text{div}(\mathbf{\sigma})+\textbf{b} =\rho\ddot{\textbf{u}}$
-- PD integral equation
+- Alternative to classcical continuum mechanics: $\text{div}(\mathbf{\sigma})+\textbf{b} =\rho\ddot{\textbf{u}}$
+- PD integral equation:
   $\int_{\mathcal{H}}(\underline{\textbf{T}}(\textbf{x},t)- \underline{\textbf{T}}(\textbf{x}',t))dV_{\textbf{x}}+\textbf{b} =\rho\ddot{\textbf{u}}$
-- focus material modeling and crack propagation no $C^1$ continuity for the displacement
+- Focus material modeling and crack propagation; no $C^1$ continuity for the displacement
 
 
 ![bg right:44% fit transparent](../assets/PeriMesh.png)
@@ -126,13 +126,13 @@ Presentation URL: https://perihub.github.io/Presentations/COMPLAS_2025
 ## PD Solving the integral - Material point method
 
 __Advantages__  
-- fast to implement
-- cracks are easy to include
-- discretization
+- Fast to implement
+- Failure propagation
+- Discretization
 
 __Diadvantages__  
-- convergence is lower
-- surfaces are not known
+- Convergence is lower
+- Surfaces are not known
 
 ![bg right:50% width:900px](../assets/Fragmenting_Cylinder.gif)
 
