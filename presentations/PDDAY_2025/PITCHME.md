@@ -37,7 +37,129 @@ Presentation URL: https://perihub.github.io/Presentations/PDDAY_2025
 
 ---
 
+## PD Solving the integral - Material point method
 
+__Advantages__  
+- Fast to implement
+- Failure propagation
+- Discretization
+
+__Diadvantages__  
+- Convergence is lower
+- Surfaces are not known
+
+![bg right:50% width:900px](../assets/Fragmenting_Cylinder.gif)
+
+---
+
+<!--_class: cols-2-->
+
+# Peridynamic Framework (PeriLab)
+
+<div class=ldiv>
+
+- No pre-processing required, mesh will be generated based on the gcode
+- Material Models:
+  - PD Solid Elastic/Plastic
+- Thermal Models:
+  - Thermal Flow
+  - Heat Transfer
+  - HETVAL subroutine
+- Damage Models:
+  - Critical Stretch
+</div>
+<div class=rdiv style="margin-top:80px">
+
+![width:500px](https://raw.githubusercontent.com/PeriHub/PeriLab.jl/main/assets/PeriLab_crack.gif)
+
+</div>
+
+---
+
+# Solver Overview
+
+- **Verlet**
+  - Explicit solver for non-linear problems
+- **Static**
+  - Static solver for linear problems
+- **Matrix Verlet**
+  - Efficient matrix-based explicit solver for non-linear problems
+- **Matrix Linear Static**
+  - Efficient matrix-based static solver for linear problems
+
+---
+<style scoped>
+table {
+    width: 100%;
+    font-size: 24px;
+}
+</style>
+# Module Overview
+
+|Material|Damage|Thermal|Contact|Coupling|Additive|Degradation|
+|---|---|---|---|---|---|---|
+|Bond-Based|Critical Stretch|Thermal Flow|Penalty|FEM-PD|Damage-based|*Bond-based Corrosion*
+|PD Solid Elastic/Plastic|Critical Energy|Heat Transfer|*Short-Range*|Guyan Reduction||*Thermal Decomposition*
+|Correspondence Elastic/Plastic||Thermal Expansion|
+|Correspondence UMAT/VUMAT||HETVAL|
+|Bond Associated Correspondence|
+
+---
+
+# Input and Output Formats
+
+- Input
+  - Text file
+  - Exodus file
+  - Abaqus model
+- Output
+  - Exodus file
+  - CSV file
+
+---
+
+<!-- _class: section-slide-rocket -->
+
+## Get-Started
+
+---
+
+# How to get started with PeriLab?
+
+- Ready to use application:
+  - Download and install [PeriHub](https://github.com/PeriHub/PeriHub)
+- Just the simulation core:
+  - Download the docker image from [Docker Hub](https://hub.docker.com/r/perihub/perilab)
+  - Download the julia package with: `Pkg.add("PeriLab")`
+  - Download the [release files](https://github.com/PeriHub/PeriLab.jl/releases)
+- Develop and contribute:
+  - Clone the [repository](https://github.com/PeriHub/PeriLab.jl) and follow the development guide
+    - Implement your own peridynamic models (don't worry it's easy!)
+    - Create a pull request in order to contribute 
+
+
+---
+
+# Planned Features
+
+-
+-
+
+---
+
+# Feedback Time
+
+- Scan the QR-code
+- What is missing for you to use PeriLab?
+- Further questions?
+
+![bg right:50% width:500px](https://quickchart.io/qr?text=https://app.sli.do/event/5mmfvHmXVAHMyJPJJY11dA&light=0000&size=300)
+
+---
+
+# Feedback Time
+
+<iframe src="https://app.sli.do/event/5mmfvHmXVAHMyJPJJY11dA" width="90%" height="85%" style="border: 0; margin-left: 70px"></iframe>
 
 ---
 
@@ -61,12 +183,34 @@ Presentation URL: https://perihub.github.io/Presentations/PDDAY_2025
 
 ---
 
+# PeriHub
+
+
+- **Peridynamic simulation engine** – extends PeriLab for detailed material‑science studies.  
+- **Easy to use & portable** – GUI, REST API, and Docker for quick setup on any platform.  
+- **Trusted, FAIR‑compliant** – built by experts (incl. DLR) with rigorous quality and open‑science standards.
+
+![bg right width:250px](https://raw.githubusercontent.com/PeriHub/PeriHub/refs/heads/main/docs/assets/images/PeriHubLogo2b.png)
+
+---
+
+# Features - What can I do with PeriHub?
+
+
+- **Peridynamic simulation engine** – extends PeriLab for detailed material‑science studies.  
+- **Easy to use & portable** – GUI, REST API, and Docker for quick setup on any platform.  
+- **Trusted, FAIR‑compliant** – built by experts (incl. DLR) with rigorous quality and open‑science standards.
 
 ---
 
 <!-- _class: section-slide-vulcan -->
 
-## Simulation
+## Overview
+
+---
+
+![width:1070px](./assets/PeriHub.svg)
+
 
 ---
 
