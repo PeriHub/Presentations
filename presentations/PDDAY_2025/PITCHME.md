@@ -37,8 +37,13 @@ Presentation URL: https://perihub.github.io/Presentations/PDDAY_2025
 
 ---
 
-## PD Solving the integral - Material point method
+# PD solving strategies
 
+
+##  Material point method
+$\begin{equation}
+\mathbf{F}_{int,i}=\sum_{j \in \mathcal{H}_i}\underline{\mathbf{T}}_{ij}\langle\boldsymbol{\xi}_{ij}\rangle V_j,
+\end{equation}$
 __Advantages__  
 - Fast to implement
 - Failure propagation
@@ -49,6 +54,72 @@ __Diadvantages__
 - Surfaces are not known
 
 ![bg right:50% width:900px](../assets/Fragmenting_Cylinder.gif)
+
+---
+
+## Matrix based approach
+
+- use correspondence stiffness matrix based on material point method
+
+__Advantages__ 
+- linear static analysis possible
+- less operations per time step if Verlet is used
+
+__Diadvantages__  
+- matrix update is costly
+- algorithms are more complex
+
+![bg right 90%](./assets/force_comp.png)
+
+---
+
+## Main Advantage
+
+- it allows reduction methods
+- currently under development
+- static and dynamic reduction
+ ![bg right 90%](./assets/coupling_nodes.png)
+
+
+
+$\begin{equation}
+\begin{bmatrix}
+\boldsymbol{K}_{mm} & \boldsymbol{K}_{ms} \\
+\boldsymbol{K}_{sm} & \boldsymbol{K}_{ss}
+\end{bmatrix}
+\begin{bmatrix}
+\boldsymbol{u}_m \\ \boldsymbol{u}_s
+\end{bmatrix}=
+\begin{bmatrix}
+\boldsymbol{F}_m \\ \boldsymbol{F}_s
+\end{bmatrix}
+\end{equation}$
+
+$\boldsymbol{F}_s = \boldsymbol{0}$
+$\begin{equation}
+\boldsymbol{K}_{sm} \boldsymbol{u}_m + \boldsymbol{K}_{ss} \boldsymbol{u}_s = \boldsymbol{0}
+\end{equation}$
+
+---
+
+$\begin{equation}
+\boldsymbol{u}_s = -\boldsymbol{K}_{ss}^{-1} \boldsymbol{K}_{sm} \boldsymbol{u}_m
+\end{equation}$
+
+$\begin{equation}
+\boldsymbol{K}_{mm} \boldsymbol{u}_m + \boldsymbol{K}_{ms} \left(-\boldsymbol{K}_{ss}^{-1} \boldsymbol{K}_{sm} \boldsymbol{u}_m\right) = \boldsymbol{F}_m
+\end{equation}$
+
+$\begin{equation}
+\boldsymbol{K}_{\text{red}} = \boldsymbol{K}_{mm} - \boldsymbol{K}_{ms} \boldsymbol{K}_{ss}^{-1} \boldsymbol{K}_{sm}
+\end{equation}$
+
+- currently under testing
+- split $\mathbf{K}_{mm}$ in material point part and matrix part
+  - allows easy implementation of fracture or non-linear material
+  - reduction of degrees of freedoms
+
+ ![bg right 90%](./assets/coupling_nodes.png)
 
 ---
 
@@ -94,6 +165,7 @@ table {
     font-size: 24px;
 }
 </style>
+
 # Module Overview
 
 |Material|Damage|Thermal|Contact|Coupling|Additive|Degradation|
@@ -103,6 +175,13 @@ table {
 |Correspondence Elastic/Plastic||Thermal Expansion|
 |Correspondence UMAT/VUMAT||HETVAL|
 |Bond Associated Correspondence|
+
+
+---
+
+## FEM Coupling
+
+![bg 160% right](./assets/cauchy_yy_mix_static.png)
 
 ---
 
