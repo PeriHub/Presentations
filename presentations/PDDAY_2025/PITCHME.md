@@ -35,7 +35,58 @@ Jan-Timo Hesse<a href="https://orcid.org/0000-0002-3006-1520"><img src="../asset
 Presentation URL: https://perihub.github.io/Presentations/PDDAY_2025
 </div>
 
+
+
+
 ---
+# What is PeriLab?
+A solver for PD integral equation
+$\int_{\mathcal{H}}(\underline{\textbf{T}}(\textbf{x},t)- \underline{\textbf{T}}(\textbf{x}',t))dV_{\textbf{x}}+\textbf{b} =\rho\ddot{\textbf{u}}$
+
+
+- Open Source
+- 🚀 Easy Installation and ✒️ Modularization
+- 🎨 User Materials and 🧮 Abaqus Input
+- 🧲 Multiphysics and 💻 HPC capabilities
+- ...
+
+
+</div>
+
+![bg right fit](./assets/PeriLab_crack.gif)
+
+---
+
+# PeriLab vs. Alternative solutions
+
+<div class=rdiv>
+
+<div class=mermaid>
+quadrantChart
+  x-axis Low Functionalty --> High Functionalty
+  y-axis Hard to use --> Simple to use
+  Peridigm: [0.85, 0.2]
+  PeriLab: [0.85, 0.8]
+  EMU: [0.95, 0.1]
+  PeriPy: [0.2, 0.7]
+  Peridynamics.jl: [0.7, 0.6]
+  PeriPyDIC: [0.2, 0.6]
+  LAMMPS: [0.3, 0.3]
+  PeriFlakes: [0.35, 0.4]
+  Relation-Based Software: [0.4, 0.25]
+  BB_PD: [0.2, 0.50]
+  PeriDEM: [0.13, 0.3]
+</div>
+</div>
+
+---
+
+# Why PeriLab
+![bg](./assets/chart.png)
+
+---
+
+
 
 # PD solving strategies
 
@@ -185,6 +236,27 @@ table {
 
 ---
 
+
+## Temperature
+
+- convection
+- heat transfer
+- thermo-mechanical coupling
+
+![bg right fit](https://github.com/PeriHub/PeriLab.jl/blob/main/docs/src/assets/temperature_distribution_cooling.png?raw=true)
+
+
+---
+
+## Interblock damage
+
+- damage between layers or material
+- bonds handled differently if they exist in two blocks
+
+![bg right fit](https://raw.githubusercontent.com/PeriHub/PeriLab.jl/cf3b50528edaf2744fcaeb94e0133fc801dd2418/docs/src/assets/InterBlockDamage.svg)
+
+---
+
 # Input and Output Formats
 
 - Input
@@ -194,6 +266,27 @@ table {
 - Output
   - Exodus file
   - CSV file
+
+---
+# Live Demonstration
+
+## Module integration
+
+
+```
+module my_demo_mod
+```
+
+```
+function damage_name()
+    return "module name"
+end
+```
+
+- define a yaml file
+- define variables and call them
+- write variable to nodes
+- [Examplary models](https://github.com/PeriHub/PeriLab.jl/tree/main/examples/Seminars/) 
 
 ---
 
