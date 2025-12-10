@@ -400,7 +400,6 @@ Presentation URL: https://perihub.github.io/Presentations/PDDAY_2025
 - **Peridynamic simulation engine** – extends PeriLab for detailed material‑science studies.  
 - **Easy to use & portable** – GUI, REST API, and Docker for quick setup on any platform.  
 - **Trusted, FAIR‑compliant** – built by experts (incl. DLR) with rigorous quality and open‑science standards.
-- 
 
 ![bg right width:250px](https://raw.githubusercontent.com/PeriHub/PeriHub/refs/heads/main/docs/assets/images/PeriHubLogo2b.png)
 
