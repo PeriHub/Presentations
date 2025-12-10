@@ -57,6 +57,79 @@ Presentation URL: https://perihub.github.io/Presentations/PDDAY_2025
 
 ---
 
+# PeriLab vs. Alternative solutions
+
+<div style="display: flex; justify-content: space-between;">
+
+<div style="flex: 1; margin-right: 0px;">
+
+##
+
+  <div class="mermaid">
+  %%{init: { 'theme':'forest','quadrantChart': { 'pointLabelFontSize': '130%'} } }%%
+  quadrantChart
+    x-axis Low Functionalty --> High Functionalty
+    y-axis Hard to use --> Simple to use
+    Peridigm: [0.85, 0.2]
+    PeriLab: [0.85, 0.8]
+    EMU: [0.95, 0.1]
+    PeriPy: [0.2, 0.7]
+    Peridynamics.jl: [0.7, 0.6]
+    PeriPyDIC: [0.2, 0.6]
+    LAMMPS: [0.3, 0.3]
+    PeriFlakes: [0.35, 0.4]
+    Relation-Based Software: [0.4, 0.25]
+    BB_PD: [0.2, 0.50]
+    PeriDEM: [0.13, 0.3]
+    </div>
+
+</div>
+
+<div style="flex: 1; margin-right: -300px;">
+
+## Reference
+
+[PeriLab](https://gitlab.com/dlr-perihub/PeriLab.jl)
+[Peridynamics.jl](https://github.com/kaipartmann/Peridynamics.jl)
+[Peridigm](https://link.springer.com/article/10.1007/s42102-023-00100-0)
+[EMU](https://www.osti.gov/biblio/1351608)
+[PeriPy](https://doi.org/10.1016/j.cma.2021.114085)
+[PeriPyDIC](https://link.springer.com/article/10.1007/s11043-017-9342-3)
+[LAMMPS](https://www.osti.gov/biblio/959309/)
+[PeriFlakes](https://doi.org/10.1016/j.cma.2017.04.016)
+[Relation-Based Software](https://doi.org/10.1016/j.advengsoft.2022.103124)
+[BB_PD](https://doi.org/10.1016/j.compstruc.2021.106682)
+[PeriDEM](https://doi.org/10.1016/j.jmps.2021.104376)
+
+</div>
+
+---
+
+# Why PeriLab
+![bg](./assets/chart.png)
+
+---
+
+# PD solving strategies
+
+
+##  Material point method
+$\begin{equation}
+\mathbf{F}_{int,i}=\sum_{j \in \mathcal{H}_i}\underline{\mathbf{T}}_{ij}\langle\boldsymbol{\xi}_{ij}\rangle V_j,
+\end{equation}$
+__Advantages__  
+- Fast to implement
+- Failure propagation
+- Discretization
+
+__Diadvantages__  
+- Convergence is lower
+- Surfaces are not known
+
+![bg right:50% width:900px](../assets/Fragmenting_Cylinder.gif)
+
+---
+
 # Solver Overview
 
 - **Verlet**
@@ -69,12 +142,79 @@ Presentation URL: https://perihub.github.io/Presentations/PDDAY_2025
   - Efficient matrix-based static solver for linear problems
 
 ---
+
+## Matrix based approach
+
+- Use correspondence stiffness matrix based on material point method
+
+__Advantages__ 
+- Linear static analysis possible
+- Less operations per time step if Verlet is used
+
+__Diadvantages__  
+- Matrix update is costly
+- Algorithms are more complex
+
+![bg right 90%](./assets/force_comp.png)
+
+---
+
+## Main Advantage
+
+- Allows reduction methods
+- Currently under development
+- Static and dynamic reduction
+ ![bg right 90%](./assets/coupling_nodes.png)
+
+
+
+$\begin{equation}
+\begin{bmatrix}
+\boldsymbol{K}_{mm} & \boldsymbol{K}_{ms} \\
+\boldsymbol{K}_{sm} & \boldsymbol{K}_{ss}
+\end{bmatrix}
+\begin{bmatrix}
+\boldsymbol{u}_m \\ \boldsymbol{u}_s
+\end{bmatrix}=
+\begin{bmatrix}
+\boldsymbol{F}_m \\ \boldsymbol{F}_s
+\end{bmatrix}
+\end{equation}$
+
+$\boldsymbol{F}_s = \boldsymbol{0}$
+$\begin{equation}
+\boldsymbol{K}_{sm} \boldsymbol{u}_m + \boldsymbol{K}_{ss} \boldsymbol{u}_s = \boldsymbol{0}
+\end{equation}$
+
+---
+
+$\begin{equation}
+\boldsymbol{u}_s = -\boldsymbol{K}_{ss}^{-1} \boldsymbol{K}_{sm} \boldsymbol{u}_m
+\end{equation}$
+
+$\begin{equation}
+\boldsymbol{K}_{mm} \boldsymbol{u}_m + \boldsymbol{K}_{ms} \left(-\boldsymbol{K}_{ss}^{-1} \boldsymbol{K}_{sm} \boldsymbol{u}_m\right) = \boldsymbol{F}_m
+\end{equation}$
+
+$\begin{equation}
+\boldsymbol{K}_{\text{red}} = \boldsymbol{K}_{mm} - \boldsymbol{K}_{ms} \boldsymbol{K}_{ss}^{-1} \boldsymbol{K}_{sm}
+\end{equation}$
+
+- Currently under testing
+- Split $\mathbf{K}_{mm}$ in material point part and matrix part
+  - Allows easy implementation of fracture or non-linear material
+  - Reduction of degrees of freedoms
+
+ ![bg right 90%](./assets/coupling_nodes.png)
+
+---
 <style scoped>
 table {
     width: 100%;
     font-size: 24px;
 }
 </style>
+
 # Module Overview
 
 |Material|Damage|Thermal|Contact|Coupling|Additive|Degradation|
@@ -84,6 +224,27 @@ table {
 |Correspondence Elastic/Plastic||Thermal Expansion|
 |Correspondence UMAT/VUMAT||HETVAL|
 |Bond Associated Correspondence|
+
+
+---
+
+## Temperature
+
+- Convection
+- Heat transfer
+- Thermo-mechanical coupling
+
+![bg right fit](https://github.com/PeriHub/PeriLab.jl/blob/main/docs/src/assets/temperature_distribution_cooling.png?raw=true)
+
+
+---
+
+## Interblock damage
+
+- Damage between layers or material
+- Bonds handled differently if they exist in two blocks
+
+![bg right fit](https://raw.githubusercontent.com/PeriHub/PeriLab.jl/cf3b50528edaf2744fcaeb94e0133fc801dd2418/docs/src/assets/InterBlockDamage.svg)
 
 ---
 
@@ -97,7 +258,26 @@ table {
   - Exodus file
   - CSV file
 
-![bg right:50% width:900px](../assets/Fragmenting_Cylinder.gif)
+---
+# Live Demonstration
+
+## Module integration
+
+
+```
+module my_demo_mod
+```
+
+```
+function damage_name()
+    return "module name"
+end
+```
+
+- define a yaml file
+- define variables and call them
+- write variable to nodes
+- [Examplary models](https://github.com/PeriHub/PeriLab.jl/tree/main/examples/Seminars/) 
 
 ---
 
@@ -141,9 +321,9 @@ table {
 
 ---
 
-# Examples - PD-FEM-Coupling
+# Examples - FEM-Coupling
 
-![bg width:700px](./assets/disp_mix_static.png)
+![bg width:700px](./assets/cauchy_yy_mix_static.png)
 
 ---
 
