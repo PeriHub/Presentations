@@ -37,36 +37,17 @@ Presentation URL: https://perihub.github.io/Presentations/PDDAY_2025
 
 ---
 
-## PD Solving the integral - Material point method
-
-__Advantages__  
-- Fast to implement
-- Failure propagation
-- Discretization
-
-__Diadvantages__  
-- Convergence is lower
-- Surfaces are not known
-
-![bg right:50% width:900px](../assets/Fragmenting_Cylinder.gif)
-
----
-
 <!--_class: cols-2-->
 
 # Peridynamic Framework (PeriLab)
 
 <div class=ldiv>
 
-- No pre-processing required, mesh will be generated based on the gcode
-- Material Models:
-  - PD Solid Elastic/Plastic
-- Thermal Models:
-  - Thermal Flow
-  - Heat Transfer
-  - HETVAL subroutine
-- Damage Models:
-  - Critical Stretch
+-  A high-performance, open-source peridynamic framework in Julia
+- Designed to be extensible and modular, allowing users to easily add new features and solvers
+- Built-in support for various material models and boundary conditions
+- Support for multiphysics and multi-step simulations.
+- Extensive documentation and community support
 </div>
 <div class=rdiv style="margin-top:80px">
 
@@ -116,6 +97,8 @@ table {
   - Exodus file
   - CSV file
 
+![bg right:50% width:900px](../assets/Fragmenting_Cylinder.gif)
+
 ---
 
 <!-- _class: section-slide-plane -->
@@ -140,6 +123,30 @@ table {
 
 ---
 
+# Examples - Anisotropic Material
+
+![bg width:1200px](./assets/smetana.png)
+
+---
+
+# Examples - Anisotropic Damage
+
+![bg width:750px](./assets/Aniso_crack2.png)
+
+---
+
+# Examples - Interlaminar Failure
+
+![bg width:1200px](./assets/waviness.png)
+
+---
+
+# Examples - PD-FEM-Coupling
+
+![bg width:700px](./assets/disp_mix_static.png)
+
+---
+
 <!-- _class: section-slide-rocket -->
 
 ## Get-Started
@@ -156,16 +163,18 @@ table {
   - Download the [release files](https://github.com/PeriHub/PeriLab.jl/releases)
 - Develop and contribute:
   - Clone the [repository](https://github.com/PeriHub/PeriLab.jl) and follow the development guide
-    - Implement your own peridynamic models (don't worry it's easy!)
-    - Create a pull request in order to contribute 
+    1. Implement your own peridynamic models (don't worry it's easy!)
+    2. Create a pull request in order to contribute 
 
 
 ---
 
 # Planned Features
 
--
--
+- Dynamic solver switch
+- Corrosive material models
+- Performance and usability improvements
+- More material and damage models 
 
 ---
 
@@ -211,6 +220,7 @@ Presentation URL: https://perihub.github.io/Presentations/PDDAY_2025
 - **Peridynamic simulation engine** – extends PeriLab for detailed material‑science studies.  
 - **Easy to use & portable** – GUI, REST API, and Docker for quick setup on any platform.  
 - **Trusted, FAIR‑compliant** – built by experts (incl. DLR) with rigorous quality and open‑science standards.
+- 
 
 ![bg right width:250px](https://raw.githubusercontent.com/PeriHub/PeriHub/refs/heads/main/docs/assets/images/PeriHubLogo2b.png)
 
@@ -219,9 +229,10 @@ Presentation URL: https://perihub.github.io/Presentations/PDDAY_2025
 # Features - What can I do with PeriHub?
 
 
-- **Peridynamic simulation engine** – extends PeriLab for detailed material‑science studies.  
-- **Easy to use & portable** – GUI, REST API, and Docker for quick setup on any platform.  
-- **Trusted, FAIR‑compliant** – built by experts (incl. DLR) with rigorous quality and open‑science standards.
+- **Model Creation** - Create models using predefined templates or import your own.
+- **Simulation Execution** - Run simulations using our powerful engine.
+- **Data Visualization** - Visualize results using our built-in tools or export data for further analysis.
+- **Analysis** - Analyze results and generate reports using your own python methods.
 
 ---
 
@@ -238,15 +249,25 @@ Presentation URL: https://perihub.github.io/Presentations/PDDAY_2025
 
 <!-- _class: section-slide-rocket -->
 
-## Simulation Results
+## Live Demo
 
 ---
 
-<iframe src="https://perihub.nimbus.dlr.de" width="148%" height="180%" style="border: 0; margin-left: 70px; transform: scale(0.6); transform-origin: 0 0;"></iframe>
+# How to get started with PeriHub?
+
+- Ready to use application:
+  - Follow the guide [here](https://github.com/PeriHub/PeriHub?tab=readme-ov-file#getting-started-with-perihub-services) to get started with PeriHub services.
+- Develop and contribute:
+  - Go to the [Cintribution guide](https://github.com/PeriHub/PeriHub?tab=readme-ov-file#contributing)
+  - Submit your changes as a Pull Request
 
 ---
 
-<iframe src="https://perihub.nimbus.dlr.de" width="90%" height="100%" style="border: 0; margin-left: 70px"></iframe>
+## Planned Features
+
+- Live Demo will be released
+- Stability and user experience improvements
+- Improve Documentation
 
 ---
 
@@ -255,5 +276,3 @@ Presentation URL: https://perihub.github.io/Presentations/PDDAY_2025
 [Jan-Timo Hesse](mailto:jan-timo.hesse@dlr.de) (DLR)
 [Christian Willberg](mailto:christian.willberg@h2.de) (h2)
 ![bg right height:8cm](https://gitlab.com/dlr-perihub/PeriLab.jl/-/raw/main/assets/PeriLab_crack.gif)
-
----
