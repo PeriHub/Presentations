@@ -35,48 +35,72 @@ Jan-Timo Hesse<a href="https://orcid.org/0000-0002-3006-1520"><img src="../asset
 Presentation URL: https://perihub.github.io/Presentations/PDDAY_2025
 </div>
 
-
-
-
 ---
-# What is PeriLab?
-A solver for PD integral equation
-$\int_{\mathcal{H}}(\underline{\textbf{T}}(\textbf{x},t)- \underline{\textbf{T}}(\textbf{x}',t))dV_{\textbf{x}}+\textbf{b} =\rho\ddot{\textbf{u}}$
 
+<!--_class: cols-2-->
 
-- Open Source
-- 🚀 Easy Installation and ✒️ Modularization
-- 🎨 User Materials and 🧮 Abaqus Input
-- 🧲 Multiphysics and 💻 HPC capabilities
-- ...
+# Peridynamic Framework (PeriLab)
 
+<div class=ldiv>
+
+-  A high-performance, open-source peridynamic framework in Julia
+- Designed to be extensible and modular, allowing users to easily add new features and solvers
+- Built-in support for various material models and boundary conditions
+- Support for multiphysics and multi-step simulations.
+- Extensive documentation and community support
+</div>
+<div class=rdiv style="margin-top:80px">
+
+![width:500px](https://raw.githubusercontent.com/PeriHub/PeriLab.jl/main/assets/PeriLab_crack.gif)
 
 </div>
-
-![bg right fit](./assets/PeriLab_crack.gif)
 
 ---
 
 # PeriLab vs. Alternative solutions
 
-<div class=rdiv>
+<div style="display: flex; justify-content: space-between;">
 
-<div class=mermaid>
-quadrantChart
-  x-axis Low Functionalty --> High Functionalty
-  y-axis Hard to use --> Simple to use
-  Peridigm: [0.85, 0.2]
-  PeriLab: [0.85, 0.8]
-  EMU: [0.95, 0.1]
-  PeriPy: [0.2, 0.7]
-  Peridynamics.jl: [0.7, 0.6]
-  PeriPyDIC: [0.2, 0.6]
-  LAMMPS: [0.3, 0.3]
-  PeriFlakes: [0.35, 0.4]
-  Relation-Based Software: [0.4, 0.25]
-  BB_PD: [0.2, 0.50]
-  PeriDEM: [0.13, 0.3]
+<div style="flex: 1; margin-right: 0px;">
+
+##
+
+  <div class="mermaid">
+  %%{init: { 'theme':'forest','quadrantChart': { 'pointLabelFontSize': '130%'} } }%%
+  quadrantChart
+    x-axis Low Functionalty --> High Functionalty
+    y-axis Hard to use --> Simple to use
+    Peridigm: [0.85, 0.2]
+    PeriLab: [0.85, 0.8]
+    EMU: [0.95, 0.1]
+    PeriPy: [0.2, 0.7]
+    Peridynamics.jl: [0.7, 0.6]
+    PeriPyDIC: [0.2, 0.6]
+    LAMMPS: [0.3, 0.3]
+    PeriFlakes: [0.35, 0.4]
+    Relation-Based Software: [0.4, 0.25]
+    BB_PD: [0.2, 0.50]
+    PeriDEM: [0.13, 0.3]
+    </div>
+
 </div>
+
+<div style="flex: 1; margin-right: -300px;">
+
+## Reference
+
+[PeriLab](https://gitlab.com/dlr-perihub/PeriLab.jl)
+[Peridynamics.jl](https://github.com/kaipartmann/Peridynamics.jl)
+[Peridigm](https://link.springer.com/article/10.1007/s42102-023-00100-0)
+[EMU](https://www.osti.gov/biblio/1351608)
+[PeriPy](https://doi.org/10.1016/j.cma.2021.114085)
+[PeriPyDIC](https://link.springer.com/article/10.1007/s11043-017-9342-3)
+[LAMMPS](https://www.osti.gov/biblio/959309/)
+[PeriFlakes](https://doi.org/10.1016/j.cma.2017.04.016)
+[Relation-Based Software](https://doi.org/10.1016/j.advengsoft.2022.103124)
+[BB_PD](https://doi.org/10.1016/j.compstruc.2021.106682)
+[PeriDEM](https://doi.org/10.1016/j.jmps.2021.104376)
+
 </div>
 
 ---
@@ -85,8 +109,6 @@ quadrantChart
 ![bg](./assets/chart.png)
 
 ---
-
-
 
 # PD solving strategies
 
@@ -108,17 +130,30 @@ __Diadvantages__
 
 ---
 
+# Solver Overview
+
+- **Verlet**
+  - Explicit solver for non-linear problems
+- **Static**
+  - Static solver for linear problems
+- **Matrix Verlet**
+  - Efficient matrix-based explicit solver for non-linear problems
+- **Matrix Linear Static**
+  - Efficient matrix-based static solver for linear problems
+
+---
+
 ## Matrix based approach
 
-- use correspondence stiffness matrix based on material point method
+- Use correspondence stiffness matrix based on material point method
 
 __Advantages__ 
-- linear static analysis possible
-- less operations per time step if Verlet is used
+- Linear static analysis possible
+- Less operations per time step if Verlet is used
 
 __Diadvantages__  
-- matrix update is costly
-- algorithms are more complex
+- Matrix update is costly
+- Algorithms are more complex
 
 ![bg right 90%](./assets/force_comp.png)
 
@@ -126,9 +161,9 @@ __Diadvantages__
 
 ## Main Advantage
 
-- it allows reduction methods
-- currently under development
-- static and dynamic reduction
+- Allows reduction methods
+- Currently under development
+- Static and dynamic reduction
  ![bg right 90%](./assets/coupling_nodes.png)
 
 
@@ -165,49 +200,12 @@ $\begin{equation}
 \boldsymbol{K}_{\text{red}} = \boldsymbol{K}_{mm} - \boldsymbol{K}_{ms} \boldsymbol{K}_{ss}^{-1} \boldsymbol{K}_{sm}
 \end{equation}$
 
-- currently under testing
-- split $\mathbf{K}_{mm}$ in material point part and matrix part
-  - allows easy implementation of fracture or non-linear material
-  - reduction of degrees of freedoms
+- Currently under testing
+- Split $\mathbf{K}_{mm}$ in material point part and matrix part
+  - Allows easy implementation of fracture or non-linear material
+  - Reduction of degrees of freedoms
 
  ![bg right 90%](./assets/coupling_nodes.png)
-
----
-
-<!--_class: cols-2-->
-
-# Peridynamic Framework (PeriLab)
-
-<div class=ldiv>
-
-- No pre-processing required, mesh will be generated based on the gcode
-- Material Models:
-  - PD Solid Elastic/Plastic
-- Thermal Models:
-  - Thermal Flow
-  - Heat Transfer
-  - HETVAL subroutine
-- Damage Models:
-  - Critical Stretch
-</div>
-<div class=rdiv style="margin-top:80px">
-
-![width:500px](https://raw.githubusercontent.com/PeriHub/PeriLab.jl/main/assets/PeriLab_crack.gif)
-
-</div>
-
----
-
-# Solver Overview
-
-- **Verlet**
-  - Explicit solver for non-linear problems
-- **Static**
-  - Static solver for linear problems
-- **Matrix Verlet**
-  - Efficient matrix-based explicit solver for non-linear problems
-- **Matrix Linear Static**
-  - Efficient matrix-based static solver for linear problems
 
 ---
 <style scoped>
@@ -230,18 +228,11 @@ table {
 
 ---
 
-## FEM Coupling
-
-![bg 160% right](./assets/cauchy_yy_mix_static.png)
-
----
-
-
 ## Temperature
 
-- convection
-- heat transfer
-- thermo-mechanical coupling
+- Convection
+- Heat transfer
+- Thermo-mechanical coupling
 
 ![bg right fit](https://github.com/PeriHub/PeriLab.jl/blob/main/docs/src/assets/temperature_distribution_cooling.png?raw=true)
 
@@ -250,8 +241,8 @@ table {
 
 ## Interblock damage
 
-- damage between layers or material
-- bonds handled differently if they exist in two blocks
+- Damage between layers or material
+- Bonds handled differently if they exist in two blocks
 
 ![bg right fit](https://raw.githubusercontent.com/PeriHub/PeriLab.jl/cf3b50528edaf2744fcaeb94e0133fc801dd2418/docs/src/assets/InterBlockDamage.svg)
 
@@ -291,6 +282,31 @@ table {
 
 ---
 
+# Examples - Anisotropic Material
+
+![bg width:1200px](./assets/smetana.png)
+
+---
+
+# Examples - Anisotropic Damage
+
+![bg width:750px](./assets/Aniso_crack2.png)
+
+---
+
+# Examples - Interlaminar Failure
+
+![bg width:1200px](./assets/waviness.png)
+
+---
+
+# Examples - FEM-Coupling
+
+![bg width:700px](./assets/cauchy_yy_mix_static.png)
+
+---
+
+<!-- _class: section-slide-rocket -->
 
 
 
@@ -331,16 +347,18 @@ end
   - Download the [release files](https://github.com/PeriHub/PeriLab.jl/releases)
 - Develop and contribute:
   - Clone the [repository](https://github.com/PeriHub/PeriLab.jl) and follow the development guide
-    - Implement your own peridynamic models (don't worry it's easy!)
-    - Create a pull request in order to contribute 
+    1. Implement your own peridynamic models (don't worry it's easy!)
+    2. Create a pull request in order to contribute 
 
 
 ---
 
 # Planned Features
 
--
--
+- Dynamic solver switch
+- Corrosive material models
+- Performance and usability improvements
+- More material and damage models 
 
 ---
 
@@ -394,9 +412,10 @@ Presentation URL: https://perihub.github.io/Presentations/PDDAY_2025
 # Features - What can I do with PeriHub?
 
 
-- **Peridynamic simulation engine** – extends PeriLab for detailed material‑science studies.  
-- **Easy to use & portable** – GUI, REST API, and Docker for quick setup on any platform.  
-- **Trusted, FAIR‑compliant** – built by experts (incl. DLR) with rigorous quality and open‑science standards.
+- **Model Creation** - Create models using predefined templates or import your own.
+- **Simulation Execution** - Run simulations using our powerful engine.
+- **Data Visualization** - Visualize results using our built-in tools or export data for further analysis.
+- **Analysis** - Analyze results and generate reports using your own python methods.
 
 ---
 
@@ -413,15 +432,25 @@ Presentation URL: https://perihub.github.io/Presentations/PDDAY_2025
 
 <!-- _class: section-slide-rocket -->
 
-## Simulation Results
+## Live Demo
 
 ---
 
-<iframe src="https://perihub.nimbus.dlr.de" width="148%" height="180%" style="border: 0; margin-left: 70px; transform: scale(0.6); transform-origin: 0 0;"></iframe>
+# How to get started with PeriHub?
+
+- Ready to use application:
+  - Follow the guide [here](https://github.com/PeriHub/PeriHub?tab=readme-ov-file#getting-started-with-perihub-services) to get started with PeriHub services.
+- Develop and contribute:
+  - Go to the [Cintribution guide](https://github.com/PeriHub/PeriHub?tab=readme-ov-file#contributing)
+  - Submit your changes as a Pull Request
 
 ---
 
-<iframe src="https://perihub.nimbus.dlr.de" width="90%" height="100%" style="border: 0; margin-left: 70px"></iframe>
+## Planned Features
+
+- Live Demo will be released
+- Stability and user experience improvements
+- Improve Documentation
 
 ---
 
@@ -430,5 +459,3 @@ Presentation URL: https://perihub.github.io/Presentations/PDDAY_2025
 [Jan-Timo Hesse](mailto:jan-timo.hesse@dlr.de) (DLR)
 [Christian Willberg](mailto:christian.willberg@h2.de) (h2)
 ![bg right height:8cm](https://gitlab.com/dlr-perihub/PeriLab.jl/-/raw/main/assets/PeriLab_crack.gif)
-
----
