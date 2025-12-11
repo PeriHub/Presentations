@@ -306,9 +306,6 @@ table {
 
 ---
 
-<!-- _class: section-slide-rocket -->
-
-
 
 # Live Demonstration
 
