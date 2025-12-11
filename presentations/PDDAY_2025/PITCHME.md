@@ -268,27 +268,6 @@ table {
   - CSV file
 
 ---
-# Live Demonstration
-
-## Module integration
-
-
-```
-module my_demo_mod
-```
-
-```
-function damage_name()
-    return "module name"
-end
-```
-
-- define a yaml file
-- define variables and call them
-- write variable to nodes
-- [Examplary models](https://github.com/PeriHub/PeriLab.jl/tree/main/examples/Seminars/) 
-
----
 
 <!-- _class: section-slide-plane -->
 
@@ -312,9 +291,33 @@ end
 
 ---
 
-<!-- _class: section-slide-rocket -->
 
+
+
+# Live Demonstration
+
+## Module integration
+
+
+```
+module my_demo_mod
+```
+
+```
+function damage_name()
+    return "module name"
+end
+```
+
+- define a yaml file
+- define variables and call them
+- write variable to nodes
+- [Examplary models](https://github.com/PeriHub/PeriLab.jl/tree/main/examples/Seminars/) 
+
+---
+<!-- _class: section-slide-rocket -->
 ## Get-Started
+ 
 
 ---
 
