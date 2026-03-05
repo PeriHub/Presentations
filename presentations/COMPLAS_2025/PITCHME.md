@@ -4,7 +4,7 @@ theme: dlr
 header: ""
 footer: ""
 title: Multiphysics Simulation of Additive Manufacturing-Induced Fracture Mechanics using Peridynamic Theory
-author: Jan-Timo Hesse, Grigori Oehl
+author: Jan-Timo Hesse, Christian Willberg, Felix Winkelmann and Robert Hein
 ---
 
 <script type="module">

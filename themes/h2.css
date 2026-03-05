@@ -25,7 +25,7 @@ section {
 }
 
 section.title-slide {
-  background-image: url("../assets/h2_background.png");
+  background-image: url("../assets/h2_background_title.png");
   color: var(--title-slide-text-color);
 }
 
