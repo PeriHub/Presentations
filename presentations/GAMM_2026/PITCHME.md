@@ -212,15 +212,12 @@ $$
 
 
 
-
-
-
-
 <div style="display: flex; gap: 150px;">
 <div style="display: flex; flex-direction: column; gap:8px;">
 
 ![w:300](./assets/shear_zero_energy_modes.png)
 ![w:300](./assets/tension_zero_energy_modes.png)
+![w:400](./assets/bending_zero_energy_modes.png)
 ![w:400](./assets/bending_zero_energy_modes.png)
 
 </div>
@@ -230,7 +227,7 @@ $$
 ![w:300](./assets/shear_no_zero_energy_modes.png)
 ![w:300](./assets/tension_no_zero_energy_modes.png)
 ![w:400](./assets/bending_no_zero_energy_modes.png)
-
+![w:400](./assets/bending_no_zero_energy_modes.png)
 </div>
 </div>
 
