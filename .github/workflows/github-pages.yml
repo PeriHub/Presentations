@@ -33,11 +33,11 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Upload node_modules
-        uses: actions/upload-artifact@v4
+      - name: Cache node_modules folder
+        uses: actions/cache@v4
         with:
-          name: node_modules
           path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
 
   build:
     needs: setup
@@ -56,11 +56,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Download node_modules
-        uses: actions/download-artifact@v4
+      - name: Restore cached Primes
+        uses: actions/cache/restore@v5
         with:
-          name: node_modules
           path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
 
       - name: Build Marp slide deck
         run: FOLDER=${{ matrix.folder }} npm run build
