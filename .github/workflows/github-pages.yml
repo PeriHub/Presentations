@@ -45,6 +45,7 @@ jobs:
           - COMPLAS_2025
           - Antrittsvorlesung
           - GAMM_2024
+          - GAMM_2026
           - USACM_2024
           - PDDAY_2024
           - PDDAY_2025

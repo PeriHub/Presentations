@@ -40,7 +40,7 @@ Presentation URL: https://perihub.github.io/Presentations/GAMM_2026
 # Introduction 3D printing
 
 <div class=ldiv>
-- Additive extrusion processes enables manufacturing of complex structures without moulds
+- Additive extrusion processes enables manufacturing of complex structures without moulds 
 
 
 - Many process parameters influence the final properties
