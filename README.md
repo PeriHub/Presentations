@@ -1,5 +1,10 @@
 # Presentations
 
+- ### 96th Annual Meeting of the International Association of Applied Mathematics and Mechanics, Stuttgart
+<p align="center">
+  <a href="https://perihub.github.io/Presentations/GAMM_2026"><img src="https://perihub.github.io/Presentations/GAMM_2026/og-image.jpg" width="500" /></a>
+</p>
+
 - ### 3rd Peridynamic Day, Magdeburg
 <p align="center">
   <a href="https://perihub.github.io/Presentations/PDDAY_2025"><img src="https://perihub.github.io/Presentations/PDDAY_2025/og-image.jpg" width="500" /></a>

@@ -31,7 +31,7 @@ Jan-Timo Hesse<a href="https://orcid.org/0000-0002-3006-1520"><img src="../asset
 > <h style="color: black; ">96th Annual Meeting of the International Association of Applied Mathematics and Mechanics, GAMM 2026</h> 
 > _16-20 March, 2026 - Stuttgart_
 
-<div style="position: absolute; bottom: 10px; left: 100px; color: grray; font-size: 20px;">
+<div style="position: absolute; bottom: 10px; left: 100px; color: gray; font-size: 20px;">
 Presentation URL: https://perihub.github.io/Presentations/GAMM_2026
 </div>
 
@@ -40,11 +40,11 @@ Presentation URL: https://perihub.github.io/Presentations/GAMM_2026
 # Introduction 3D printing
 
 <div class=ldiv>
-- Additive extrusion processes enables manufacturing of complex structures without moulds 
+- Additive extrusion processes enable manufacturing of complex structures without moulds
 
 
 - Many process parameters influence the final properties
-    - Individual process parameter - property relation often unclear 
+    - Individual process parameter-property relations are often unclear 
 
 
 - Process simulations can help to predict the properties and evaluate the process parameters
@@ -98,7 +98,7 @@ Presentation URL: https://perihub.github.io/Presentations/GAMM_2026
 
 ## What is Peridynamics?
 
-- Alternative to classcical continuum mechanics: $\text{div}(\mathbf{\sigma})+\textbf{b} =\rho\ddot{\textbf{u}}$
+- Alternative to classical continuum mechanics: $\text{div}(\mathbf{\sigma})+\textbf{b} =\rho\ddot{\textbf{u}}$
 - PD integral equation:
   $\int_{\mathcal{H}}(\underline{\textbf{T}}(\textbf{x},t)- \underline{\textbf{T}}(\textbf{x}',t))dV_{\textbf{x}}+\textbf{b} =\rho\ddot{\textbf{u}}$
 - Focus material modeling and crack propagation; no $C^1$ continuity for the displacement
@@ -218,7 +218,6 @@ $$
 ![w:300](./assets/shear_zero_energy_modes.png)
 ![w:300](./assets/tension_zero_energy_modes.png)
 ![w:400](./assets/bending_zero_energy_modes.png)
-![w:400](./assets/bending_zero_energy_modes.png)
 
 </div>
 
@@ -226,7 +225,6 @@ $$
 
 ![w:300](./assets/shear_no_zero_energy_modes.png)
 ![w:300](./assets/tension_no_zero_energy_modes.png)
-![w:400](./assets/bending_no_zero_energy_modes.png)
 ![w:400](./assets/bending_no_zero_energy_modes.png)
 </div>
 </div>
