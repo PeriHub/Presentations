@@ -37,10 +37,10 @@ Presentation URL: https://perihub.github.io/Presentations/GAMM_2026
 
 ---
 
+
 # Introduction 3D printing
 
-<div class=ldiv>
-- Additive extrusion processes enables manufacturing of complex structures without moulds 
+ - Additive extrusion processes enables manufacturing of complex structures without moulds 
 
 
 - Many process parameters influence the final properties
@@ -48,13 +48,12 @@ Presentation URL: https://perihub.github.io/Presentations/GAMM_2026
 
 
 - Process simulations can help to predict the properties and evaluate the process parameters
-</div>
-<div class=rdiv>
+>
 
 ![bg right 80%](https://media.springernature.com/full/springer-static/image/art%3A10.1007%2Fs00170-019-04074-6/MediaObjects/170_2019_4074_Fig1_HTML.png?as=webp)
-</div>
 
 ---
+
 <!--_class: cols-2-->
 <!--footer: Figure Source: Yang et al., Influence of thermal processing conditions in 3D printing ...-->
 
@@ -62,6 +61,7 @@ Presentation URL: https://perihub.github.io/Presentations/GAMM_2026
 
 
 <div class=ldiv>
+
 - Crystallization influences the mechanical and technical properties of the material
 
 
@@ -217,8 +217,7 @@ $$
 
 ![w:300](./assets/shear_zero_energy_modes.png)
 ![w:300](./assets/tension_zero_energy_modes.png)
-![w:400](./assets/bending_zero_energy_modes.png)
-![w:400](./assets/bending_zero_energy_modes.png)
+![w:400](./assets/Bending_zero_energy_modes.png)
 
 </div>
 
@@ -226,11 +225,10 @@ $$
 
 ![w:300](./assets/shear_no_zero_energy_modes.png)
 ![w:300](./assets/tension_no_zero_energy_modes.png)
-![w:400](./assets/bending_no_zero_energy_modes.png)
-![w:400](./assets/bending_no_zero_energy_modes.png)
-</div>
-</div>
+![w:400](./assets/Bending_no_zero_energy_modes.png)
 
+</div>
+</div>
 
 
 ---
@@ -276,11 +274,11 @@ $$
 ## Single Bond
 
 $$
-\underline{h}(\mathbf{x},t)\langle\boldsymbol{\xi}\rangle = \mathbf{q}^T\mathbf{K}^{-1}(\mathbf{x})\boldsymbol{\xi}
+\underline{h}(\mathbf{x},t)\langle\boldsymbol{\xi}\rangle = \mathbf{q}^T\mathbf{D}^{-1}(\mathbf{x})\boldsymbol{\xi}
 $$
 
 $$
-\nabla\cdot\mathbf{q} = \int_{\mathcal{H}}\left[\mathbf{q}(\mathbf{x}')^T\mathbf{K}^{-1}(\mathbf{x}') + \mathbf{q}(\mathbf{x})^T\mathbf{K}^{-1}(\mathbf{x})\right]\boldsymbol{\xi}\,dV_{\mathbf{x}}
+\nabla\cdot\mathbf{q} = \int_{\mathcal{H}}\left[\mathbf{q}(\mathbf{x}')^T\mathbf{D}^{-1}(\mathbf{x}') + \mathbf{q}(\mathbf{x})^T\mathbf{D}^{-1}(\mathbf{x})\right]\boldsymbol{\xi}\,dV_{\mathbf{x}}
 $$
 
 
@@ -290,7 +288,7 @@ $$
 $$
 
 $$
-\nabla\tau = \mathbf{K}^{-1}\int_{\mathcal{H}}\left[\tau(\mathbf{x}')-\tau(\mathbf{x})\right]\boldsymbol{\xi}\,\underline{\omega}\langle\boldsymbol{\xi}\rangle\, dV_{\mathbf{x}}
+\nabla\tau = \mathbf{D}^{-1}\int_{\mathcal{H}}\left[\tau(\mathbf{x}')-\tau(\mathbf{x})\right]\boldsymbol{\xi}\,\underline{\omega}\langle\boldsymbol{\xi}\rangle\, dV_{\mathbf{x}}
 $$
 
 ---
