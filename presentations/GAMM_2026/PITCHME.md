@@ -31,20 +31,20 @@ Jan-Timo Hesse<a href="https://orcid.org/0000-0002-3006-1520"><img src="../asset
 > <h style="color: black; ">96th Annual Meeting of the International Association of Applied Mathematics and Mechanics, GAMM 2026</h> 
 > _16-20 March, 2026 - Stuttgart_
 
-<div style="position: absolute; bottom: 10px; left: 100px; color: grray; font-size: 20px;">
+<div style="position: absolute; bottom: 10px; left: 100px; color: gray; font-size: 20px;">
 Presentation URL: https://perihub.github.io/Presentations/GAMM_2026
 </div>
 
 ---
 
 
-# Introduction 3D printing
+# Introduction
 
  - Additive extrusion processes enables manufacturing of complex structures without moulds 
 
 
 - Many process parameters influence the final properties
-    - Individual process parameter - property relation often unclear 
+    - Individual process parameter-property relations are often unclear 
 
 
 - Process simulations can help to predict the properties and evaluate the process parameters
@@ -57,7 +57,7 @@ Presentation URL: https://perihub.github.io/Presentations/GAMM_2026
 <!--_class: cols-2-->
 <!--footer: Figure Source: Yang et al., Influence of thermal processing conditions in 3D printing ...-->
 
-# Introduction polymer crystallization
+# Polymer crystallization
 
 
 <div class=ldiv>
@@ -77,28 +77,14 @@ Presentation URL: https://perihub.github.io/Presentations/GAMM_2026
 </div>
 
 ---
-<!--footer: ''-->
-# Subroutine 
 
--  Calculation of crystallization, dual kinetic model (by Velisaris & Seferis)
 
-- Implementation in Fortran HETVAL Subroutine for usage in Abaqus
-  - Calculates crystallization kinetics through process simulation
-  - Degree of crystallization at every time step 
-
-- Temperature and time from the process simulation are inputs for the subroutine  
-
-- Stiffness value $E$ of each node will be adapted based on the degree of crystallization
-
-- Fitting function: $X_{VC} =X_{VC\infty}(w_1F_{\theta1}(k)+w_2F_{\theta2}(k))$
-
----
 
 
 
 ## What is Peridynamics?
 
-- Alternative to classcical continuum mechanics: $\text{div}(\mathbf{\sigma})+\textbf{b} =\rho\ddot{\textbf{u}}$
+- Alternative to classical continuum mechanics: $\text{div}(\mathbf{\sigma})+\textbf{b} =\rho\ddot{\textbf{u}}$
 - PD integral equation:
   $\int_{\mathcal{H}}(\underline{\textbf{T}}(\textbf{x},t)- \underline{\textbf{T}}(\textbf{x}',t))dV_{\textbf{x}}+\textbf{b} =\rho\ddot{\textbf{u}}$
 - Focus material modeling and crack propagation; no $C^1$ continuity for the displacement
@@ -337,7 +323,22 @@ $$
 
 ---
 
+<!--footer: ''-->
+# Subroutine 
 
+-  Calculation of crystallization, dual kinetic model (by Velisaris & Seferis)
+
+- Implementation in Fortran HETVAL Subroutine for usage in Abaqus
+  - Calculates crystallization kinetics through process simulation
+  - Degree of crystallization at every time step 
+
+- Temperature and time from the process simulation are inputs for the subroutine  
+
+- Stiffness value $E$ of each node will be adapted based on the degree of crystallization
+
+- Fitting function: $X_{VC} =X_{VC\infty}(w_1F_{\theta1}(k)+w_2F_{\theta2}(k))$
+
+---
 
 # Analysis comparison
 ## Fully Dynamic Static Mechanical and Thermal 3D Printing

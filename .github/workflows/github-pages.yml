@@ -19,25 +19,28 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  # prepare:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v4
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
 
-  #     - name: Install Node.js
-  #       uses: actions/setup-node@v4
-  #       with:
-  #         cache: npm
-  #         node-version-file: ".nvmrc"
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          cache: npm
+          node-version-file: ".nvmrc"
 
-  #     - name: Install dependencies
-  #       run: npm ci
+      - name: Install dependencies
+        run: npm ci
 
-  #     - name: Copy assets
-  #       run: npm copy
+      - name: Cache node_modules folder
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
 
   build:
-    # needs: prepare
+    needs: setup
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -53,21 +56,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - run: ls -R
-
-      - name: Install Node.js
-        uses: actions/setup-node@v4
+      - name: Restore cached Primes
+        uses: actions/cache/restore@v5
         with:
-          cache: npm
-          node-version-file: ".nvmrc"
-
-      - name: Install dependencies
-        run: npm ci
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
 
       - name: Build Marp slide deck
         run: FOLDER=${{ matrix.folder }} npm run build
-
-      - run: ls -R public
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
@@ -87,10 +83,10 @@ jobs:
           path: public
           merge-multiple: true
 
-      - name: Copy assets
-        run: cp -r presentations/assets public/assets && cp index.html public/index.html
-
-      - run: ls -R public
+      - name: Copy assets and index.html
+        run: |
+          cp -r presentations/assets public/assets
+          cp index.html public/index.html
 
       - name: Upload page artifacts
         uses: actions/upload-pages-artifact@v3
