@@ -84,7 +84,7 @@ Presentation URL: https://perihub.github.io/Presentations/GAMM_2026
 
 ## What is Peridynamics?
 
-- Alternative to classical continuum mechanics: $\text{div}(\mathbf{\sigma})+\textbf{b} =\rho\ddot{\textbf{u}}$
+- Alternative to classical continuum mechanics: $\text{div}(\boldsymbol{\sigma})+\textbf{b} =\rho\ddot{\textbf{u}}$
 - PD integral equation:
   $\int_{\mathcal{H}}(\underline{\textbf{T}}(\textbf{x},t)- \underline{\textbf{T}}(\textbf{x}',t))dV_{\textbf{x}}+\textbf{b} =\rho\ddot{\textbf{u}}$
 - Focus material modeling and crack propagation; no $C^1$ continuity for the displacement
