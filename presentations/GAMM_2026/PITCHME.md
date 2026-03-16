@@ -225,9 +225,7 @@ $$
 - Heat transfer
 - Thermo-mechanical coupling
 
-![bg vertical 50%](./assets/Convection_Perilab.png)
 
-![bg right fit](https://github.com/PeriHub/PeriLab.jl/blob/main/docs/src/assets/temperature_distribution_cooling.png?raw=true)
 
 
 
@@ -255,7 +253,14 @@ $$
 \rho C_v\dot{\tau} = \int_{\mathcal{H}}\left(\underline{h}(\mathbf{x},t)\langle\boldsymbol{\xi}\rangle - \underline{h}(\mathbf{x}',t)\langle\boldsymbol{\xi}'\rangle\right)dV_{\mathbf{x}} + S_i
 $$
 
+<!--footer: 'M.A. Zeleke & M. B. Ageze (2021). A Review of Peridynamics (PD) Theory of Diffusion Based Problems'-->
+
+
+
+
 ---
+
+<!--footer: ''-->
 
 ## Single Bond
 
@@ -310,7 +315,17 @@ $$
 f_{limit} \leq V_{\text{specific}} = \frac{\int_{\mathcal{H}}dV}{V_{2D\,\text{or}\,3D}}
 $$
 
+![bg vertical 50%](./assets/Convection_Perilab.png)
+
+![bg right fit](https://github.com/PeriHub/PeriLab.jl/blob/main/docs/src/assets/temperature_distribution_cooling.png?raw=true)
+
+
+
+<!--footer: 'Figure Source: Willberg et al., Peridynamic Framework to Model Add ...'-->
+
+
 ---
+<!--footer: ''-->
 
 ## Stable time step
 
