@@ -78,7 +78,7 @@ Presentation URL: https://perihub.github.io/Presentations/GAMM_2026
 
 ---
 
-
+<!--footer: ''-->
 
 
 
@@ -323,7 +323,7 @@ $$
 
 ---
 
-<!--footer: ''-->
+
 # Subroutine 
 
 -  Calculation of crystallization, dual kinetic model (by Velisaris & Seferis)
