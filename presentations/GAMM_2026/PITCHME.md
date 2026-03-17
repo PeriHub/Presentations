@@ -40,17 +40,26 @@ Presentation URL: https://perihub.github.io/Presentations/GAMM_2026
 
 # Introduction
 
- - Additive extrusion processes enables manufacturing of complex structures without moulds 
+ - Additive extrusion processes enables manufacturing of complex structures 
 
 
-- Many process parameters influence the final properties
-    - Individual process parameter-property relations are often unclear 
+- Many process parameters influence the final properties and individual process parameter-property relations are often unclear 
 
 
 - Process simulations can help to predict the properties and evaluate the process parameters
 >
 
 ![bg right 80%](https://media.springernature.com/full/springer-static/image/art%3A10.1007%2Fs00170-019-04074-6/MediaObjects/170_2019_4074_Fig1_HTML.png?as=webp)
+
+---
+
+# Material properties
+
+- created during process
+- not measurable in advance, because process and path influences them
+
+![bg right fit](./assets/stress_strain.png)
+
 
 ---
 
@@ -160,64 +169,6 @@ $$
 
 ---
 
-# Stiffness matrix assembly
-
-
-
-$$
-K_{ij}^{\text{fwd}} = -\underline{\omega}_{ij}^2 V_j^2\, \underline{\mathbf{X}}_{ij}^T \mathbf{D}_i^{-1} [\mathbf{C}_i : \mathbf{B}_{ij}]
-$$
-
-$$
-K_{ik}^{\text{fwd}} = -\underline{\omega}_{ij}V_j\, \underline{\omega}_{ik}V_k\, \underline{\mathbf{X}}_{ij}^T \mathbf{D}_i^{-1} [\mathbf{C}_i : \mathbf{B}_{ik}] \quad (k \neq j)
-$$
-
-$$
-K_{ii}^{\text{fwd}} = \sum_{k \in \mathcal{H}_i} \underline{\omega}_{ij}V_j\, \underline{\omega}_{ik}V_k\, \underline{\mathbf{X}}_{ij}^T \mathbf{D}_i^{-1} [\mathbf{C}_i : \mathbf{B}_{ik}]
-$$
-
-
-$$
-K_{ii}^{\text{bwd}} = -\sum_{j: i \in \mathcal{H}_j} \underline{\omega}_{ji}^2 V_i^2\, \underline{\mathbf{X}}_{ji}^T \mathbf{D}_j^{-1} [\mathbf{C}_j : \mathbf{B}_{ji}]
-$$
-
-$$
-K_{ik}^{\text{bwd}} = -\sum_{\substack{j: i \in \mathcal{H}_j \\ k \in \mathcal{H}_j}} \underline{\omega}_{ji}V_i\, \underline{\omega}_{jk}V_k\, \underline{\mathbf{X}}_{ji}^T \mathbf{D}_j^{-1} [\mathbf{C}_j : \mathbf{B}_{jk}]
-$$
-
-
----
-
-# Zero energy mode compensation
-
-
-
-$$
-\mathbf{K}_{\text{total}} = \mathbf{K}_{\text{correspondence}} + \mathbf{K}_{\text{stabilization}}
-$$
-
-
-
-<div style="display: flex; gap: 150px;">
-<div style="display: flex; flex-direction: column; gap:8px;">
-
-![w:300](./assets/shear_zero_energy_modes.png)
-![w:300](./assets/tension_zero_energy_modes.png)
-![w:400](./assets/bending_zero_energy_modes.png)
-
-</div>
-
-<div style="display: flex; flex-direction: column; gap:8px;">
-
-![w:300](./assets/shear_no_zero_energy_modes.png)
-![w:300](./assets/tension_no_zero_energy_modes.png)
-![w:400](./assets/bending_no_zero_energy_modes.png)
-
-</div>
-</div>
-
-
----
 
 # Including thermal effects
 
@@ -247,7 +198,7 @@ $$
 $$
 
 
-## Thermal flux (PD) [5]
+## Thermal flux (PD)
 
 $$
 \rho C_v\dot{\tau} = \int_{\mathcal{H}}\left(\underline{h}(\mathbf{x},t)\langle\boldsymbol{\xi}\rangle - \underline{h}(\mathbf{x}',t)\langle\boldsymbol{\xi}'\rangle\right)dV_{\mathbf{x}} + S_i
@@ -339,6 +290,21 @@ $$
 ---
 
 
+# Peridynamic Framework 
+
+
+- No pre-processing required, mesh will be generated based on the gcode
+- Material Models:
+  - PD Solid Elastic
+- Thermal Models:
+  - Thermal Flow
+  - Heat Transfer
+  - HETVAL subroutine
+- Damage Models:
+  - Critical Stretch
+
+---
+
 # Subroutine 
 
 -  Calculation of crystallization, dual kinetic model (by Velisaris & Seferis)
@@ -352,52 +318,6 @@ $$
 - Stiffness value $E$ of each node will be adapted based on the degree of crystallization
 
 - Fitting function: $X_{VC} =X_{VC\infty}(w_1F_{\theta1}(k)+w_2F_{\theta2}(k))$
-
----
-
-# Analysis comparison
-## Fully Dynamic Static Mechanical and Thermal 3D Printing
-
-<div style="display: flex; align-items: center; gap: 40px;">
-<div style="flex: 1;">
-
-
-
-**Fully dynamic simulation**
-- 10 hours total runtime
--  Time increment: $8.96 \times 10^{-8}$ s
--  $\approx 364\,\mu\text{s}$ per step (average)
-
-**Quasi-static**
-- 2 seconds total simulation time
-- 1 second per increment
-- 90.8 ms per step (average)
-
-
-
-</div>
-<div style="flex: 1; text-align: center;">
-
-![w:480](./assets/final_deformation.png)
-
-</div>
-</div>
-
----
-
-
-# Peridynamic Framework (PeriLab [4])
-
-
-- No pre-processing required, mesh will be generated based on the gcode
-- Material Models:
-  - PD Solid Elastic
-- Thermal Models:
-  - Thermal Flow
-  - Heat Transfer
-  - HETVAL subroutine
-- Damage Models:
-  - Critical Stretch
 
 ---
 
@@ -481,16 +401,106 @@ $T_E = [473.15K; 423.15K; 373.15K; 293.15K]$
 
 <iframe src="assets/plot.html" width="95%" height="95%" style="border: 0; margin-left: 70px"></iframe>
 
+
 ---
+
+
+# Stiffness matrix assembly
+
+
+
+$$
+K_{ij}^{\text{fwd}} = -\underline{\omega}_{ij}^2 V_j^2\, \underline{\mathbf{X}}_{ij}^T \mathbf{D}_i^{-1} [\mathbf{C}_i : \mathbf{B}_{ij}]
+$$
+
+$$
+K_{ik}^{\text{fwd}} = -\underline{\omega}_{ij}V_j\, \underline{\omega}_{ik}V_k\, \underline{\mathbf{X}}_{ij}^T \mathbf{D}_i^{-1} [\mathbf{C}_i : \mathbf{B}_{ik}] \quad (k \neq j)
+$$
+
+$$
+K_{ii}^{\text{fwd}} = \sum_{k \in \mathcal{H}_i} \underline{\omega}_{ij}V_j\, \underline{\omega}_{ik}V_k\, \underline{\mathbf{X}}_{ij}^T \mathbf{D}_i^{-1} [\mathbf{C}_i : \mathbf{B}_{ik}]
+$$
+
+
+$$
+K_{ii}^{\text{bwd}} = -\sum_{j: i \in \mathcal{H}_j} \underline{\omega}_{ji}^2 V_i^2\, \underline{\mathbf{X}}_{ji}^T \mathbf{D}_j^{-1} [\mathbf{C}_j : \mathbf{B}_{ji}]
+$$
+
+$$
+K_{ik}^{\text{bwd}} = -\sum_{\substack{j: i \in \mathcal{H}_j \\ k \in \mathcal{H}_j}} \underline{\omega}_{ji}V_i\, \underline{\omega}_{jk}V_k\, \underline{\mathbf{X}}_{ji}^T \mathbf{D}_j^{-1} [\mathbf{C}_j : \mathbf{B}_{jk}]
+$$
+
+
+---
+
+# Zero energy mode compensation
+
+
+
+$$
+\mathbf{K}_{\text{total}} = \mathbf{K}_{\text{correspondence}} + \mathbf{K}_{\text{stabilization}}
+$$
+
+
+
+<div style="display: flex; gap: 150px;">
+<div style="display: flex; flex-direction: column; gap:8px;">
+
+![w:300](./assets/shear_zero_energy_modes.png)
+![w:300](./assets/tension_zero_energy_modes.png)
+![w:400](./assets/bending_zero_energy_modes.png)
+
+</div>
+
+<div style="display: flex; flex-direction: column; gap:8px;">
+
+![w:300](./assets/shear_no_zero_energy_modes.png)
+![w:300](./assets/tension_no_zero_energy_modes.png)
+![w:400](./assets/bending_no_zero_energy_modes.png)
+
+</div>
+</div>
+
+---
+
+# Analysis comparison
+## Fully Dynamic Static Mechanical and Thermal 3D Printing
+
+<div style="display: flex; align-items: center; gap: 40px;">
+<div style="flex: 1;">
+
+
+
+**Fully dynamic simulation**
+- 10 hours total runtime
+-  Time increment: $8.96 \times 10^{-8}$ s
+-  $\approx 364\,\mu\text{s}$ per step (average)
+
+**Quasi-static**
+- 2 seconds total simulation time
+- 1 second per increment
+- 90.8 ms per step (average)
+
+
+
+</div>
+<div style="flex: 1; text-align: center;">
+
+![w:480](./assets/final_deformation.png)
+
+</div>
+</div>
+
+---
+
+
+
 
 # Discussion and further work
 
 - Basic influence of different process parameters can be captured
 - PeriLab allows efficient and statistical analysis of the AM process
-
-- Verification with experiments
-- Variation of diverse process parameters
-- Influence of printbed
+- implementation of UMATs in stiffness matrix approach
 
 
 ---
