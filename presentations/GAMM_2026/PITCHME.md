@@ -295,7 +295,7 @@ $$
 
 - No pre-processing required, mesh will be generated based on the gcode
 - Material Models:
-  - PD Solid Elastic
+  - Elastic
 - Thermal Models:
   - Thermal Flow
   - Heat Transfer
@@ -373,11 +373,6 @@ $T_E = [473.15K; 423.15K; 373.15K; 293.15K]$
 
 </div>
 
----
-
-<!-- _class: section-slide-rocket -->
-
-## Simulation Results
 
 ---
 
