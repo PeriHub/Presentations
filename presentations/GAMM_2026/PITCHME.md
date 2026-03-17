@@ -292,7 +292,6 @@ $$
 
 # Peridynamic Framework 
 
-
 - No pre-processing required, mesh will be generated based on the gcode
 - Material Models:
   - Elastic

@@ -1,48 +1,25 @@
 name: GitHub Pages
-
 on:
   push:
     branches:
       - master
     paths:
       - "**.md"
-
   workflow_dispatch:
-
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
-
 concurrency:
   group: pages
   cancel-in-progress: true
-
 jobs:
-  setup:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Install Node.js
-        uses: actions/setup-node@v4
-        with:
-          cache: npm
-          node-version-file: ".nvmrc"
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Cache node_modules folder
-        uses: actions/cache@v4
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
-
   build:
-    needs: setup
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
     strategy:
+      max-parallel: 20
+      fail-fast: false
       matrix:
         folder:
           - COMPLAS_2025
@@ -55,44 +32,55 @@ jobs:
           - MICRO_ANALYSIS
     steps:
       - uses: actions/checkout@v4
-
-      - name: Restore cached Primes
-        uses: actions/cache/restore@v5
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          path: node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
-
-      - name: Build Marp slide deck
-        run: FOLDER=${{ matrix.folder }} npm run build
-
-      - name: Upload artifacts
+          node-version-file: ".nvmrc"
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit
+      - name: Build HTML
+        run: |
+          FOLDER="${{ matrix.folder }}"
+          mkdir -p "public/${FOLDER}"
+          if [ -d "${FOLDER}/assets" ]; then
+            cp -r "${FOLDER}/assets" "public/${FOLDER}/"
+          fi
+          npx @marp-team/marp-cli@latest "${FOLDER}/index.md" \
+            --theme-set themes/ \
+            --html \
+            --allow-local-files \
+            -o "public/${FOLDER}/index.html"
+        timeout-minutes: 2
+      - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           path: public
           name: ${{ matrix.folder }}
-
+          retention-days: 1
   deploy:
     needs: build
+    if: always()
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      - name: Download page artifacts
+      - name: Download artifacts
         uses: actions/download-artifact@v4
         with:
           path: public
           merge-multiple: true
-
-      - name: Copy assets and index.html
+      - name: Copy global assets and index.html
         run: |
-          cp -r presentations/assets public/assets
+          if [ -d "assets" ]; then
+            cp -r assets public/assets
+          fi
+          if [ -d "themes" ]; then
+            cp -r themes public/themes
+          fi
           cp index.html public/index.html
-
-      - name: Upload page artifacts
+      - name: Upload pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: public
-
       - name: Deploy to GitHub Pages
-        id: deployment
         uses: actions/deploy-pages@v4
