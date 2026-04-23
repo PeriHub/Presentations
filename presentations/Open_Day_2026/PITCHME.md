@@ -91,9 +91,9 @@ footer { font-size: 14px; color: #888; text-align: right; }
 # Simulation Software in the Age of AI
 ## Peridynamics · Julia · Sustainable Data
 
-Prof. Dr.-Ing. Christian Willberg
-[![ORCID](https://orcid.org/sites/default/files/images/orcid_16x16.png)](https://orcid.org/0000-0003-2433-9183)
+Prof. Dr.-Ing. Christian Willberg[![ORCID](https://orcid.org/sites/default/files/images/orcid_16x16.png)](https://orcid.org/0000-0003-2433-9183)
 christian.willberg@h2.de
+
 
 > **Open Day** — Hotel Albatros, Yaoundé, Cameroon
 > _25 April 2026_
@@ -103,7 +103,7 @@ christian.willberg@h2.de
     <img src="https://quickchart.io/qr?text=https://perihub.github.io/Presentations/Open_Day_2026/&light=0000&size=300" alt="Presentation link" style="height:180px;width:auto;vertical-align: top;background-color:transparent;">
 </div>
 
----
+
 
 <!--paginate: true-->
 
@@ -393,10 +393,10 @@ $$s = \frac{|\boldsymbol{\xi}+\boldsymbol{\eta}| - |\boldsymbol{\xi}|}{|\boldsym
 <div>
 
 **Shape tensor** (computed once):
-$$\mathbf{K} = \int_{\mathcal{H}} \underline{\omega}\,\boldsymbol{\xi}\otimes\boldsymbol{\xi}\,dV'$$
+$$\mathbf{K} = \int_{\mathcal{H}} \underline{\omega}\,\underline{\mathbf{X}}\langle\boldsymbol{\xi}\rangle\otimes\underline{\mathbf{X}}\langle\boldsymbol{\xi}\rangle\,dV'$$
 
 **Deformation gradient:**
-$$\mathbf{F} = \!\left[\int_{\mathcal{H}} \underline{\omega}\,(\boldsymbol{\xi}+\boldsymbol{\eta})\otimes\boldsymbol{\xi}\,dV'\right]\mathbf{K}^{-1}$$
+$$\mathbf{F} = \!\left[\int_{\mathcal{H}} \underline{\omega}\, \langle\boldsymbol{\xi}\rangle\underline{\mathbf{Y}}\langle\boldsymbol{\xi}\rangle\otimes\underline{\mathbf{X}}\langle\boldsymbol{\xi}\rangle\,dV'\right]\mathbf{K}^{-1}$$
 
 **Linearised strain:**
 $$\boldsymbol{\varepsilon} = \tfrac{1}{2}(\mathbf{F}+\mathbf{F}^T) - \mathbf{I}$$
