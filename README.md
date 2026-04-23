@@ -1,5 +1,11 @@
 # Presentations
 
+- ### Open Day 2026, Yaoundé, Cameroon
+<p align="center">
+  <a href="https://perihub.github.io/Presentations/GAMM_2026"><img src="https://perihub.github.io/Presentations/Open_Day_2026/og-image.jpg" width="500" /></a>
+</p>
+
+
 - ### 96th Annual Meeting of the International Association of Applied Mathematics and Mechanics, Stuttgart
 <p align="center">
   <a href="https://perihub.github.io/Presentations/GAMM_2026"><img src="https://perihub.github.io/Presentations/GAMM_2026/og-image.jpg" width="500" /></a>
