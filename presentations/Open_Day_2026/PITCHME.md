@@ -291,7 +291,10 @@ where $\Delta K = \Delta\sigma \cdot Y \cdot \sqrt{\pi a}$
 
 # Part 2 — Peridynamics
 
+![bg right:50% width:900px](../assets/Fragmenting_Cylinder.gif)
+
 ---
+
 
 # Why a New Simulation Method?
 
