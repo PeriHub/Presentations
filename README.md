@@ -2,7 +2,7 @@
 
 - ### Open Day 2026, Yaoundé, Cameroon
 <p align="center">
-  <a href="https://perihub.github.io/Presentations/GAMM_2026"><img src="https://perihub.github.io/Presentations/Open_Day_2026/og-image.jpg" width="500" /></a>
+  <a href="https://perihub.github.io/Presentations/Open_Day_2026"><img src="https://perihub.github.io/Presentations/Open_Day_2026/og-image.jpg" width="500" /></a>
 </p>
 
 
