@@ -176,6 +176,18 @@ This is not anti-AI. This is what makes AI *possible* in engineering.
 
 ---
 
+# Fracture & Fatigue
+
+## Aloha Airlines Flight 243 (1988)
+
+![bg right 60%](https://upload.wikimedia.org/wikipedia/commons/1/1e/Aloha_Airlines_Flight_243_fuselage.png)
+
+## Eschede Train Disaster (1998)
+![bg right vertical 60%](https://i.redd.it/ad8daopd59e61.jpg)
+
+
+---
+
 # Simulation and AI — Not Competitors
 
 <div class="cols">
@@ -246,19 +258,10 @@ This is the thread of today's talk: physics → software → data.
 
 </div>
 
----
-# Fracture & Fatigue
-
-## Aloha Airlines Flight 243 (1988)
-
-![bg right 60%](https://upload.wikimedia.org/wikipedia/commons/1/1e/Aloha_Airlines_Flight_243_fuselage.png)
-
-## Eschede Train Disaster (1998)
-![bg right vertical 60%](https://i.redd.it/ad8daopd59e61.jpg)
 
 ---
 
-## Fokus here — Crack Propagation
+#  Crack Propagation
 
 <div class="ldiv">
 
