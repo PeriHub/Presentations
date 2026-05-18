@@ -37,6 +37,32 @@ Presentation URL: https://perihub.github.io/Presentations/FRASCAL_2026
 
 ---
 
+# Why a New Simulation Method?
+
+<div class="cols">
+<div>
+
+**Classical continuum mechanics**
+
+$$\operatorname{div}(\boldsymbol{\sigma}) + \mathbf{b} = \rho\ddot{\mathbf{u}}$$
+
+- Requires spatial derivatives of $\boldsymbol{\sigma}$
+- At cracks: derivatives **undefined**
+- Cracks must be prescribed or tracked (XFEM, CZM)
+- Mesh distortion → remeshing
+
+</div>
+<div>
+
+## FEM
+- method to approximate classical continuum mechanics
+- cracks lead to infinite stresses, because no valid solution exists
+
+</div>
+</div>
+
+---
+
 # Peridynamics (PD)
 
 $\int_{\mathcal{H}}\!\bigl(\underline{\mathbf{T}}\langle\boldsymbol{\xi}\rangle - \underline{\mathbf{T}}'\langle{-}\boldsymbol{\xi}\rangle\bigr)\,dV' + \mathbf{b} = \rho\ddot{\mathbf{u}}$
@@ -136,18 +162,6 @@ $$\rho\ddot{\mathbf{u}} = \int_{\mathcal{H}}\!\bigl(\underline{\mathbf{T}}\langl
 
 ---
 
-## What is Peridynamics?
-
-- Alternative to classical continuum mechanics: $\text{div}(\mathbf{\sigma})+\textbf{b} =\rho\ddot{\textbf{u}}$
-- PD integral equation:
-  $\int_{\mathcal{H}}(\underline{\textbf{T}}(\textbf{x},t)- \underline{\textbf{T}}(\textbf{x}',t))dV_{\textbf{x}}+\textbf{b} =\rho\ddot{\textbf{u}}$
-- Focus material modeling and crack propagation; no $C^1$ continuity for the displacement
-
-
-![bg right:44% fit transparent](../assets/PeriMesh.png)
-
----
-
 ## PD Solving the integral - Material point method
 
 __Advantages__  
@@ -160,6 +174,12 @@ __Disadvantages__
 - Surfaces are not known
 
 ![bg right:50% width:900px](../assets/Fragmenting_Cylinder.gif)
+
+---
+
+<!-- _class: section-slide-cfrp -->
+
+## Peridynamic Framework (PeriLab)
 
 ---
 
@@ -179,6 +199,38 @@ __Disadvantages__
 
 ![width:500px](https://raw.githubusercontent.com/PeriHub/PeriLab.jl/main/assets/PeriLab_crack.gif)
 
+</div>
+
+---
+
+# PeriLab — Design Philosophy
+
+<div class="cols">
+<div>
+
+**Goal:** Reduce the entry barrier to peridynamic simulation
+
+**Key decisions:**
+- Julia as implementation language
+- Package manager for all dependencies
+- Macro-based module loading (no recompilation for new models)
+- New material model: **1 file** (vs. 5+ in Peridigm)
+- New input parameter: **in YAML** (vs. 6 files + recompile)
+- MPI parallelism built in
+
+</div>
+<div>
+
+| Criterion | Peridigm | PeriLab |
+|---|---|---|
+| Installation | Manual | Package manager |
+| Build time | ~10 min | < 5 min |
+| New material | 5+ files | 1 file |
+| New parameter | 6 files + compile | YAML only |
+| Libraries | Manual update | Automatic |
+| Compilation knowledge | Deep | None |
+
+</div>
 </div>
 
 ---
@@ -227,76 +279,34 @@ Julia achieves C-level performance with Python-level readability — without sac
 
 ---
 
-# PeriLab vs. Alternative solutions
+## Adding a New Material Model in PeriLab
 
-<div style="display: flex; justify-content: space-between;">
+```julia
+# One file, one module — no recompilation of the core
+module MyPlasticModel
 
-<div style="flex: 1; margin-right: 0px;">
+using PeriLab
 
-##
+function compute_stress(strain, history, params)
+    # your constitutive law here
+    σ = params["E"] .* strain
+    return σ, history
+end
+end
+```
 
-  <div class="mermaid">
-  %%{init: { 'theme':'forest','quadrantChart': { 'pointLabelFontSize': '130%'} } }%%
-  quadrantChart
-    x-axis Low Functionalty --> High Functionalty
-    y-axis Hard to use --> Simple to use
-    Peridigm: [0.85, 0.2]
-    PeriLab: [0.85, 0.8]
-    EMU: [0.95, 0.1]
-    PeriPy: [0.2, 0.7]
-    Peridynamics.jl: [0.7, 0.6]
-    PeriPyDIC: [0.2, 0.6]
-    LAMMPS: [0.3, 0.3]
-    PeriFlakes: [0.35, 0.4]
-    Relation-Based Software: [0.4, 0.25]
-    BB_PD: [0.2, 0.50]
-    PeriDEM: [0.13, 0.3]
-    </div>
+```yaml
+# Reference in the YAML input deck — that is all
+Material Models:
+  MyMaterial:
+    Material Model: MyPlasticModel
+    E: 210000
+```
 
+<div class="note">
+
+The macro system discovers and integrates the module at runtime. No changes to the core codebase, no recompilation, no deep knowledge of the solver internals required.
 </div>
-
-<div style="flex: 1; margin-right: -300px;">
-
-## Reference
-
-[PeriLab](https://gitlab.com/dlr-perihub/PeriLab.jl)
-[Peridynamics.jl](https://github.com/kaipartmann/Peridynamics.jl)
-[Peridigm](https://link.springer.com/article/10.1007/s42102-023-00100-0)
-[EMU](https://www.osti.gov/biblio/1351608)
-[PeriPy](https://doi.org/10.1016/j.cma.2021.114085)
-[PeriPyDIC](https://link.springer.com/article/10.1007/s11043-017-9342-3)
-[LAMMPS](https://www.osti.gov/biblio/959309/)
-[PeriFlakes](https://doi.org/10.1016/j.cma.2017.04.016)
-[Relation-Based Software](https://doi.org/10.1016/j.advengsoft.2022.103124)
-[BB_PD](https://doi.org/10.1016/j.compstruc.2021.106682)
-[PeriDEM](https://doi.org/10.1016/j.jmps.2021.104376)
-
-</div>
-
----
-
-# Why PeriLab
-![bg](./assets/chart.png)
-
----
-
-# PD solving strategies
-
-
-##  Material point method
-$\begin{equation}
-\mathbf{F}_{int,i}=\sum_{j \in \mathcal{H}_i}\underline{\mathbf{T}}_{ij}\langle\boldsymbol{\xi}_{ij}\rangle V_j,
-\end{equation}$
-__Advantages__  
-- Fast to implement
-- Failure propagation
-- Discretization
-
-__Diadvantages__  
-- Convergence is lower
-- Surfaces are not known
-
-![bg right:50% width:900px](../assets/Fragmenting_Cylinder.gif)
 
 ---
 
@@ -334,47 +344,10 @@ __Diadvantages__
 - Allows reduction methods
 - Currently under development
 - Static and dynamic reduction
- ![bg right 90%](./assets/coupling_nodes.png)
-
-
-
-$\begin{equation}
-\begin{bmatrix}
-\boldsymbol{K}_{mm} & \boldsymbol{K}_{ms} \\
-\boldsymbol{K}_{sm} & \boldsymbol{K}_{ss}
-\end{bmatrix}
-\begin{bmatrix}
-\boldsymbol{u}_m \\ \boldsymbol{u}_s
-\end{bmatrix}=
-\begin{bmatrix}
-\boldsymbol{F}_m \\ \boldsymbol{F}_s
-\end{bmatrix}
-\end{equation}$
-
-$\boldsymbol{F}_s = \boldsymbol{0}$
-$\begin{equation}
-\boldsymbol{K}_{sm} \boldsymbol{u}_m + \boldsymbol{K}_{ss} \boldsymbol{u}_s = \boldsymbol{0}
-\end{equation}$
-
----
-
-$\begin{equation}
-\boldsymbol{u}_s = -\boldsymbol{K}_{ss}^{-1} \boldsymbol{K}_{sm} \boldsymbol{u}_m
-\end{equation}$
-
-$\begin{equation}
-\boldsymbol{K}_{mm} \boldsymbol{u}_m + \boldsymbol{K}_{ms} \left(-\boldsymbol{K}_{ss}^{-1} \boldsymbol{K}_{sm} \boldsymbol{u}_m\right) = \boldsymbol{F}_m
-\end{equation}$
-
-$\begin{equation}
-\boldsymbol{K}_{\text{red}} = \boldsymbol{K}_{mm} - \boldsymbol{K}_{ms} \boldsymbol{K}_{ss}^{-1} \boldsymbol{K}_{sm}
-\end{equation}$
-
 - Currently under testing
 - Split $\mathbf{K}_{mm}$ in material point part and matrix part
   - Allows easy implementation of fracture or non-linear material
   - Reduction of degrees of freedoms
-
  ![bg right 90%](./assets/coupling_nodes.png)
 
 ---
@@ -414,7 +387,7 @@ table {
 - Damage between layers or material
 - Bonds handled differently if they exist in two blocks
 
-![bg right fit](https://raw.githubusercontent.com/PeriHub/PeriLab.jl/cf3b50528edaf2744fcaeb94e0133fc801dd2418/docs/src/assets/InterBlockDamage.svg)
+![bg right fit](./assets/inter_layer_bonds.svg)
 
 ---
 
@@ -476,120 +449,18 @@ table {
 
 ---
 
-
-# Live Demonstration
-
-## Module integration
-
-
-```
-module my_demo_mod
-```
-
-```
-function damage_name()
-    return "module name"
-end
-```
-
-- define a yaml file
-- define variables and call them
-- write variable to nodes
-- [Examplary models](https://github.com/PeriHub/PeriLab.jl/tree/main/examples/Seminars/) 
-
----
-<!-- _class: section-slide-rocket -->
-## Get-Started
-
----
-
-# PeriLab — Design Philosophy
-
-<div class="cols">
-<div>
-
-**Goal:** Reduce the entry barrier to peridynamic simulation
-
-**Key decisions:**
-- Julia as implementation language
-- Package manager for all dependencies
-- Macro-based module loading (no recompilation for new models)
-- New material model: **1 file** (vs. 5+ in Peridigm)
-- New input parameter: **in YAML** (vs. 6 files + recompile)
-- MPI parallelism built in
-
-</div>
-<div>
-
-| Criterion | Peridigm | PeriLab |
-|---|---|---|
-| Installation | Manual | Package manager |
-| Build time | ~10 min | < 5 min |
-| New material | 5+ files | 1 file |
-| New parameter | 6 files + compile | YAML only |
-| Libraries | Manual update | Automatic |
-| Compilation knowledge | Deep | None |
-
-</div>
-</div>
-
----
-
-# Adding a New Material Model in PeriLab
-
-```julia
-# One file, one module — no recompilation of the core
-module MyPlasticModel
-
-using PeriLab
-
-function compute_stress(strain, history, params)
-    # your constitutive law here
-    σ = params["E"] .* strain
-    return σ, history
-end
-
-end
-```
-
-```yaml
-# Reference in the YAML input deck — that is all
-Material Models:
-  MyMaterial:
-    Material Model: MyPlasticModel
-    E: 210000
-```
-
-<div class="note">
-
-The macro system discovers and integrates the module at runtime. No changes to the core codebase, no recompilation, no deep knowledge of the solver internals required.
-
-</div>
-
----
-
-# How to get started with PeriLab?
-
-- Ready to use application:
-  - Download and install [PeriHub](https://github.com/PeriHub/PeriHub)
-- Just the simulation core:
-  - Download the docker image from [Docker Hub](https://hub.docker.com/r/perihub/perilab)
-  - Download the julia package with: `Pkg.add("PeriLab")`
-  - Download the [release files](https://github.com/PeriHub/PeriLab.jl/releases)
-- Develop and contribute:
-  - Clone the [repository](https://github.com/PeriHub/PeriLab.jl) and follow the development guide
-    1. Implement your own peridynamic models (don't worry it's easy!)
-    2. Create a pull request in order to contribute 
-
-
----
-
 # Planned Features
 
 - Dynamic solver switch
 - Corrosive material models
 - Performance and usability improvements
 - More material and damage models 
+
+---
+
+<!-- _class: section-slide-vulcan -->
+
+## PeriHub
 
 ---
 
@@ -611,12 +482,6 @@ The macro system discovers and integrates the module at runtime. No changes to t
 - **Simulation Execution** - Run simulations using our powerful engine.
 - **Data Visualization** - Visualize results using our built-in tools or export data for further analysis.
 - **Analysis** - Analyze results and generate reports using your own python methods.
-
----
-
-<!-- _class: section-slide-vulcan -->
-
-## Overview
 
 ---
 
@@ -668,13 +533,18 @@ Examples available:
 
 ---
 
-# How to get started with PeriHub?
+# How to get started with Peridynamics?
 
 - Ready to use application:
-  - Follow the guide [here](https://github.com/PeriHub/PeriHub?tab=readme-ov-file#getting-started-with-perihub-services) to get started with PeriHub services.
+  - Download and install [PeriHub](https://github.com/PeriHub/PeriHub)
+- Just the simulation core:
+  - Download the docker image from [Docker Hub](https://hub.docker.com/r/perihub/perilab)
+  - Download the julia package with: `Pkg.add("PeriLab")`
+  - Download the [release files](https://github.com/PeriHub/PeriLab.jl/releases)
 - Develop and contribute:
-  - Go to the [Cintribution guide](https://github.com/PeriHub/PeriHub?tab=readme-ov-file#contributing)
-  - Submit your changes as a Pull Request
+  - Clone the [repository](https://github.com/PeriHub/PeriLab.jl) and follow the development guide
+    1. Implement your own peridynamic models (don't worry it's easy!)
+    2. Create a pull request in order to contribute 
 
 ---
 
