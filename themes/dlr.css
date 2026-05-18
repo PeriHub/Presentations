@@ -31,13 +31,60 @@ header {
   height: 20px;
 }
 
+.note {
+  background: #eaf2f8;
+  border-left: 4px solid #2e86c1;
+  padding: 10px 16px;
+  margin: 8px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 20px;
+}
+.box {
+  background: #fdf2e9;
+  border: 2px solid #e67e22;
+  border-radius: 8px;
+  padding: 14px 20px;
+  margin: 10px 0;
+}
+.box strong {
+  color: #d35400;
+}
+.green {
+  background: #eafaf1;
+  border-left: 4px solid #27ae60;
+  padding: 12px 18px;
+  margin: 10px 0;
+  border-radius: 0 6px 6px 0;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 10px 0;
+  font-size: 19px;
+}
+th {
+  background: #1a5276;
+  color: white;
+  padding: 7px 12px;
+  text-align: left;
+}
+td {
+  padding: 6px 12px;
+  border-bottom: 1px solid #d5dbdb;
+}
+tr:nth-child(even) td {
+  background: #f2f3f4;
+}
+
 section {
+  font-size: 23px;
   font-family: Frutiger;
   background-image: url("../assets/dlr_background_slides.svg");
 }
 section.title-slide {
   background-image: url("../assets/dlr_background_title.svg");
   color: var(--title-slide-text-color);
+  font-size: 28px;
 }
 
 section.section-slide-cfrp {
@@ -113,6 +160,13 @@ section.section-slide-vulcan header {
 }
 section.section-slide-vulcan footer {
   visibility: hidden;
+}
+.cols {
+  display: flex;
+  gap: 36px;
+}
+.cols > div {
+  flex: 1;
 }
 section.cols-2 {
   overflow: visible;

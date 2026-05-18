@@ -54,6 +54,7 @@ jobs:
           - PDDAY_2024
           - PDDAY_2025
           - MICRO_ANALYSIS
+          - FRASCAL_2026
     steps:
       - uses: actions/checkout@v4
 
