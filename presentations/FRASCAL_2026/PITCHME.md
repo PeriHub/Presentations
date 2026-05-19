@@ -76,7 +76,7 @@ $\int_{\mathcal{H}}\!\bigl(\underline{\mathbf{T}}\langle\boldsymbol{\xi}\rangle 
 
 <div class="note">
 
-Silling (2000): "Reformulation of elasticity theory for discontinuities and long-range forces."
+Silling (2000): "<a href="https://www.sciencedirect.com/science/article/pii/S0022509699000290" target="_blank">Reformulation of elasticity theory for discontinuities and long-range forces.</a>"
 
 </div>
 
@@ -335,6 +335,12 @@ __Diadvantages__
 - Matrix update is costly
 - Algorithms are more complex
 
+<div class="note">
+
+Hesse (2026): "<a href="https://www.sciencedirect.com/science/article/pii/S2352711026001378" target="_blank">Update (v2.0) to PeriLab - peridynamic laboratory</a>"
+
+</div>
+
 ![bg right 90%](./assets/force_comp.png)
 
 ---
@@ -393,13 +399,15 @@ table {
 
 # Input and Output Formats
 
-- Input
-  - Text file
-  - Exodus file
-  - Abaqus model
-- Output
-  - Exodus file
-  - CSV file
+<div class="mermaid">
+%%{init: { 'theme':'forest','flowchart': { 'pointLabelFontSize': '130%'} } }%%
+flowchart LR
+    A[Text file] --> D{PeriLab}
+    B[Exodus file] --> D
+    C[Abaqus model] --> D
+    D -->E[Exodus file]
+    D -->F[CSV file]
+</div>
 
 ---
 
@@ -475,27 +483,6 @@ table {
 
 ---
 
-# Features - What can I do with PeriHub?
-
-
-- **Model Creation** - Create models using predefined templates or import your own.
-- **Simulation Execution** - Run simulations using our powerful engine.
-- **Data Visualization** - Visualize results using our built-in tools or export data for further analysis.
-- **Analysis** - Analyze results and generate reports using your own python methods.
-
----
-
-![width:1070px](./assets/PeriHub.svg)
-
-
----
-
-<!-- _class: section-slide-rocket -->
-
-## Live Demo
-
----
-
 # PeriHub — Making Simulation Accessible
 
 <div class="cols">
@@ -530,6 +517,27 @@ Examples available:
 
 </div>
 </div>
+
+---
+
+# Features - What can I do with PeriHub?
+
+
+- **Model Creation** - Create models using predefined templates or import your own.
+- **Simulation Execution** - Run simulations using our powerful engine.
+- **Data Visualization** - Visualize results using our built-in tools or export data for further analysis.
+- **Analysis** - Analyze results and generate reports using your own python methods.
+
+---
+
+![width:1070px](./assets/PeriHub.svg)
+
+
+---
+
+<!-- _class: section-slide-rocket -->
+
+## Live Demo
 
 ---
 
